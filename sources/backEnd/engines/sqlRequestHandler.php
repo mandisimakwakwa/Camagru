@@ -5,34 +5,47 @@ $projectRoot = substr(getcwd(), 0, strpos(getcwd(), "sources"));
 require $projectRoot . "sources/backEnd/controllers/relativePathController.php";
 
 //Create USE DB query
-function ft_useCamagru($db_name)
+function ft_useCamagru($dbConn, $dbName)
 {
 
-    $dbQuery = "USE $db_name";
-    return $dbQuery;
+    $dbQuery = "USE $dbName";
+
+    $preparedStatement = $dbConn->prepare($dbQuery);
+    $preparedStatement->execute();
 }
 
 //Create Camagru if it doesn't exist query
-function ft_createDBQuery($db_name)
-{
+function ft_createDB($dbConn, $db_name) {
 
     $dbQuery = "CREATE DATABASE IF NOT EXISTS $db_name";
-    return $dbQuery;
+
+    $preparedStatement = $dbConn->prepare($dbQuery);
+    $preparedStatement->execute();
 }
 
 //Create users Table query
-function ft_createUsersTableQuery($db_name)
-{
+function ft_createUsersTable($dbConn) {
 
     $dbQuery = "CREATE TABLE IF NOT EXISTS users (
-                httpEmail VARCHAR(72) NOT NULL,
-                httpPassword VARCHAR(66),
-                userName VARCHAR(30),
-                userID INT(8) NOT NULL AUTO_INCREMENT,
-                verificationStatus BOOLEAN,
+                email VARCHAR(72) NOT NULL,
+                username VARCHAR(30),
+                password VARCHAR(66),
+                userID INT(8) AUTO_INCREMENT,
                 PRIMARY KEY (userID),
-                UNIQUE (httpEmail, userName));";
-    return $dbQuery;
+                UNIQUE (email, userName));";
+
+    $preparedStatement = $dbConn->prepare($dbQuery);
+    $preparedStatement->execute();
+    ft_autoIncrementSet($dbConn);
+}
+
+//Set Auto Increment Start Value
+function ft_autoIncrementSet($dbConn) {
+
+    $dbQuery  = "ALTER TABLE users AUTO_INCREMENT=1250";
+
+    $preparedStatement = $dbConn->prepare($dbQuery);
+    $preparedStatement->execute();
 }
 
 //Create gallery table query

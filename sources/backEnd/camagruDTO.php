@@ -25,6 +25,16 @@ function ft_jsonDecodeNice($json, $assoc = TRUE) {
     return json_decode($json, $assoc);
 }
 
+function ft_register($dbConn, $httpEmail, $httpUsername, $httpPassword) {
+
+    $dbQuery = "INSERT INTO users (email, username, password) VALUES (:email, :username, :password)";
+    $preparedStatement = $dbConn->prepare($dbQuery);
+    $preparedStatement->bindParam(':email', $httpEmail);
+    $preparedStatement->bindParam(':username', $httpUsername);
+    $preparedStatement->bindParam(':password', $httpPassword);
+    $preparedStatement->execute();
+}
+
 //Debug Connection to camagruDTO.php
 function ft_checkCamagruDTO() {
 

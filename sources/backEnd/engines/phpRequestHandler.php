@@ -4,6 +4,9 @@
 $projectRoot = substr(getcwd(), 0, strpos(getcwd(), "sources"));
 require $projectRoot . "sources/backEnd/controllers/relativePathController.php";
 
+//Session Creator
+session_start();
+
 //Global Variables
     //Handle HTTP Requests
     $getHTTPJSON = file_get_contents("php://input");
@@ -16,12 +19,10 @@ require $projectRoot . "sources/backEnd/controllers/relativePathController.php";
     $dbConnName = $_SESSION['dbConnName'];
 
 //Establish Network Connection
-//$dbConn = ft_getConnection($dbConnDSN, $dbConnUser, $dbConnPassword);
-echo $dbConnName;
+$dbConn = ft_getConnection($dbConnDSN, $dbConnUser, $dbConnPassword);
+
 //Create DB if Not Exists
-/*$dbQuery = ft_createDBQuery($dbConnName);
-$preparedStatement = $dbConn->prepare($dbQuery);
-$preparedStatement->execute();*/
+ft_createDB($dbConn, $dbConnName);
 
 //Check Session State
 if ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
@@ -40,6 +41,23 @@ if ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
     $_SESSION['httpRegisterPassword'] = hash("sha256", ft_validator($decodedHTTPJSON['httpRegisterPassword']));
     $_SESSION['httpRegisterConfirmPassword'] = hash("sha256", ft_validator($decodedHTTPJSON['httpRegisterConfirmPassword']));
 
+    //Register User
+        //Use Camagru DB
+        ft_useCamagru($dbConn, $dbConnName);
+
+        //Create users Table
+        ft_createUsersTable($dbConn);
+
+        //Set Auto Increment
+        ft_autoIncrementSet();
+
+        //Store User In DB
+        $httpRegisterEmail = $_SESSION['httpRegisterEmail'];
+        $httpRegisterUsername = $_SESSION['httpRegisterUsername'];
+        $httpRegisterPassword = $_SESSION['httpRegisterPassword'];
+
+        ft_register($dbConn, $httpRegisterEmail, $httpRegisterUsername, $httpRegisterPassword);
+
     //Debug Register Session State
 //    echo "Register Session State Works";
 } else {
@@ -48,7 +66,8 @@ if ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
 //    echo "Session State is NULL";
 }
 
-ft_sessionDebug($_SESSION);
+//Debug Session
+//ft_sessionDebug($_SESSION);
 
 //Get Filename
 function ft_getFileName($filePathInfo) {
