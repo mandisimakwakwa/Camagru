@@ -49,7 +49,7 @@ if ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
         ft_createUsersTable($dbConn);
 
         //Set Auto Increment
-        ft_autoIncrementSet();
+        ft_autoIncrementSet($dbConn);
 
         //Store User In DB
         $httpRegisterEmail = $_SESSION['httpRegisterEmail'];
