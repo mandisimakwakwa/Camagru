@@ -8,6 +8,7 @@ require $projectRoot . "sources/backEnd/controllers/relativePathController.php";
     //Handle HTTP Requests
     $getHTTPJSON = file_get_contents("php://input");
     $decodedHTTPJSON = json_decode($getHTTPJSON, true);
+
     //DB Connection Variables
     $dbConnDSN = $_SESSION['dbConnDSN'];
     $dbConnUser = $_SESSION['dbConnUser'];
