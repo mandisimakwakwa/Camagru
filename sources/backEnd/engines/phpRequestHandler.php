@@ -16,12 +16,12 @@ require $projectRoot . "sources/backEnd/controllers/relativePathController.php";
     $dbConnName = $_SESSION['dbConnName'];
 
 //Establish Network Connection
-$dbConn = ft_getConnection($dbConnDSN, $dbConnUser, $dbConnPassword);
-
+//$dbConn = ft_getConnection($dbConnDSN, $dbConnUser, $dbConnPassword);
+echo $dbConnName;
 //Create DB if Not Exists
-$dbQuery = ft_createDBQuery($dbConnName);
+/*$dbQuery = ft_createDBQuery($dbConnName);
 $preparedStatement = $dbConn->prepare($dbQuery);
-$preparedStatement->execute();
+$preparedStatement->execute();*/
 
 //Check Session State
 if ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
