@@ -57,12 +57,6 @@ if ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
         echo $_SESSION['confirmLogin'] = "0";
         echo $_SESSION['errorLog'];
     }
-
-    //Debugger
-        //Debug Login Session State
-        //echo "Login Session State Works";
-        //Debug Session
-//        ft_sessionDebug($_SESSION);
 } elseif ($decodedHTTPJSON['SessionState'] == 'REGISTER') {
 
     //Set Sessions
@@ -97,20 +91,11 @@ if ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
             echo $_SESSION['confirmLogin'] = "0";
             echo $_SESSION['errorLog'];
         }
-
-    //Debugger
-        //Debug Register Session State
-        //echo "Register Session State Works";
-        //Debug Session
-//        ft_sessionDebug($_SESSION);
 } else {
 
     //Debug NULL Session State
 //    echo "Session State is NULL";
 }
-
-//Debug Session
-//ft_sessionDebug($_SESSION);
 
 //Get Filename
 function ft_getFileName($filePathInfo) {

@@ -15,6 +15,14 @@ $checkPageName = $_SESSION['checkPageName'];
     <?php
 
     if ($checkPageName == 'main') {
+
+        ?>
+
+        <div>
+            <?php echo $_SESSION['userDBUsername']?>
+        </div>
+
+        <?php
     } elseif ($checkPageName == 'index') {
         ?>
 
