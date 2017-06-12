@@ -43,9 +43,19 @@ function ft_sendHTTPRequest(httpRequestAction, httpPostActionParams, getFormPara
     xhttpRequest.onreadystatechange = function () {
 
         if (this.readyState === 4 && this.status === 200) {
-            console.log(xhttpRequest.response);
-            // var response = JSON.parse(xhttpRequest.responseText);
-            return xhttpRequest.response;
+
+            var response = xhttpRequest.response;
+            var confirmLogin = response[0];
+
+            console.log(response[0]);
+            if (confirmLogin == "1") {
+
+                ft_redirectController();
+            } else {
+
+                alert(response.substring(1));
+            }
+            return response;
         }
     };
 
@@ -90,4 +100,10 @@ function ft_validateUserRegistrationHttpSend() {
     //Session State is Register
     var params = {'httpRegisterEmail' : httpRegisterEmail, 'httpRegisterUsername' : httpRegisterUsername, 'httpRegisterPassword' : httpRegisterPassword, 'httpRegisterConfirmPassword' : httpRegisterConfirmPassword, 'SessionState' : "REGISTER"};
     console.log(ft_sendHTTPRequest("POST", params, ""));
+}
+
+/*Redirect to Main.php*/
+function ft_redirectController() {
+
+    window.location.href = "sources/frontEnd/html/htmlLayouts/main.php";
 }

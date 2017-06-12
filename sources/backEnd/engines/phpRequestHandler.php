@@ -18,8 +18,11 @@ session_start();
     $dbConnPassword = $_SESSION['dbConnPassword'];
     $dbConnName = $_SESSION['dbConnName'];
 
-//Establish Network Connection
-$dbConn = ft_getConnection($dbConnDSN, $dbConnUser, $dbConnPassword);
+    //Establish Network Connection
+    $dbConn = ft_getConnection($dbConnDSN, $dbConnUser, $dbConnPassword);
+
+    //Session Set Error Log
+    $_SESSION['errorLog'] = "Error Login and Password Don't Match";
 
 //Create DB if Not Exists
 ft_createDB($dbConn, $dbConnName);
@@ -33,6 +36,27 @@ if ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
     //Set Sessions
     $_SESSION['httpLoginEmail'] = ft_validator($decodedHTTPJSON['httpLoginEmail']);
     $_SESSION['httpLoginPassword'] = hash("sha256", ft_validator($decodedHTTPJSON['httpLoginPassword']));
+    $_SESSION['confirmLogin'] = "1";
+
+    //Retrieve User From DB
+    $httpLoginEmail = $_SESSION['httpLoginEmail'];
+    $httpLoginUsername = $_SESSION['httpLoginUsername'];
+    $httpLoginPassword = $_SESSION['httpLoginPassword'];
+
+    //Set DB Sessions
+    $_SESSION['userDBEmail'] = ft_getUserDBEmail($dbConn, $httpLoginEmail, $httpLoginPassword);
+    $_SESSION['userDBUsername'] = ft_getUserDBUsername($dbConn, $httpLoginEmail, $httpLoginPassword);
+    $_SESSION['userDBPassword'] = ft_getUserDBPassword($dbConn, $httpLoginEmail, $httpLoginPassword);
+
+    if (($_SESSION['userDBEmail'] == $httpLoginEmail) && ($_SESSION['httpLoginPassword'] == $httpLoginPassword)) {
+
+        //Send Client-Side Response
+        echo $_SESSION['confirmLogin'];
+    } else {
+
+        echo $_SESSION['confirmLogin'] = "0";
+        echo $_SESSION['errorLog'];
+    }
 
     //Debugger
         //Debug Login Session State
@@ -59,10 +83,26 @@ if ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
         //Assign User HTTP values to DB
         ft_register($dbConn, $httpRegisterEmail, $httpRegisterUsername, $httpRegisterPassword);
 
+        //Set DB Sessions
+        $_SESSION['userDBEmail'] = ft_getUserDBEmail($dbConn, $httpRegisterEmail, $httpRegisterPassword);
+        $_SESSION['userDBUsername'] = ft_getUserDBUsername($dbConn, $httpRegisterEmail, $httpRegisterPassword);
+        $_SESSION['userDBPassword'] = ft_getUserDBPassword($dbConn, $httpRegisterEmail, $httpRegisterPassword);
+
+        //Validate User
+        if (($httpRegisterEmail == $_SESSION['userDBEmail']) && ($httpRegisterPassword == $_SESSION['userDBPassword'])) {
+
+            echo $_SESSION['confirmLogin'] = "1";
+        } else {
+
+            echo $_SESSION['confirmLogin'] = "0";
+            echo $_SESSION['errorLog'];
+        }
+
     //Debugger
         //Debug Register Session State
         //echo "Register Session State Works";
-        ft_sessionDebug($_SESSION);
+        //Debug Session
+//        ft_sessionDebug($_SESSION);
 } else {
 
     //Debug NULL Session State

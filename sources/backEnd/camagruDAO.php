@@ -16,6 +16,54 @@ function ft_register($dbConn, $httpEmail, $httpUsername, $httpPassword) {
     $preparedStatement->execute();
 }
 
+//Get User Email from DB
+function ft_getUserDBEmail($dbConn, $httpRegisterEmail, $httpRegisterPassword) {
+
+    $dbQuery = "SELECT email FROM users WHERE email=:email AND password=:password";
+
+    $preparedStatement = $dbConn->prepare($dbQuery);
+    $preparedStatement->bindParam(':email', $httpRegisterEmail);
+    $preparedStatement->bindParam(':password', $httpRegisterPassword);
+    $preparedStatement->execute();
+
+    $queryResult = $preparedStatement->fetch();
+    $dbEmail = $queryResult[0];
+
+    return $dbEmail;
+}
+
+//Get User Username from DB
+function ft_getUserDBUsername($dbConn, $httpRegisterEmail, $httpRegisterPassword) {
+
+    $dbQuery = "SELECT username FROM users WHERE email=:email AND password=:password";
+
+    $preparedStatement = $dbConn->prepare($dbQuery);
+    $preparedStatement->bindParam(':email', $httpRegisterEmail);
+    $preparedStatement->bindParam(':password', $httpRegisterPassword);
+    $preparedStatement->execute();
+
+    $queryResult = $preparedStatement->fetch();
+    $dbUsername = ucfirst(strtolower($queryResult[0]));
+
+    return $dbUsername;
+}
+
+//Get User Password from DB
+function ft_getUserDBPassword($dbConn, $httpRegisterEmail, $httpRegisterPassword) {
+
+    $dbQuery = "SELECT password FROM users WHERE email=:email AND password=:password";
+
+    $preparedStatement = $dbConn->prepare($dbQuery);
+    $preparedStatement->bindParam(':email', $httpRegisterEmail);
+    $preparedStatement->bindParam(':password', $httpRegisterPassword);
+    $preparedStatement->execute();
+
+    $queryResult = $preparedStatement->fetch();
+    $dbPassword = $queryResult[0];
+
+    return $dbPassword;
+}
+
 //Debug Connection to camagruDAO.php
 function ft_checkCamagruDAO() {
 

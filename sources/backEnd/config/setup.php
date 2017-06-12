@@ -36,6 +36,7 @@ session_start();
     $_SESSION['userDBPassword'] = "";
 
     //Misc Sessions
+    $_SESSION['errorLog'] = "";
     //DB Pic Likes
     $_SESSION['db_picturelikes'] = "";
     //Header User Check
