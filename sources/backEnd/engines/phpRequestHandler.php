@@ -24,6 +24,9 @@ $dbConn = ft_getConnection($dbConnDSN, $dbConnUser, $dbConnPassword);
 //Create DB if Not Exists
 ft_createDB($dbConn, $dbConnName);
 
+//Use Camagru DB
+ft_useCamagru($dbConn, $dbConnName);
+
 //Check Session State
 if ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
 
@@ -31,8 +34,11 @@ if ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
     $_SESSION['httpLoginEmail'] = ft_validator($decodedHTTPJSON['httpLoginEmail']);
     $_SESSION['httpLoginPassword'] = hash("sha256", ft_validator($decodedHTTPJSON['httpLoginPassword']));
 
-    //Debug Login Session State
-//    echo "Login Session State Works";
+    //Debugger
+        //Debug Login Session State
+        //echo "Login Session State Works";
+        //Debug Session
+//        ft_sessionDebug($_SESSION);
 } elseif ($decodedHTTPJSON['SessionState'] == 'REGISTER') {
 
     //Set Sessions
@@ -42,24 +48,21 @@ if ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
     $_SESSION['httpRegisterConfirmPassword'] = hash("sha256", ft_validator($decodedHTTPJSON['httpRegisterConfirmPassword']));
 
     //Register User
-        //Use Camagru DB
-        ft_useCamagru($dbConn, $dbConnName);
-
-        //Create users Table
+        //Create users Table & Set Auto Increment
         ft_createUsersTable($dbConn);
-
-        //Set Auto Increment
-        ft_autoIncrementSet($dbConn);
 
         //Store User In DB
         $httpRegisterEmail = $_SESSION['httpRegisterEmail'];
         $httpRegisterUsername = $_SESSION['httpRegisterUsername'];
         $httpRegisterPassword = $_SESSION['httpRegisterPassword'];
 
+        //Assign User HTTP values to DB
         ft_register($dbConn, $httpRegisterEmail, $httpRegisterUsername, $httpRegisterPassword);
 
-    //Debug Register Session State
-//    echo "Register Session State Works";
+    //Debugger
+        //Debug Register Session State
+        //echo "Register Session State Works";
+        ft_sessionDebug($_SESSION);
 } else {
 
     //Debug NULL Session State

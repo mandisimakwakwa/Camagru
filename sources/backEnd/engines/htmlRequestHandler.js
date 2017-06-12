@@ -60,13 +60,13 @@ function ft_sendHTTPRequest(httpRequestAction, httpPostActionParams, getFormPara
 function ft_validateUserLoginHttpSend() {
 
     //Get Data From Login Form Client-Side
-    httpEmail = document.forms["loginForm"]["loginEmailInput"].value;
+    httpLoginEmail = document.forms["loginForm"]["loginEmailInput"].value;
 
     //Security Hash Password Implementation will be Applied Later in PHP
-    httpPassword = document.forms["loginForm"]["loginPasswordInput"].value;
+    httpLoginPassword = document.forms["loginForm"]["loginPasswordInput"].value;
 
     //Session State is Login
-    var params = {'httpLoginEmail' : httpEmail, 'httpLoginPassword' : httpPassword, 'SessionState' : "LOGIN"};
+    var params = {'httpLoginEmail' : httpLoginEmail, 'httpLoginPassword' : httpLoginPassword, 'SessionState' : "LOGIN"};
     console.log(ft_sendHTTPRequest("POST", params, ""));
 }
 
@@ -74,20 +74,20 @@ function ft_validateUserLoginHttpSend() {
 
 function ft_validateUserRegistrationHttpSend() {
 
-    //Get Email Form Client-Side
-    httpEmail = document.forms['registrationForm']['registerEmailInput'].value;
+    //Get Email From Register Form Client-Side
+    httpRegisterEmail = document.forms['registrationForm']['registerEmailInput'].value;
 
     //Get Username Form Client-Side
-    httpUsername = document.forms['registrationForm']['registerUsernameInput'].value;
+    httpRegisterUsername = document.forms['registrationForm']['registerUsernameInput'].value;
 
     //Get Password Form Client-Side
         //To be hashed From Front-End in Future
-    httpPassword = document.forms['registrationForm']['registerPasswordInput'].value;
+    httpRegisterPassword = document.forms['registrationForm']['registerPasswordInput'].value;
 
     //Get Confirm Password Form Client-Side
-    httpConfirmPassword = document.forms['registrationForm']['registerConfirmPasswordInput'].value;
+    httpRegisterConfirmPassword = document.forms['registrationForm']['registerConfirmPasswordInput'].value;
 
     //Session State is Register
-    var params = {'httpRegisterEmail' : httpEmail, 'httpRegisterUsername' : httpUsername, 'httpRegisterPassword' : httpPassword, 'httpRegisterConfirmPassword' : httpConfirmPassword, 'SessionState' : "REGISTER"};
+    var params = {'httpRegisterEmail' : httpRegisterEmail, 'httpRegisterUsername' : httpRegisterUsername, 'httpRegisterPassword' : httpRegisterPassword, 'httpRegisterConfirmPassword' : httpRegisterConfirmPassword, 'SessionState' : "REGISTER"};
     console.log(ft_sendHTTPRequest("POST", params, ""));
 }
