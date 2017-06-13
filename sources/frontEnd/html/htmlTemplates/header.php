@@ -15,15 +15,15 @@ $checkPageName = $_SESSION['checkPageName'];
     <h1>
         <?php
 
-        //Check index/main page name
-        if ($checkPageName == 'main') {
+            //Check index/main page name
+            if ($checkPageName == 'main') {
 
-            echo "Welcome to Camagru: ";
-            echo ucfirst($dbUsername);
-        } elseif ($checkPageName == 'index') {
+                echo "Welcome to Camagru: ";
+                echo $_SESSION['userDBUsername'];
+            } elseif  ($checkPageName == 'index') {
 
-            echo "Welcome to Camagru";
-        }
+                echo "Welcome to Camagru";
+            }
         ?>
     </h1>
 </header>

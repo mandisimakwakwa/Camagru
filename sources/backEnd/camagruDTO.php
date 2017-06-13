@@ -7,11 +7,6 @@ require $projectRoot . 'sources/backEnd/controllers/relativePathController.php';
 //Session Start
 session_start();
 
-//Global Varialbles
-$username = $_SESSION['httpEmail'];
-$password = $_SESSION['httpPassword'];
-
-
 //Validator function to check for injections
 function ft_validator($userInputSample)
 {

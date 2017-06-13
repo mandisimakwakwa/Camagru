@@ -26,18 +26,18 @@ $checkPageName = $_SESSION['checkPageName'];
 
     <!--Calling indexPage.css-->
     <link rel="stylesheet"
-          href="sources/frontEnd/css/indexPage.css"
+          href="../../css/indexPage.css"
           type="text/css"
     >
 
     <!--Calling main.css-->
     <link rel="stylesheet"
-          href="sources/frontEnd/css/main.css"
+          href="../../css/main.css"
           type="text/css"
     >
 
     <!--Calling htmlRequestHandler-->
-    <script src="sources/backEnd/engines/htmlRequestHandler.js"
+    <script src="../../../backEnd/engines/htmlRequestHandler.js"
             type="text/javascript"
     ></script>
 </head>

@@ -4,51 +4,38 @@
 $projectRoot = substr(getcwd(), 0, strpos(getcwd(), "sources"));
 require $projectRoot . "sources/backEnd/controllers/relativePathController.php";
 
-//Global Variables
-$dsn = $GLOBALS['DB_DSN'];
-$user = $GLOBALS['DB_USER'];
-$password = $GLOBALS['DB_PASSWORD'];
-$dbNameVariable = $GLOBALS['DB_NAME'];
-
 //Session Creator
 session_start();
 
 //Global Variables
     //HTTP Login Sessions
-    $_SESSION['httpLoginEmail'] = "";
-    $_SESSION['httpLoginPassword'] = "";
+    $_SESSION['httpLoginEmail'];
+    $_SESSION['httpLoginPassword'];
 
     //HTTP Register Sessions
-    $_SESSION['httpRegisterEmail'] = "";
-    $_SESSION['httpRegisterUsername']  = "";
-    $_SESSION['httpRegisterPassword'] = "";
-    $_SESSION['httpRegisterConfirmPassword'] = "";
-
-    //DB Conn Sessions
-    $_SESSION['dbConnDSN'] = $dsn;
-    $_SESSION['dbConnUser'] = $user;
-    $_SESSION['dbConnPassword'] = $password;
-    $_SESSION['dbConnName'] = $dbNameVariable;
+    $_SESSION['httpRegisterEmail'];
+    $_SESSION['httpRegisterUsername'];
+    $_SESSION['httpRegisterPassword'];
+    $_SESSION['httpRegisterConfirmPassword'];
 
     //DB User Sessions
-    $_SESSION['userDBEmail'] = "";
-    $_SESSION['userDBUsername'] = "";
-    $_SESSION['userDBPassword'] = "";
+    $_SESSION['userDBEmail'];
+    $_SESSION['userDBUsername'];
+    $_SESSION['userDBPassword'];
 
     //Misc Sessions
-    $_SESSION['errorLog'] = "";
+    $_SESSION['errorLog'];
     //DB Pic Likes
-    $_SESSION['db_picturelikes'] = "";
+    $_SESSION['db_picturelikes'];
     //Header User Check
-    $_SESSION['checkPageType'] = "";
+    $_SESSION['checkPageName'];
     //Login Check
     $_SESSION['confirmLogin'] = "-1";
 
 //ft_sessionDebug($_SESSION);
 
 //Get Connection
-function ft_getConnection($dsn, $user, $password)
-{
+function ft_getConnection($dsn, $user, $password) {
 
     //Try Connection
     try {

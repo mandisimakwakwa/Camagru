@@ -48,7 +48,7 @@ if ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
     $_SESSION['userDBUsername'] = ft_getUserDBUsername($dbConn, $httpLoginEmail, $httpLoginPassword);
     $_SESSION['userDBPassword'] = ft_getUserDBPassword($dbConn, $httpLoginEmail, $httpLoginPassword);
 
-    if (($_SESSION['userDBEmail'] == $httpLoginEmail) && ($_SESSION['httpLoginPassword'] == $httpLoginPassword)) {
+    if (($_SESSION['userDBEmail'] == $httpLoginEmail) && ($_SESSION['userDBPassword'] == $httpLoginPassword)) {
 
         //Send Client-Side Response
         echo $_SESSION['confirmLogin'];

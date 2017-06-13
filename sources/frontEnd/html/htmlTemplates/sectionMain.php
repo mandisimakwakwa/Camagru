@@ -14,135 +14,128 @@ $checkPageName = $_SESSION['checkPageName'];
 
     <?php
 
-    if ($checkPageName == 'main') {
+        if ($checkPageName == 'main') {
 
-        ?>
+        } elseif ($checkPageName == 'index') {
+            ?>
 
-        <div>
-            <?php echo $_SESSION['userDBUsername']?>
-        </div>
-
-        <?php
-    } elseif ($checkPageName == 'index') {
-        ?>
-
-        <!--Login Form Div-->
-        <div id="loginFormDiv"
-             class="modal"
-        >
-
-                                <span class="close"
-                                      onclick="ft_closeLoginModal()"
-                                >
-                                    &times;
-                                </span>
-
-            <form class="modal-content"
-                  id="loginForm"
-                  method="post"
+            <!--Login Form Div-->
+            <div id="loginFormDiv"
+                 class="modal"
             >
-                <h1>Login</h1>
-                <br><br>
 
-                <input type="text"
-                       placeholder="Please Enter Email"
-                       id="loginEmailInput">
+                                    <span class="close"
+                                          onclick="ft_closeLoginModal()"
+                                    >
+                                        &times;
+                                    </span>
 
-                <input type="password"
-                       placeholder="Please Enter Password"
-                       id="loginPasswordInput"
-                       required>
+                <form class="modal-content"
+                      id="loginForm"
+                      method="post"
+                >
+                    <h1>Login</h1>
+                    <br><br>
 
-                <br><br>
+                    <input type="text"
+                           placeholder="Please Enter Email"
+                           id="loginEmailInput">
 
-                <div id="loginFormButtonsDivContainer">
+                    <input type="password"
+                           placeholder="Please Enter Password"
+                           id="loginPasswordInput"
+                           required>
 
-                    <button id="loginSubmitButton"
-                            onclick="ft_validateUserLoginHttpSend()">
-                        Login
-                    </button>
+                    <br><br>
 
-                    <button id="cancelSubmitButton"
-                            onclick="ft_closeLoginModal()"
-                    >
+                    <div id="loginFormButtonsDivContainer">
 
-                        Cancel
-                    </button>
-                </div>
-            </form>
-        </div>
+                        <button id="loginSubmitButton"
+                                onclick="ft_validateUserLoginHttpSend()">
+                            Login
+                        </button>
 
-        <!--Login Button-->
-        <button onclick="ft_showLoginModal()"
-        >
-
-            Login
-        </button>
-
-        <!--Register Form Div-->
-        <div id="registrationFormDiv"
-             class="modal"
-        >
-
-                        <span class="close"
-                              onclick="ft_closeRegisterModal()"
+                        <button id="cancelSubmitButton"
+                                onclick="ft_closeLoginModal()"
                         >
-                                    &times;
-                                </span>
 
-            <form class="modal-content"
-                  id="registrationForm"
-                  method="post"
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!--Login Button-->
+            <button onclick="ft_showLoginModal()"
             >
-                <h1>Register</h1>
-                <br><br>
 
-                <input type="text"
-                       placeholder="Please Enter Email"
-                       id="registerEmailInput"
+                Login
+            </button>
+
+            <!--Register Form Div-->
+            <div id="registrationFormDiv"
+                 class="modal"
+            >
+
+                            <span class="close"
+                                  onclick="ft_closeRegisterModal()"
+                            >
+                                        &times;
+                                    </span>
+
+                <form class="modal-content"
+                      id="registrationForm"
+                      method="post"
                 >
+                    <h1>Register</h1>
+                    <br><br>
 
-                <input type="text"
-                       placeholder="Please Enter Username"
-                       id="registerUsernameInput"
-                >
-
-                <input type="password"
-                       placeholder="Please Enter Password"
-                       id="registerPasswordInput"
-                       required>
-
-                <input type="password"
-                       placeholder="Please Confirm Password"
-                       id="registerConfirmPasswordInput"
-                       required>
-                <br><br>
-
-                <div id="registrationFormButtonsDivContainer">
-
-                    <button id="registrationSubmitButton"
-                            onclick="ft_validateUserRegistrationHttpSend()"
-                    >
-                        Submit
-                    </button>
-
-                    <button id="cancelSubmitButton"
-                            onclick="ft_closeRegisterModal()"
+                    <input type="text"
+                           placeholder="Please Enter Email"
+                           id="registerEmailInput"
                     >
 
-                        Cancel
-                    </button>
-                </div>
-            </form>
-        </div>
+                    <input type="text"
+                           placeholder="Please Enter Username"
+                           id="registerUsernameInput"
+                    >
 
-        <!--Registration Button-->
-        <button onclick="ft_showRegistrationModal()"
-        >
+                    <input type="password"
+                           placeholder="Please Enter Password"
+                           id="registerPasswordInput"
+                           required>
 
-            Register
-        </button>
-        <?php
-    }
+                    <input type="password"
+                           placeholder="Please Confirm Password"
+                           id="registerConfirmPasswordInput"
+                           required>
+                    <br><br>
+
+                    <div id="registrationFormButtonsDivContainer">
+
+                        <button id="registrationSubmitButton"
+                                onclick="ft_validateUserRegistrationHttpSend()"
+                        >
+                            Submit
+                        </button>
+
+                        <button id="cancelSubmitButton"
+                                onclick="ft_closeRegisterModal()"
+                        >
+
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!--Registration Button-->
+            <button onclick="ft_showRegistrationModal()"
+            >
+
+                Register
+            </button>
+            <?php
+        }
     ?>
 </main>
