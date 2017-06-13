@@ -16,6 +16,7 @@ $checkPageName = $_SESSION['checkPageName'];
 
         if ($checkPageName == 'main') {
 
+            echo "Camera Div View";
         } elseif ($checkPageName == 'index') {
             ?>
 

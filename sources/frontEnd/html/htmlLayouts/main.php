@@ -25,8 +25,14 @@ $checkPageName = $_SESSION['checkPageName'];
     <title>Camagru</title>
 
     <!--Calling indexPage.css-->
-    <link rel="stylesheet"
+    <!--<link rel="stylesheet"
           href="../../css/indexPage.css"
+          type="text/css"
+    >-->
+
+    <!--Calling mainPage.css-->
+    <link rel="stylesheet"
+          href="../../css/mainPage.css"
           type="text/css"
     >
 
@@ -56,10 +62,17 @@ $checkPageName = $_SESSION['checkPageName'];
                     //Calling Section Main Div
                     include $sectionMain;
                 } elseif ($checkPageName == "main") {
+                    ?>
 
-                    //Calling Section Main and Aside Div
-                    include $sectionMain;
-                    include $sectionAside;
+                    <div class="sectionClass">
+                        <?php
+
+                            //Calling Section Main and Aside Div
+                            include $sectionMain;
+                            include $sectionAside;
+                        ?>
+                    </div>
+                    <?php
                 }
 
                 //Calling Footer Div

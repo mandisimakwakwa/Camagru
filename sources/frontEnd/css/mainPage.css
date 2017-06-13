@@ -1,0 +1,99 @@
+/*Index Page Styling*/
+
+/*Fill Body with Flex*/
+
+/*Body Debug Class*/
+.bodyWrapperDebugDiv {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    width: 100%;
+}
+
+/*Fill Body Context*/
+.bodyWrapperDebugDiv > .headerClass, .sectionMainClass, .sectionAsideClass, .footerClass {
+
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+/*Adjust Height Assign of Elements*/
+
+/*Adjust Header Height*/
+.headerClass {
+
+    display: flex;
+    flex: 5;
+}
+
+/*Section Div Styling*/
+.sectionClass {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex: 10;
+}
+
+/*Style Content of Main Div*/
+.sectionMainClass {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    border: bisque solid thin;
+    flex: 2;
+}
+
+/*Style Content of Aside Div*/
+.sectionAsideClass {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 900px;
+    border: bisque solid thin;
+    flex: 1;
+}
+
+/*Adjust Footer Height*/
+.footerClass {
+
+    display: flex;
+    flex: 1;
+}
+
+/*Style Registration Form*/
+
+/*Registration Form Button Styling*/
+#registrationFormButtonsDivContainer {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+/*Style Login Form*/
+
+/*Login Form Buttons Styling*/
+#loginFormButtonsDivContainer {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+#cancelSubmitButton {
+
+    background-color: red;
+}

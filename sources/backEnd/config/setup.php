@@ -50,8 +50,7 @@ function ft_getConnection($dsn, $user, $password) {
 }
 
 //Debug Connection to setup.php
-function ft_checkSetupLinking()
-{
+function ft_checkSetupLinking() {
 
     echo 'setup.php is accessible<br>';
 }
