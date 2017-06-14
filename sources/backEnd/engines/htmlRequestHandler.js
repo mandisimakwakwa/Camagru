@@ -48,6 +48,7 @@ function ft_sendHTTPRequest(httpRequestAction, httpPostActionParams, getFormPara
             var confirmLogin = response[0];
 
             console.log(response[0]);
+            console.log(xhttpRequest.response);
             if (confirmLogin == "1") {
 
                 ft_redirectController();

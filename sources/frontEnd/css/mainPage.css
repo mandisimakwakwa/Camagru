@@ -9,18 +9,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 100%;
-    width: 100%;
+    /*min-height: 100%;
+    width: 100%;*/
 }
 
 /*Fill Body Context*/
 .bodyWrapperDebugDiv > .headerClass, .sectionMainClass, .sectionAsideClass, .footerClass {
 
     display: flex;
-    width: 100%;
     justify-content: center;
     align-items: center;
-    flex: 1;
+    flex: 1 100%;
 }
 
 /*Adjust Height Assign of Elements*/
@@ -29,7 +28,7 @@
 .headerClass {
 
     display: flex;
-    flex: 5;
+    flex: 2;
 }
 
 /*Section Div Styling*/
@@ -38,7 +37,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex: 10;
+    flex: 4;
 }
 
 /*Style Content of Main Div*/
@@ -47,8 +46,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-direction: row;
-    border: bisque solid thin;
+    flex-direction: column;
+    /*border: bisque solid thin;*/
     flex: 2;
 }
 
@@ -59,8 +58,37 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    width: 900px;
     border: bisque solid thin;
+    flex: 1;
+}
+
+.camContainerClass {
+
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+#camViewID, #photoViewID {
+
+    border: bisque solid thin;
+    flex: 1 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#camViewID {
+
+    flex: 2;
+    padding: 0;
+    margin: 0;
+}
+
+#photoViewID {
+
     flex: 1;
 }
 
@@ -96,4 +124,11 @@
 #cancelSubmitButton {
 
     background-color: red;
+}
+
+.buttonContainer {
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }

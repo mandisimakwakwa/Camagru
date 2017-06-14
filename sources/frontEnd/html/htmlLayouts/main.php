@@ -24,12 +24,6 @@ $checkPageName = $_SESSION['checkPageName'];
 
     <title>Camagru</title>
 
-    <!--Calling indexPage.css-->
-    <!--<link rel="stylesheet"
-          href="../../css/indexPage.css"
-          type="text/css"
-    >-->
-
     <!--Calling mainPage.css-->
     <link rel="stylesheet"
           href="../../css/mainPage.css"
@@ -44,6 +38,11 @@ $checkPageName = $_SESSION['checkPageName'];
 
     <!--Calling htmlRequestHandler-->
     <script src="../../../backEnd/engines/htmlRequestHandler.js"
+            type="text/javascript"
+    ></script>
+
+    <!--Calling applicationController-->
+    <script src="../../../backEnd/controllers/applicationController.js"
             type="text/javascript"
     ></script>
 </head>

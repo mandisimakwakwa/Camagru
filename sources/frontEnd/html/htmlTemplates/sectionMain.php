@@ -15,8 +15,36 @@ $checkPageName = $_SESSION['checkPageName'];
     <?php
 
         if ($checkPageName == 'main') {
+            ?>
 
-            echo "Camera Div View";
+            <div class="camContainerClass">
+
+                <video id="camViewID" autoplay>
+                </video>
+                <script>ft_camDisplay()</script>
+                <canvas id="photoViewID"></canvas>
+            </div>
+            <div class="buttonContainer">
+
+                <button id="snapPicIDButton"
+                        onclick="ft_snapButton()">
+                    Snap
+                </button>
+                <button id="mergePicIDButton"
+                        onclick="ft_mergeButton()">
+                    Merge Pic
+                </button>
+                <button id="uploadPicIDButton"
+                        onclick="ft_uploadButton()">
+                    Upload
+                </button>
+                <button id="savePicIDButton"
+                        onclick="ft_saveButton()">
+                    Save Pic
+                </button>
+            </div>
+            <div>Merge Pics</div>
+            <?php
         } elseif ($checkPageName == 'index') {
             ?>
 
