@@ -1,3 +1,25 @@
+/*Get Current Page Event Info*/
+
+function ft_sendHTTPPicRequest(httpRequestAction, httpPostActionParams, getFormParams) {
+
+    var xhttpRequest = new XMLHttpRequest();
+
+    xhttpRequest.open(httpRequestAction, "../../../backEnd/engines/imageHandler.php" + getFormParams, true);
+    // xhttpRequest.setRequestHeader("Content-type", "application/json");
+    xhttpRequest.onreadystatechange = function () {
+
+        if (this.readyState === 4 && this.status === 200) {
+
+            var response = xhttpRequest.response;
+            return response;
+        }
+    };
+
+    if (getFormParams !== "")
+        xhttpRequest.send();
+    else
+        xhttpRequest.send(JSON.stringify(httpPostActionParams));
+}
 
 function ft_camDisplay() {
 
@@ -56,8 +78,11 @@ function ft_saveButton() {
     var canvas = document.getElementById('photoViewID');
     var context = canvas.getContext('2d');
     var data = canvas.toDataURL('image/png');
-    var filetype = data.split(":")[0];
-    console.log(filetype);
+    var baseEncodedData = data.replace("data:image/png;base64,", "");
+
+    var params = {'httpImageContainer' : baseEncodedData, 'SessionState' : "IMG"};
+    console.log(baseEncodedData);
+    ft_sendHTTPPicRequest("POST", params, "");
 }
 
 function ft_uploadButton() {
