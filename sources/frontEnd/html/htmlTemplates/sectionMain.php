@@ -19,10 +19,16 @@ $checkPageName = $_SESSION['checkPageName'];
 
             <div class="camContainerClass">
 
-                <video id="camViewID" autoplay>
+                <video id="camViewID"
+                       height="480"
+                       width="360"
+                       autoplay>
                 </video>
                 <script>ft_camDisplay()</script>
-                <canvas id="photoViewID"></canvas>
+                <canvas id="photoViewID"
+                        height="480"
+                        width="360">
+                </canvas>
             </div>
             <div class="buttonContainer">
 

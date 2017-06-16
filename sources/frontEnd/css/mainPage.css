@@ -72,7 +72,6 @@
 
 #camViewID, #photoViewID {
 
-    border: bisque solid thin;
     flex: 1 100%;
     display: flex;
     align-items: center;
@@ -82,14 +81,15 @@
 
 #camViewID {
 
-    flex: 2;
     padding: 0;
     margin: 0;
 }
 
 #photoViewID {
 
-    flex: 1;
+    /*border: bisque solid thin;*/
+    margin: 0;
+    padding: 0;
 }
 
 /*Adjust Footer Height*/

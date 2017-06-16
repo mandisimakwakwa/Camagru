@@ -22,12 +22,42 @@ function ft_camDisplay() {
 
 function ft_snapButton() {
 
-    alert("You Pressed the Snap Button");
+    var cam = document.getElementById('camViewID');
+    var canvas = document.getElementById('photoViewID');
+    var context = canvas.getContext('2d');
+    var camViewHeight = cam.videoHeight;
+    var camViewWidth = cam.videoWidth;
+    var data = canvas.toDataURL('image/png');
+
+    console.log(camViewWidth, camViewHeight);
+    if (camViewWidth && camViewHeight) {
+
+        canvas.width = camViewWidth;
+        canvas.height = camViewHeight;
+
+        context.drawImage(cam, 10, 110.5, canvas.width/1.65, canvas.height/1.65);
+        canvas.setAttribute('src', data);
+    } else {
+
+        ft_clearPhoto(canvas, context, data);
+    }
+}
+
+function ft_clearPhoto(canvas, context, data) {
+
+    context.fillStyle = "#AAA";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    canvas.setAttribute('src', data);
 }
 
 function ft_saveButton() {
 
-    alert("You Pressed the Save Button");
+    var canvas = document.getElementById('photoViewID');
+    var context = canvas.getContext('2d');
+    var data = canvas.toDataURL('image/png');
+    var filetype = data.split(":")[0];
+    console.log(filetype);
 }
 
 function ft_uploadButton() {
