@@ -11,6 +11,7 @@ function ft_sendHTTPPicRequest(httpRequestAction, httpPostActionParams, getFormP
         if (this.readyState === 4 && this.status === 200) {
 
             var response = xhttpRequest.response;
+            console.log(xhttpRequest.response);
             return response;
         }
     };
@@ -81,7 +82,7 @@ function ft_saveButton() {
     var baseEncodedData = data.replace("data:image/png;base64,", "");
 
     var params = {'httpImageContainer' : baseEncodedData, 'SessionState' : "IMG"};
-    console.log(baseEncodedData);
+    // console.log(baseEncodedData);
     ft_sendHTTPPicRequest("POST", params, "");
 }
 
