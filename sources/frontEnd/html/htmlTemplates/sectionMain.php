@@ -20,14 +20,12 @@ $checkPageName = $_SESSION['checkPageName'];
             <div class="camContainerClass">
 
                 <video id="camViewID"
-                       height="480"
-                       width="360"
+                       height="250"
                        autoplay>
                 </video>
                 <script>ft_camDisplay()</script>
                 <canvas id="photoViewID"
-                        height="480"
-                        width="360">
+                        height="250">
                 </canvas>
             </div>
             <div class="buttonContainer">
@@ -49,7 +47,31 @@ $checkPageName = $_SESSION['checkPageName'];
                     Save Pic
                 </button>
             </div>
-            <div>Merge Pics</div>
+
+            <div>
+
+                <div>
+
+                    <br>
+                    <img src="../../../../resources/merge/1.png"
+                         height="80"
+                         width="80"
+                    >
+                    <img src="../../../../resources/merge/2.png"
+                         height="80"
+                         width="80"
+                    >
+                    <img src="../../../../resources/merge/3.png"
+                         height="80"
+                         width="80"
+                    >
+                    <img src="../../../../resources/merge/4.png"
+                         height="80"
+                         width="80"
+                    >
+                    <hr>
+                </div>
+            </div>
             <?php
         } elseif ($checkPageName == 'index') {
             ?>

@@ -40,17 +40,15 @@ function ft_autoIncrementSet($dbConn) {
 }
 
 //Create gallery table query
-function ft_createGalleryTableQuery($db_name)
+function ft_createGalleryTable($dbConn)
 {
 
     $dbQuery = "CREATE TABLE IF NOT EXISTS gallery (
-                imageID INT(8) NOT NULL AUTO_INCREMENT	,
-                imageTitle VARCHAR(66),
-                userID INT(8) NOT NULL,
-                imageStatus BOOLEAN,
-                creationDate TIMESTAMP,
+                imageID VARCHAR(66),
+                imageContent VARCHAR (255),
+                username VARCHAR(30),
                 PRIMARY KEY (imageID));";
-    return $dbQuery;
+    ft_queryExecute($dbConn, $dbQuery);
 }
 
 //Create Social Network Features table query
