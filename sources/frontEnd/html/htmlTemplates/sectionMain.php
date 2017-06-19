@@ -44,7 +44,7 @@ $checkPageName = $_SESSION['checkPageName'];
                 </button>
                 <button id="savePicIDButton"
                         onclick="ft_saveButton()">
-                    Save Pic
+                    Save to Gallery
                 </button>
             </div>
 

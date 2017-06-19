@@ -12,7 +12,7 @@ $checkPageName = $_SESSION['checkPageName'];
 
 <header class="headerClass">
 
-    <h1>
+    <h1 class="headerClassDebug">
         <?php
 
             //Check index/main page name

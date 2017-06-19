@@ -91,3 +91,8 @@ function ft_mergeButton() {
 
     alert("You Pressed the Merge Button");
 }
+
+function ft_logout() {
+
+    alert("You Pressed the Logout Button");
+}
