@@ -51,10 +51,40 @@ function ft_sendHTTPRequest(httpRequestAction, httpPostActionParams, getFormPara
             console.log(xhttpRequest.response);
             if (confirmLogin == "1") {
 
-                ft_redirectController();
+                ft_redirectMainController();
             } else {
 
                 alert(response.substring(1));
+            }
+            return response;
+        }
+    };
+
+    if (getFormParams !== "")
+        xhttpRequest.send();
+    else
+        xhttpRequest.send(JSON.stringify(httpPostActionParams));
+}
+
+/*Get Current Logout Page Event Info*/
+
+function ft_sendLogoutHTTPRequest(httpRequestAction, httpPostActionParams, getFormParams) {
+
+    var xhttpRequest = new XMLHttpRequest();
+
+    xhttpRequest.open(httpRequestAction, "../../../backEnd/engines/logoutHandler.php" + getFormParams, true);
+    // xhttpRequest.setRequestHeader("Content-type", "application/json");
+    xhttpRequest.onreadystatechange = function () {
+
+        if (this.readyState === 4 && this.status === 200) {
+
+            var response = xhttpRequest.response;
+            var confirmLogin = response;
+
+            console.log(response);
+            if (confirmLogin == "-1") {
+
+                ft_redirectIndexController();
             }
             return response;
         }
@@ -81,6 +111,17 @@ function ft_validateUserLoginHttpSend() {
     console.log(ft_sendHTTPRequest("POST", params, ""));
 }
 
+/*Get Logout Session State*/
+
+function ft_logout() {
+
+
+    var params = {'SessionState' : "LOGOUT"};
+
+    //Call Send HTTP Request Function Parse Login as session state.
+    console.log(ft_sendLogoutHTTPRequest("POST", params, ""));
+}
+
 /*Get Registration Info*/
 
 function ft_validateUserRegistrationHttpSend() {
@@ -104,7 +145,13 @@ function ft_validateUserRegistrationHttpSend() {
 }
 
 /*Redirect to Main.php*/
-function ft_redirectController() {
+function ft_redirectMainController() {
 
     window.location.href = "sources/frontEnd/html/htmlLayouts/main.php";
+}
+
+/*Redirect to Index.php*/
+function ft_redirectIndexController() {
+
+    window.location.href = "../../../../index.php";
 }
