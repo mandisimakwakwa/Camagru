@@ -46,6 +46,36 @@ function ft_imageDBUpload($dbConn, $dbUsername, $imageID, $imageContent) {
     $preparedStatement->execute();
 }
 
+//Get The Sum Total of Images in Gallery
+function   ft_getUserImageSum($dbConn){
+
+    $username = $_SESSION['userDBUsername'];
+
+    $dbQuery = "SELECT imageContent FROM gallery WHERE username=:username";
+
+    $preparedStatement = $dbConn->prepare($dbQuery);
+    $preparedStatement->bindParam(':username', $username);
+    $preparedStatement->execute();
+
+    $queryResult = $preparedStatement->fetchAll(PDO::FETCH_COLUMN);
+    return count($queryResult);
+}
+
+//Get The Content of Images in Gallery
+function   ft_getUserImages($dbConn){
+
+    $username = $_SESSION['userDBUsername'];
+
+    $dbQuery = "SELECT imageContent FROM gallery WHERE username=:username";
+
+    $preparedStatement = $dbConn->prepare($dbQuery);
+    $preparedStatement->bindParam(':username', $username);
+    $preparedStatement->execute();
+
+    $queryResult = $preparedStatement->fetchAll(PDO::FETCH_COLUMN);
+    return $queryResult;
+}
+
 //Debug Connection to camagruDTO.php
 function ft_checkCamagruDTO()
 {
