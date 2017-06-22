@@ -103,6 +103,12 @@ canvas {
     padding: 0;
 }
 
+/*Create Thumbnail Container Class*/
+.thumbnailClassDebug {
+
+    border: red solid thick;
+}
+
 /*Adjust Footer Height*/
 .footerClass {
 

@@ -37,13 +37,23 @@ $_SESSION['errorLog'] = "Error DB Conn Failed user images not Retrieved";
         <button id="logoutButtonID"
                 onclick="ft_logout()">Logout</button>
     </div>
-    <div>
+    <div class="thumbnailClassDebug">
         Create Thumbnail from DB Value
-        <div>Div One</div>
-        <div>Div Two</div>
-        <div>Div Three</div>
-        <div>Div Four</div>
-        <div>Div Five</div>
+        <div id="thumbOne">Div One
+            <canvas id="thumbCanvasOne" height="10" width="10"></canvas>
+        </div>
+        <div id="thumbTwo">Div Two
+            <canvas id="thumbCanvasOne" height="10" width="10"></canvas>
+        </div>
+        <div id="thumbThree">Div Three
+            <canvas id="thumbCanvasOne" height="10" width="10"></canvas>
+        </div>
+        <div id="thumbFour">Div Four
+            <canvas id="thumbCanvasOne" height="10" width="10"></canvas>
+        </div>
+        <div id="thumbFive">Div Five
+            <canvas id="thumbCanvasOne" height="10" width="10"></canvas>
+        </div>
     </div>
     <div class="buttonContainer">
         <button>Prev</button>
