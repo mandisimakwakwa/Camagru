@@ -62,6 +62,42 @@ function ft_snapButton() {
     }
 }
 
+/*Get Current Page Event Info*/
+
+function ft_receivePHPResponse(httpRequestAction, httpPostActionParams, getFormParams) {
+
+    var xhttpRequest = new XMLHttpRequest();
+
+    xhttpRequest.open(httpRequestAction, "../../../frontEnd/html/htmlTemplates/sectionAside.php" + getFormParams, true);
+    // xhttpRequest.setRequestHeader("Content-type", "application/json");
+    xhttpRequest.onreadystatechange = function () {
+
+        if (this.readyState === 4 && this.status === 200) {
+
+            var response = xhttpRequest.response;
+
+            console.log(response);
+            return response;
+        }
+    };
+
+    if (getFormParams !== "")
+        xhttpRequest.send();
+    else
+        xhttpRequest.send(JSON.stringify(httpPostActionParams));
+}
+
+function ft_canvasImmigration() {
+
+    var canvas = document.getElementById('thumbCanvasOne');
+    var context = canvas.getContext('2d');
+    var data = canvas.toDataURL('image/png');
+    var baseEncodedData = data.replace("data:image/png;base64,", "");
+    var params = {'httpImageContainer' : baseEncodedData, 'SessionState' : "THUMBNAIL"};
+
+    ft_receivePHPResponse("POST", params, "");
+}
+
 function ft_clearPhoto(canvas, context, data) {
 
     context.fillStyle = "#AAA";

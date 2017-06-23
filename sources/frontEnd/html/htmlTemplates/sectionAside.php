@@ -24,8 +24,10 @@ $_SESSION['errorLog'] = "Error DB Conn Failed user images not Retrieved";
 //Global Variables
     //Read Pics From DB and Convert to Thumbnails
     $sumOfImageArrayContents = ft_getUserImageSum($dbConn);
+    $userImageContainer = ft_getUserImages($dbConn);
 
     //Pagination
+    $itemCounter = 0;
     $itemsPerPageLimiter = 5;
     $sumOfPages = $sumOfImageArrayContents/$itemsPerPageLimiter;
 ?>
@@ -37,22 +39,16 @@ $_SESSION['errorLog'] = "Error DB Conn Failed user images not Retrieved";
         <button id="logoutButtonID"
                 onclick="ft_logout()">Logout</button>
     </div>
-    <div class="thumbnailClassDebug">
-        Create Thumbnail from DB Value
-        <div id="thumbOne">Div One
-            <canvas id="thumbCanvasOne" height="10" width="10"></canvas>
-        </div>
-        <div id="thumbTwo">Div Two
-            <canvas id="thumbCanvasOne" height="10" width="10"></canvas>
-        </div>
-        <div id="thumbThree">Div Three
-            <canvas id="thumbCanvasOne" height="10" width="10"></canvas>
-        </div>
-        <div id="thumbFour">Div Four
-            <canvas id="thumbCanvasOne" height="10" width="10"></canvas>
-        </div>
-        <div id="thumbFive">Div Five
-            <canvas id="thumbCanvasOne" height="10" width="10"></canvas>
+    <div class="thumbnailClass">
+        <h2>Gallery</h2>
+        <div id="thumbOne">
+
+            <canvas id="thumbCanvasOne" height="50" width="50"></canvas>
+            <script type="text/javascript">
+
+                ft_canvasImmigration();
+                <?php echo "$itemCounter:$userImageContainer[0]"?>
+            </script>
         </div>
     </div>
     <div class="buttonContainer">

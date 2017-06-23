@@ -26,13 +26,13 @@ $checkPageName = $_SESSION['checkPageName'];
 
     <!--Calling mainPage.css-->
     <link rel="stylesheet"
-          href="../../css/mainPage.css"
+          href="../../css/main.css"
           type="text/css"
     >
 
     <!--Calling main.css-->
     <link rel="stylesheet"
-          href="../../css/main.css"
+          href="../../css/mainPage.css"
           type="text/css"
     >
 
