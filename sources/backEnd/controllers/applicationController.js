@@ -89,11 +89,8 @@ function ft_receivePHPResponse(httpRequestAction, httpPostActionParams, getFormP
 
 function ft_canvasImmigration() {
 
-    var canvas = document.getElementById('thumbCanvasOne');
-    var context = canvas.getContext('2d');
-    var data = canvas.toDataURL('image/png');
-    var baseEncodedData = data.replace("data:image/png;base64,", "");
-    var params = {'httpImageContainer' : baseEncodedData, 'SessionState' : "THUMBNAIL"};
+    //Post Image Variables
+    var params = {'SessionState' : "THUMBNAIL"};
 
     ft_receivePHPResponse("POST", params, "");
 }
