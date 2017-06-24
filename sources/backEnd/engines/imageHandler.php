@@ -46,6 +46,11 @@ session_start();
         ft_imageDBUpload($dbConn, $username, $pictureFilename, $imageContent);
     } elseif ($decodedHTTPJSON['SessionState'] == "LAYER") {
 
+        $imageLayerFilename = $decodedHTTPJSON['layerImageFilename'];
+        $imageLayerContent = imagecreatefrompng("../../../resources/merge/$imageLayerFilename");
+        $imageBaseContent = $decodedHTTPJSON['baseImage'];
+        $imageBaseContentObject = imagecreatefromstring($imageBaseContent);
+        ft_imageMerge($imageBaseContentObject, $imageLayerContent);
     } else {
 
         echo $_SESSION['errorLog'];
@@ -59,7 +64,14 @@ session_start();
         return $imageRawData;
     }*/
 
-    function ft_imageMerge() {
+    function ft_imageMerge($imageBaseContent, $imageLayerConent) {
 
-        //Image Merge Layer to DB
+        //Image Merge Stored String Images
+        imagealphablending($imageBaseContent, true);
+        imagesavealpha($imageBaseContent, true);
+        imagealphablending($imageLayerConent, true);
+        imagesavealpha($imageLayerConent, true);
+
+        imagecopymerge($imageBaseContent, $imageLayerConent, 0, 0, 0, 0, 350, 350, 100);
+        echo "merge:$imageBaseContent";
     }

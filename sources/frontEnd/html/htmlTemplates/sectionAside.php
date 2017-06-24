@@ -47,7 +47,6 @@ $_SESSION['errorLog'] = "Error DB Conn Failed user images not Retrieved";
             <script type="text/javascript">
 
                 ft_canvasImmigration();
-                <?php echo "$itemCounter:$userImageContainer[0]"?>
             </script>
         </div>
     </div>

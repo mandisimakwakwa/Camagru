@@ -34,18 +34,18 @@ $checkPageName = $_SESSION['checkPageName'];
                         onclick="ft_snapButton()">
                     Snap
                 </button>
-                <button id="mergePicIDButton"
+                <!--<button id="mergePicIDButton"
                         onclick="ft_mergeButton()">
                     Merge Pic
-                </button>
-                <button id="uploadPicIDButton"
+                </button>-->
+                <!--<button id="uploadPicIDButton"
                         onclick="ft_uploadButton()">
                     Upload
-                </button>
-                <button id="savePicIDButton"
+                </button>-->
+                <!--<button id="savePicIDButton"
                         onclick="ft_saveButton()">
                     Save to Gallery
-                </button>
+                </button>-->
             </div>
 
             <div>
@@ -54,18 +54,26 @@ $checkPageName = $_SESSION['checkPageName'];
 
                     <br>
                     <img src="../../../../resources/merge/1.png"
+                         id="1.png"
+                         onclick="ft_mergeLayer(this);"
                          height="80"
                          width="80"
                     >
                     <img src="../../../../resources/merge/2.png"
+                         onclick="ft_mergeLayer(this);"
+                         id="2.png"
                          height="80"
                          width="80"
                     >
                     <img src="../../../../resources/merge/3.png"
+                         id="3.png"
+                         onclick="ft_mergeLayer(this);"
                          height="80"
                          width="80"
                     >
                     <img src="../../../../resources/merge/4.png"
+                         id="4.png"
+                         onclick="ft_mergeLayer(this);"
                          height="80"
                          width="80"
                     >
