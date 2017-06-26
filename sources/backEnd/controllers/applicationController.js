@@ -54,7 +54,7 @@ function ft_snapButton() {
 
     if (camViewWidth && camViewHeight) {
 
-        context.drawImage(cam, 0, 0, 300, 450);
+        context.drawImage(cam, 0, 0, 300, 250);
         canvas.setAttribute('src', data);
     } else {
 
@@ -64,13 +64,13 @@ function ft_snapButton() {
 
 /*Get Current Page Event Info*/
 
-function ft_canvasImmigration() {
+/*function ft_canvasImmigration() {
 
     //Post Image Variables
     var params = {'SessionState' : "THUMBNAIL"};
 
     ft_sendHTTPPicRequest("POST", params, "");
-}
+}*/
 
 function ft_clearPhoto(canvas, context, data) {
 
