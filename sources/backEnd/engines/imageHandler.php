@@ -51,7 +51,6 @@ session_start();
         $imageBaseContent = $decodedHTTPJSON['baseImage'];
         $imageBaseContentObject = imagecreatefromstring($imageBaseContent);
 
-        echo $imageLayerContent;
         ft_imageMerge($imageBaseContentObject, $imageLayerContent);
     } else {
 
