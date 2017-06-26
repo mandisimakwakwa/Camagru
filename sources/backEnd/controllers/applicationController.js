@@ -12,6 +12,14 @@ function ft_sendHTTPPicRequest(httpRequestAction, httpPostActionParams, getFormP
 
             var response = xhttpRequest.response;
             console.log(xhttpRequest.response);
+
+            if (response) {
+
+                var canvas = document.getElementById('photoViewID');
+                var data = canvas.toDataURL('image/png');
+
+                //Use Append Child Here
+            }
             return response;
         }
     };

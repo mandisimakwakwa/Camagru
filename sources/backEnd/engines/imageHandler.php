@@ -74,5 +74,5 @@ session_start();
         imagesavealpha($imageLayerConent, true);
 
         imagecopymerge($imageBaseContent, $imageLayerConent, 0, 0, 0, 0, 350, 350, 100);
-        echo "merge:$imageBaseContent";
+        echo "$imageBaseContent";
     }
