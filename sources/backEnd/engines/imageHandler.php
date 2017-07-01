@@ -47,11 +47,10 @@ session_start();
     } elseif ($decodedHTTPJSON['SessionState'] == "LAYER") {
 
         $imageLayerFilename = $decodedHTTPJSON['layerImageFilename'];
-        $imageLayerContent = imagecreatefrompng("../../../resources/merge/$imageLayerFilename");
-        $imageBaseContent = $decodedHTTPJSON['baseImage'];
-        $imageBaseContentObject = imagecreatefromstring($imageBaseContent);
+        $imageLayerContent = imagecreatefromstring(base64_decode(ft_base64FromPNG($imageLayerFilename)));
+        $imageBaseContent = imagecreatefromstring(base64_decode($decodedHTTPJSON['baseImage']));
 
-        ft_imageMerge($imageBaseContentObject, $imageLayerContent);
+        ft_imageMerge($imageBaseContent, $imageLayerContent);
     } else {
 
         echo $_SESSION['errorLog'];
@@ -65,14 +64,34 @@ session_start();
         return $imageRawData;
     }*/
 
-    function ft_imageMerge($imageBaseContent, $imageLayerConent) {
+    function ft_base64FromPNG($imageLayerFilename) {
+
+        $path = "../../../resources/merge/$imageLayerFilename";
+        $image = file_get_contents($path);
+        $imageData = base64_encode($image);
+
+        return $imageData;
+    }
+
+    function ft_imageMerge($imageBaseContent, $imageLayerContent) {
 
         //Image Merge Stored String Images
-        imagealphablending($imageBaseContent, true);
+        imagealphablending($imageBaseContent, false);
         imagesavealpha($imageBaseContent, true);
-        imagealphablending($imageLayerConent, true);
-        imagesavealpha($imageLayerConent, true);
+        imagealphablending($imageLayerContent, true);
+        imagesavealpha($imageLayerContent, true);
 
-        imagecopymerge($imageBaseContent, $imageLayerConent, 0, 0, 0, 0, 350, 350, 100);
-        echo "$imageBaseContent";
+        imagecopymerge($imageBaseContent, $imageLayerContent, 0, 0, 0, 0, 350, 350, 100);
+
+        // Output and free from memory
+        header('Content-Type: image/png');
+
+        ob_start();
+        imagepng($imageBaseContent);
+        $image = ob_get_clean();
+
+        echo 'data:image/png;base64,'.base64_encode($image);
+
+        imagedestroy($imageBaseContent);
+        imagedestroy($imageLayerContent);
     }
