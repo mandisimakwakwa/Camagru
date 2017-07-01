@@ -11,17 +11,19 @@ function ft_sendHTTPPicRequest(httpRequestAction, httpPostActionParams, getFormP
         if (this.readyState === 4 && this.status === 200) {
 
             var response = xhttpRequest.response;
-            // console.log(xhttpRequest.response);
+            var canvas = document.getElementById('photoViewID');
+            var context = canvas.getContext('2d');
+            var image = new Image();
+            image.src = response;
 
             if (response) {
 
-                var canvas = document.getElementById('photoViewID');
-                var data = canvas.toDataURL('image/png');
+                //Draw image from encoded base64
+                context.drawImage(image, 200, 200);
+            } else {
 
-                console.log(data);
-                //Use Append canvas Child Here
+                ft_clearPhoto(canvas, context, data);
             }
-            return response;
         }
     };
 
@@ -63,7 +65,7 @@ function ft_snapButton() {
 
     if (camViewWidth && camViewHeight) {
 
-        context.drawImage(cam, 0, 0, 300, 250);
+        context.drawImage(cam, 0, 0, 300, 450);
         canvas.setAttribute('src', data);
     } else {
 
@@ -73,13 +75,13 @@ function ft_snapButton() {
 
 /*Get Current Page Event Info*/
 
-/*function ft_canvasImmigration() {
+function ft_canvasImmigration() {
 
     //Post Image Variables
     var params = {'SessionState' : "THUMBNAIL"};
 
     ft_sendHTTPPicRequest("POST", params, "");
-}*/
+}
 
 function ft_clearPhoto(canvas, context, data) {
 
