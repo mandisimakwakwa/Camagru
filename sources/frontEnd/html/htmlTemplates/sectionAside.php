@@ -40,18 +40,46 @@ $_SESSION['errorLog'] = "Error DB Conn Failed user images not Retrieved";
                 onclick="ft_logout()">Logout</button>
     </div>
     <div class="thumbnailClass">
+
         <h2>Gallery</h2>
-        <div id="thumbOne">
 
-            <canvas id="thumbCanvasOne" height="50" width="50"></canvas>
-            <script type="text/javascript">
+        <div>
+            <?php
+                while ($itemCounter < $itemsPerPageLimiter) {
+                    ?>
+                        <div>
 
-                ft_canvasImmigration();
-            </script>
+                            <canvas id="<?php echo $itemCounter+1;?>"
+                                    height="50"
+                                    width="50"
+                            ></canvas>
+                            <br>
+                            <script type="text/javascript">
+
+                                ft_thumbnailDisplay(<?php echo $itemCounter+1;?>)
+                            </script>
+                        </div>
+                    <?php
+                    $itemCounter += 1;
+                    echo $itemCounter;
+                }
+            ?>
         </div>
     </div>
     <div class="buttonContainer">
-        <button>Prev</button>
-        <button>Next</button>
+
+        <button id="prevButtonID"
+                onclick="ft_prev()"
+        >
+
+            Prev
+        </button>
+
+        <button id="nextButtonID"
+                onclick="ft_next()"
+        >
+
+            Next
+        </button>
     </div>
 </aside>
