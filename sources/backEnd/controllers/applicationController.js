@@ -50,7 +50,7 @@ function ft_camDisplay() {
     
     function ft_videoError(e) {
 
-        //Go
+        //Go's
     }
 }
 
