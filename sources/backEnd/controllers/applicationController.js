@@ -109,6 +109,9 @@ function ft_uploadButton() {
 
 function ft_thumbnailDisplay(itemCount, imageData) {
 
-    alert(itemCount);
-    console.log(imageData);
+    console.log(imageData.length);
+
+    var image = "data:image/png;base64,"+imageData;
+    var imageTag = "<img src='"+image+"'/>";
+    return imageTag;
 }

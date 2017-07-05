@@ -53,20 +53,21 @@ $sumOfPages = $sumOfImageArrayContents / $itemsPerPageLimiter;
             while ($itemCounter < $itemsPerPageLimiter) {
 
                 $imageData = $userImageContainer[$itemCounter];
-                $base64encodedImage = base64_decode($imageData);
                 ?>
                 <div>
 
-                    <canvas id="<?php echo $itemCounter + 1; ?>"
+                    <img id="<?php echo $itemCounter + 1; ?>"
                             height="50"
                             width="50"
-                    ></canvas>
+                    />
                     <br>
                     <script language="JavaScript"
                             type="text/javascript"
                     >
+                        var itemCounter = "<?php echo $itemCounter + 1;?>";
+                        var imageData = "<?php echo $imageData;;?>";
 
-                        ft_thumbnailDisplay(<?php echo $itemCounter + 1;?>, <?php echo $base64encodedImage;?>);
+                        ft_thumbnailDisplay(itemCounter, imageData);
                     </script>
                 </div>
                 <?php

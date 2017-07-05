@@ -45,8 +45,9 @@ function ft_createGalleryTable($dbConn)
 
     $dbQuery = "CREATE TABLE IF NOT EXISTS gallery (
                 imageID VARCHAR(66),
-                imageContent VARCHAR (255),
+                imageContent VARCHAR(50000),
                 username VARCHAR(30),
+                insertTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 PRIMARY KEY (imageID));";
     ft_queryExecute($dbConn, $dbQuery);
 }

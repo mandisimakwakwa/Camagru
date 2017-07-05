@@ -38,10 +38,6 @@ session_start();
         $username = $_SESSION['userDBUsername'];
         $imageContent = $decodedHTTPJSON['httpImageContainer'];
 
-
-        //Create gallery Table if Not Exist
-        ft_createGalleryTable($dbConn);
-
         //Image Data to DB
         ft_imageDBUpload($dbConn, $username, $pictureFilename, $imageContent);
     } elseif ($decodedHTTPJSON['SessionState'] == "LAYER") {

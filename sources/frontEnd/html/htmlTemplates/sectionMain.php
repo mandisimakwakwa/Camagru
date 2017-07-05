@@ -3,6 +3,19 @@
 //Session Start
 session_start();
 
+//DB Connection Variables
+$dbConnDSN = $_SESSION['dbConnDSN'];
+$dbConnUser = $_SESSION['dbConnUser'];
+$dbConnPassword = $_SESSION['dbConnPassword'];
+$dbConnName = $_SESSION['dbConnName'];
+
+//Establish Network Connection
+$dbConn = ft_getConnection($dbConnDSN, $dbConnUser, $dbConnPassword);
+ft_useCamagru($dbConn, $dbConnName);
+
+//Create gallery Table if Not Exist
+ft_createGalleryTable($dbConn);
+
 //Initialize Check Page Type Session
 $_SESSION['checkPageName'] = ft_getFileName($_SERVER['PHP_SELF']);
 
