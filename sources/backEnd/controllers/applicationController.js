@@ -59,11 +59,9 @@ function ft_snapButton() {
     var cam = document.getElementById('camViewID');
     var canvas = document.getElementById('photoViewID');
     var context = canvas.getContext('2d');
-    var camViewHeight = cam.videoHeight;
-    var camViewWidth = cam.videoWidth;
-    var data = canvas.toDataURL('image/png');
+     var data = canvas.toDataURL('image/png');
 
-    if (camViewWidth && camViewHeight) {
+    if (data) {
 
         context.drawImage(cam, 0, 0, 300, 450);
         canvas.setAttribute('src', data);
@@ -105,4 +103,12 @@ function ft_mergeLayer(imageLayerContainer) {
 function ft_uploadButton() {
 
     alert("You Pressed the Upload Button");
+}
+
+/*Display Gallery Thumbnails*/
+
+function ft_thumbnailDisplay(itemCount, imageData) {
+
+    alert(itemCount);
+    console.log(imageData);
 }

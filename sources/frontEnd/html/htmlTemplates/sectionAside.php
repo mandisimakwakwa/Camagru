@@ -16,20 +16,21 @@ $dbConnName = $_SESSION['dbConnName'];
 
 //Establish Network Connection
 $dbConn = ft_getConnection($dbConnDSN, $dbConnUser, $dbConnPassword);
-ft_useCamagru($dbConn,$dbConnName);
+ft_useCamagru($dbConn, $dbConnName);
 
 //Session Set Error Log
 $_SESSION['errorLog'] = "Error DB Conn Failed user images not Retrieved";
 
 //Global Variables
-    //Read Pics From DB and Convert to Thumbnails
-    $sumOfImageArrayContents = ft_getUserImageSum($dbConn);
-    $userImageContainer = ft_getUserImages($dbConn);
+//Read Pics From DB and Convert to Thumbnails
+$sumOfImageArrayContents = ft_getUserImageSum($dbConn);
+$userImageContainer = ft_getUserImages($dbConn);
 
-    //Pagination
-    $itemCounter = 0;
-    $itemsPerPageLimiter = 5;
-    $sumOfPages = $sumOfImageArrayContents/$itemsPerPageLimiter;
+//Pagination
+$itemCounter = 0;
+$currentPage = 1;
+$itemsPerPageLimiter = 5;
+$sumOfPages = $sumOfImageArrayContents / $itemsPerPageLimiter;
 ?>
 
 <aside class="sectionAsideClass">
@@ -37,32 +38,40 @@ $_SESSION['errorLog'] = "Error DB Conn Failed user images not Retrieved";
     <div>
 
         <button id="logoutButtonID"
-                onclick="ft_logout()">Logout</button>
+                onclick="ft_logout()">Logout
+        </button>
     </div>
     <div class="thumbnailClass">
 
         <h2>Gallery</h2>
 
+        <hr>
+        <hr>
+
         <div>
             <?php
-                while ($itemCounter < $itemsPerPageLimiter) {
-                    ?>
-                        <div>
+            while ($itemCounter < $itemsPerPageLimiter) {
 
-                            <canvas id="<?php echo $itemCounter+1;?>"
-                                    height="50"
-                                    width="50"
-                            ></canvas>
-                            <br>
-                            <script type="text/javascript">
+                $imageData = $userImageContainer[$itemCounter];
+                $base64encodedImage = base64_decode($imageData);
+                ?>
+                <div>
 
-                                ft_thumbnailDisplay(<?php echo $itemCounter+1;?>)
-                            </script>
-                        </div>
-                    <?php
-                    $itemCounter += 1;
-                    echo $itemCounter;
-                }
+                    <canvas id="<?php echo $itemCounter + 1; ?>"
+                            height="50"
+                            width="50"
+                    ></canvas>
+                    <br>
+                    <script language="JavaScript"
+                            type="text/javascript"
+                    >
+
+                        ft_thumbnailDisplay(<?php echo $itemCounter + 1;?>, <?php echo $base64encodedImage;?>);
+                    </script>
+                </div>
+                <?php
+                $itemCounter += 1;
+            }
             ?>
         </div>
     </div>
@@ -73,7 +82,10 @@ $_SESSION['errorLog'] = "Error DB Conn Failed user images not Retrieved";
         >
 
             Prev
+
         </button>
+
+        <button id="currentPageID"><?php echo $currentPage; ?></button>
 
         <button id="nextButtonID"
                 onclick="ft_next()"

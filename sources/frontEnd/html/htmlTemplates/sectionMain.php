@@ -23,7 +23,11 @@ $checkPageName = $_SESSION['checkPageName'];
                        height="250"
                        autoplay>
                 </video>
-                <script>ft_camDisplay()</script>
+                <script language="JavaScript"
+                        type="text/javascript"
+                >
+                    ft_camDisplay();
+                </script>
                 <canvas id="photoViewID"
                         height="250">
                 </canvas>

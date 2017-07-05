@@ -165,8 +165,3 @@ function ft_next() {
 
     alert("You Pressed the Next Button");
 }
-
-function ft_thumbnailDisplay(pageCount) {
-
-    alert(pageCount);
-}

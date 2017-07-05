@@ -130,6 +130,11 @@ canvas {
 
 }
 
+#currentPageID:hover {
+
+    border: none;
+}
+
 /*Adjust Footer Height*/
 .footerClass {
 
