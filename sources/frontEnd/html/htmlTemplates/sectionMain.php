@@ -59,10 +59,10 @@ $checkPageName = $_SESSION['checkPageName'];
                         onclick="ft_uploadButton()">
                     Upload
                 </button>-->
-                <!--<button id="savePicIDButton"
+                <button id="savePicIDButton"
                         onclick="ft_saveButton()">
                     Save to Gallery
-                </button>-->
+                </button>
             </div>
 
             <div>

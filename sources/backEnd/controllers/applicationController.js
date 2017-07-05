@@ -109,9 +109,35 @@ function ft_uploadButton() {
 
 function ft_thumbnailDisplay(itemCount, imageData) {
 
-    console.log(imageData.length);
-
     var image = "data:image/png;base64,"+imageData;
     var imageTag = "<img src='"+image+"'/>";
     return imageTag;
 }
+
+function ft_prev(currentPage) {
+
+    if (currentPage > 1) {
+
+        var prevPage = currentPage - 1;
+    } else {
+
+        var prevPage = 1;
+    }
+
+    window.location = "?page="+prevPage;
+}
+
+function ft_next(currentPage) {
+
+    if (currentPage) {
+
+        var nextPage = currentPage + 1;
+    } else {
+
+        var nextPage = 1;
+    }
+
+    window.location = "?page="+nextPage;
+}
+
+//refresh page with window.location.reload();

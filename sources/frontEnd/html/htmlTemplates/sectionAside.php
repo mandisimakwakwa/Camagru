@@ -27,9 +27,9 @@ $sumOfImageArrayContents = ft_getUserImageSum($dbConn);
 $userImageContainer = ft_getUserImages($dbConn);
 
 //Pagination
-$itemCounter = 0;
-$currentPage = 1;
-$itemsPerPageLimiter = 5;
+$currentPage = strlen($_GET['page'])>0?$_GET['page']:1;
+$itemCounter = 0 + ($currentPage * 5) - 5;
+$itemsPerPageLimiter = 5 + $itemCounter;
 $sumOfPages = $sumOfImageArrayContents / $itemsPerPageLimiter;
 ?>
 
@@ -56,19 +56,33 @@ $sumOfPages = $sumOfImageArrayContents / $itemsPerPageLimiter;
                 ?>
                 <div>
 
-                    <img id="<?php echo $itemCounter + 1; ?>"
-                            height="50"
-                            width="50"
-                    />
-                    <br>
-                    <script language="JavaScript"
-                            type="text/javascript"
-                    >
-                        var itemCounter = "<?php echo $itemCounter + 1;?>";
-                        var imageData = "<?php echo $imageData;;?>";
+                    <?php
 
-                        ft_thumbnailDisplay(itemCounter, imageData);
-                    </script>
+                        if ($imageData) {
+
+                            ?>
+
+                                <img id="<?php echo $itemCounter + 1; ?>"
+                                     height="50"
+                                     width="50"
+                                     src="data:image/png;base64,<?php echo $imageData; ?>"
+                                />
+
+                            <?php
+                        } else {
+
+                            ?>
+
+                                <img id="<?php echo $itemCounter + 1; ?>"
+                                     height="50"
+                                     width="50"
+                                     src="#"
+                                />
+
+                            <?php
+                        }
+                    ?>
+                    <br>
                 </div>
                 <?php
                 $itemCounter += 1;
@@ -79,17 +93,17 @@ $sumOfPages = $sumOfImageArrayContents / $itemsPerPageLimiter;
     <div class="buttonContainer">
 
         <button id="prevButtonID"
-                onclick="ft_prev()"
+                onclick="ft_prev(<?php echo $currentPage;?>)"
         >
 
             Prev
 
         </button>
 
-        <button id="currentPageID"><?php echo $currentPage; ?></button>
+        <button id="currentPageID"><?php echo $currentPage;?></button>
 
         <button id="nextButtonID"
-                onclick="ft_next()"
+                onclick="ft_next(<?php echo $currentPage;?>)"
         >
 
             Next

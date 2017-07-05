@@ -155,13 +155,3 @@ function ft_redirectIndexController() {
 
     window.location.href = "../../../../index.php";
 }
-
-function ft_prev() {
-
-    alert("You Pressed the Prev Button");
-}
-
-function ft_next() {
-
-    alert("You Pressed the Next Button");
-}
