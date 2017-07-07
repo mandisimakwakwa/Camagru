@@ -66,7 +66,7 @@ function   ft_getUserImages($dbConn){
 
     $username = $_SESSION['userDBUsername'];
 
-    $dbQuery = "SELECT imageContent FROM gallery WHERE username=:username ORDER BY insertTime";
+    $dbQuery = "SELECT imageContent FROM gallery WHERE username=:username ORDER BY insertTime DESC";
 
     $preparedStatement = $dbConn->prepare($dbQuery);
     $preparedStatement->bindParam(':username', $username);

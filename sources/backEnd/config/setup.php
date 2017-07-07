@@ -22,6 +22,7 @@ session_start();
     $_SESSION['userDBEmail'];
     $_SESSION['userDBUsername'];
     $_SESSION['userDBPassword'];
+    $_SESSION['userImageTBLContainer'];
 
     //Misc Sessions
     $_SESSION['errorLog'];

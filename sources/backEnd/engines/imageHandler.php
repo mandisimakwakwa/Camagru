@@ -39,7 +39,7 @@ session_start();
         $imageContent = $decodedHTTPJSON['httpImageContainer'];
 
         //Image Data to DB
-        ft_imageDBUpload($dbConn, $username, $pictureFilename, $imageContent);
+//        ft_imageDBUpload($dbConn, $username, $pictureFilename, $imageContent);
     } elseif ($decodedHTTPJSON['SessionState'] == "LAYER") {
 
         $imageLayerFilename = $decodedHTTPJSON['layerImageFilename'];
@@ -47,7 +47,10 @@ session_start();
         $imageBaseContent = imagecreatefromstring(base64_decode($decodedHTTPJSON['baseImage']));
 
         $imageContent = ft_imageMerge($imageBaseContent, $imageLayerContent);
-        ft_imageDBUpload($dbConn, $username, $pictureFilename, $imageContent);
+        $_SESSION['userImageTBLContainer'] = $imageContent;
+    } elseif ($decodedHTTPJSON['SessionState'] == "GALLERY") {
+
+        ft_imageDBUpload($dbConn, $username, $pictureFilename, $_SESSION['userImageTBLContainer']);
     } else {
 
         echo $_SESSION['errorLog'];
@@ -94,6 +97,7 @@ session_start();
 
         if ($image) {
 
+            $_SESSION['saveButtonState'] = "ON";
             return $imageContent;
         } else {
 

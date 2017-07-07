@@ -73,10 +73,10 @@ function ft_snapButton() {
 
 /*Get Current Page Event Info*/
 
-function ft_canvasImmigration() {
+function ft_saveButton() {
 
     //Post Image Variables
-    var params = {'SessionState' : "THUMBNAIL"};
+    var params = {'SessionState' : "GALLERY"};
 
     ft_sendHTTPPicRequest("POST", params, "");
 }
@@ -95,9 +95,24 @@ function ft_mergeLayer(imageLayerContainer) {
     var canvas = document.getElementById('photoViewID');
     var data = canvas.toDataURL('image/png');
     var baseEncodedData = data.replace("data:image/png;base64,", "");
-    var params = {'baseImage' : baseEncodedData, 'layerImageFilename' : layerImageFilename, 'SessionState' : "LAYER"}
+    var params = {'baseImage' : baseEncodedData, 'layerImageFilename' : layerImageFilename, 'SessionState' : "LAYER"};
 
     ft_sendHTTPPicRequest("POST", params, "");
+}
+
+function ft_buttonReloader(saveButtonState) {
+
+    var saveButtonOn = "<button id='saveButtonOnID'>Save</button>";
+    var saveButtonOff = "<button id='saveButtonOffID'>Save Off</button>";
+    var saveButtonToggle = saveButtonState;
+
+    if (saveButtonToggle == "On") {
+
+        document.write(saveButtonOn);
+    } else {
+
+        document.write(saveButtonOff);
+    }
 }
 
 function ft_uploadButton() {

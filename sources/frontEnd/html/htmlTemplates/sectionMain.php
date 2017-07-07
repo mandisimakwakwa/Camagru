@@ -45,24 +45,39 @@ $checkPageName = $_SESSION['checkPageName'];
                         height="250">
                 </canvas>
             </div>
-            <div class="buttonContainer">
+            <div class="buttonContainer"
+                 id="buttonContainerID">
 
                 <button id="snapPicIDButton"
                         onclick="ft_snapButton()">
                     Snap
                 </button>
-                <!--<button id="mergePicIDButton"
-                        onclick="ft_mergeButton()">
-                    Merge Pic
-                </button>-->
-                <!--<button id="uploadPicIDButton"
-                        onclick="ft_uploadButton()">
-                    Upload
-                </button>-->
-                <button id="savePicIDButton"
-                        onclick="ft_saveButton()">
-                    Save to Gallery
-                </button>
+                <script language="JavaScript"
+                        type="text/javascript">
+
+                    ft_buttonReloader("Off");
+                </script>
+                <?php
+/*
+                    if ($_SESSION['saveButtonState'] == "ON") {
+
+                        */?><!--
+                        <button id="saveButtonID"
+                                onclick="ft_saveButton()">
+                            Save
+
+                        <?php
+/*                    } else {
+
+                        */?>
+                        <button id="saveButtonGreyID">
+
+                            Save OFF
+
+                        <?php
+/*                    }
+                */?>
+                        </button>-->
             </div>
 
             <div>

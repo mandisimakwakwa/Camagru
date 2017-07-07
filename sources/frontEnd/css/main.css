@@ -158,3 +158,27 @@ input[type=text], input[type=password] {
     border: none;
     cursor: pointer;
 }
+
+#saveButtonOffID {
+
+    background-color: grey;
+    color: bisque;
+    padding: 14px 20px;
+    font-size: larger;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#saveButtonOffID:hover {
+
+    background-color: grey;
+    color: bisque;
+    padding: 14px 20px;
+    font-size: larger;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
