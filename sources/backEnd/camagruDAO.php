@@ -7,6 +7,9 @@ require $projectRoot . 'sources/backEnd/controllers/relativePathController.php';
 //Register User to DB
 function ft_register($dbConn, $httpEmail, $httpUsername, $httpPassword) {
 
+    //Send Confirmation Email
+
+    //Confirmation Email Return
     $dbQuery = "INSERT INTO users (email, username, password) VALUES (:email, :username, :password)";
 
     $preparedStatement = $dbConn->prepare($dbQuery);
