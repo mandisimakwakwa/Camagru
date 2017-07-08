@@ -109,6 +109,7 @@ function ft_buttonReloader(saveButtonState) {
     if (saveButtonToggle == "On") {
 
         document.write(saveButtonOn);
+        ft_saveButton();
     } else {
 
         document.write(saveButtonOff);

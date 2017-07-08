@@ -7,6 +7,15 @@ function ft_showLoginModal() {
     loginFormObj.style.display = "flex";
 }
 
+//Reveals Gallery Modal
+function ft_showGalleryModal() {
+
+    var galleryObj = document.getElementById('galleryDiv');
+
+    //Give Visibility Styling
+    galleryObj.style.display = "flex";
+}
+
 //Reveals Registration Modal
 function ft_showRegistrationModal() {
 
@@ -23,6 +32,13 @@ function ft_closeLoginModal() {
 
     //Give Invisibility Styling
     loginFormObj.style.display = "";
+}
+
+function ft_closeGalleryModal() {
+
+    var galleryObj = document.getElementById('galleryDiv');
+
+    galleryObj.style.display = "";
 }
 
 function ft_closeRegisterModal() {
@@ -154,6 +170,32 @@ function ft_redirectMainController() {
 function ft_redirectIndexController() {
 
     window.location.href = "../../../../index.php";
+}
+
+function ft_prev(currentPage) {
+
+    if (currentPage > 1) {
+
+        var prevPage = currentPage - 1;
+    } else {
+
+        var prevPage = 1;
+    }
+
+    window.location = "?page="+prevPage;
+}
+
+function ft_next(currentPage) {
+
+    if (currentPage) {
+
+        var nextPage = currentPage + 1;
+    } else {
+
+        var nextPage = 1;
+    }
+
+    window.location = "?page="+nextPage;
 }
 
 

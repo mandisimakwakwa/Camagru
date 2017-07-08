@@ -19,6 +19,17 @@ ft_createGalleryTable($dbConn);
 //Initialize Check Page Type Session
 $_SESSION['checkPageName'] = ft_getFileName($_SERVER['PHP_SELF']);
 
+//Global Variables
+//Read Pics From DB and Convert to Thumbnails
+$sumOfImageArrayContents = ft_getImageSum($dbConn);
+$userImageContainer = ft_getAllImages($dbConn);
+
+//Pagination
+$currentPage = strlen($_GET['page'])>0?$_GET['page']:1;
+$itemCounter = 0 + ($currentPage * 5) - 5;
+$itemsPerPageLimiter = 5 + $itemCounter;
+$sumOfPages = $sumOfImageArrayContents / $itemsPerPageLimiter;
+
 //Global Page Variables
 $checkPageName = $_SESSION['checkPageName'];
 ?>
@@ -55,29 +66,8 @@ $checkPageName = $_SESSION['checkPageName'];
                 <script language="JavaScript"
                         type="text/javascript">
 
-                    ft_buttonReloader("Off");
+                    ft_buttonReloader("On");
                 </script>
-                <?php
-/*
-                    if ($_SESSION['saveButtonState'] == "ON") {
-
-                        */?><!--
-                        <button id="saveButtonID"
-                                onclick="ft_saveButton()">
-                            Save
-
-                        <?php
-/*                    } else {
-
-                        */?>
-                        <button id="saveButtonGreyID">
-
-                            Save OFF
-
-                        <?php
-/*                    }
-                */?>
-                        </button>-->
             </div>
 
             <div>
@@ -167,6 +157,87 @@ $checkPageName = $_SESSION['checkPageName'];
             >
 
                 Login
+            </button>
+
+            <!--Gallery Div-->
+            <div id="galleryDiv"
+                 class="modal"
+            >
+
+                <span class="close"
+                      onclick="ft_closeGalleryModal()"
+                >
+                                        &times;
+                </span>
+
+                <div class="modal-content">
+                    <?php
+                        while ($itemCounter < $itemsPerPageLimiter) {
+
+                            $imageData = $userImageContainer[$itemCounter];
+                            ?>
+                            <div>
+
+                                <?php
+
+                                if ($imageData) {
+
+                                    ?>
+
+                                    <img id="<?php echo $itemCounter + 1; ?>"
+                                         height="50"
+                                         width="50"
+                                         src="data:image/png;base64,<?php echo $imageData; ?>"
+                                    />
+
+                                    <?php
+                                } else {
+
+                                    ?>
+
+                                    <img id="<?php echo $itemCounter + 1; ?>"
+                                         height="50"
+                                         width="50"
+                                         src="#"
+                                    />
+
+                                    <?php
+                                }
+                                ?>
+                                <br>
+                            </div>
+                        <?php
+                        $itemCounter += 1;
+                    }
+                    ?>
+                </div>
+
+                <div class="buttonContainer">
+
+                    <button id="prevButtonID"
+                            onclick="ft_prev(<?php echo $currentPage;?>)"
+                    >
+
+                        Prev
+
+                    </button>
+
+                    <button id="currentPageID"><?php echo $currentPage;?></button>
+
+                    <button id="nextButtonID"
+                            onclick="ft_next(<?php echo $currentPage;?>)"
+                    >
+
+                        Next
+                    </button>
+                </div>
+            </div>
+
+            <!--Gallery Display Button-->
+            <button onclick="ft_showGalleryModal()"
+            >
+
+                Gallery
             </button>
 
             <!--Register Form Div-->

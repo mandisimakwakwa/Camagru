@@ -61,6 +61,18 @@ function   ft_getUserImageSum($dbConn){
     return count($queryResult);
 }
 
+//Get The Sum Total of Images in Gallery
+function   ft_getImageSum($dbConn){
+
+    $dbQuery = "SELECT imageContent FROM gallery";
+
+    $preparedStatement = $dbConn->prepare($dbQuery);
+    $preparedStatement->execute();
+
+    $queryResult = $preparedStatement->fetchAll(PDO::FETCH_COLUMN);
+    return count($queryResult);
+}
+
 //Get The Content of Images in Gallery
 function   ft_getUserImages($dbConn){
 
@@ -73,6 +85,30 @@ function   ft_getUserImages($dbConn){
     $preparedStatement->execute();
 
     $queryResult = $preparedStatement->fetchAll(PDO::FETCH_COLUMN);
+    return $queryResult;
+}
+
+//Get The Content of Images in Gallery
+function   ft_getAllImages($dbConn){
+
+    $dbQuery = "SELECT imageContent FROM gallery ORDER BY insertTime DESC";
+
+    $preparedStatement = $dbConn->prepare($dbQuery);
+    $preparedStatement->execute();
+
+    $queryResult = $preparedStatement->fetchAll(PDO::FETCH_COLUMN);
+    $imageSum = count($queryResult);
+    $i = 0;
+
+    while ($i < $imageSum) {
+
+        if ($queryResult[$i] == NULL) {
+
+            unset($queryResult[$i]);
+            $queryResult = array_values($queryResult);
+        }
+        $i++;
+    }
     return $queryResult;
 }
 

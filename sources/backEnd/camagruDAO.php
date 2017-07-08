@@ -8,8 +8,22 @@ require $projectRoot . 'sources/backEnd/controllers/relativePathController.php';
 function ft_register($dbConn, $httpEmail, $httpUsername, $httpPassword) {
 
     //Send Confirmation Email
+    $email = "kt2jh@uscaves.com";
+    $subject = ucfirst($httpUsername)." Validation";
+//    $message = "<a href='#'>Click Here</a> to Validate";
+    $message = "email works";
+    $message = wordwrap($message, 70, "\r\n");
+    $retMail = mail($email, $subject, $message);
 
     //Confirmation Email Return
+    if ($retMail) {
+
+        echo "email sent";
+    } else {
+
+        echo "email failed";
+    }
+
     $dbQuery = "INSERT INTO users (email, username, password) VALUES (:email, :username, :password)";
 
     $preparedStatement = $dbConn->prepare($dbQuery);
