@@ -5,7 +5,7 @@ Web Video Engine for PHP
         Camagru is a web-application project.
         
         This project should be able too:
-            ^ Ensure that DB,Table,etc creation is uses PDO
+            ^ Ensure that DB,Table,etc creation uses PDO
             ^ Register Users
             ^ Login Users
             ^ Verify Login via Email
