@@ -2,7 +2,7 @@
 
 //Setup Relative Root
 $projectRoot = substr(getcwd(), 0, strpos(getcwd(), "sources"));
-require $projectRoot . 'sources/backEnd/controllers/relativePathController.php';
+require $projectRoot . 'sources/backEnd/controllers/phpPathController.php';
 
 //Session Start
 session_start();
@@ -32,6 +32,18 @@ function ft_queryExecute($dbConn, $dbQuery) {
 
     $preparedStatement = $dbConn->prepare($dbQuery);
     $preparedStatement->execute();
+}
+
+//Debug Controller
+function ft_debugController()
+{
+
+    ft_checkDatabaseLinking();
+    ft_checkSetupLinking();
+    ft_checkCamagruDAO();
+    ft_checkCamagruDTO();
+    ft_checksqlRequestHandler();
+    ft_checkPHPRequestHandler();
 }
 
 //Image Data into DB

@@ -2,7 +2,7 @@
 
 //Setup Relative Root
 $projectRoot = substr(getcwd(), 0, strpos(getcwd(), "sources"));
-require $projectRoot . 'sources/backEnd/controllers/relativePathController.php';
+require $projectRoot . 'sources/backEnd/controllers/phpPathController.php';
 
 //Session Start
 session_start();
@@ -13,17 +13,7 @@ $_SESSION['checkPageName'] = ft_getFileName($_SERVER['PHP_SELF']);
 //Global Page Variables
 $checkPageName = $_SESSION['checkPageName'];
 
-//Debug Controller
-function ft_debugController()
-{
 
-    ft_checkDatabaseLinking();
-    ft_checkSetupLinking();
-    ft_checkCamagruDAO();
-    ft_checkCamagruDTO();
-    ft_checksqlRequestHandler();
-    ft_checkPHPRequestHandler();
-}
 
 //ft_debugController();
 ?>
@@ -52,7 +42,7 @@ function ft_debugController()
     >
 
     <!--Calling htmlRequestHandler-->
-    <script src="sources/backEnd/engines/htmlRequestHandler.js"
+    <script src="sources/backEnd/engines/controllers/indexController.js"
             type="text/javascript"
     ></script>
 </head>

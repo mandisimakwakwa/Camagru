@@ -2,7 +2,7 @@
 
 //Setup Relative Root
 $projectRoot = substr(getcwd(), 0, strpos(getcwd(), "sources"));
-require $projectRoot . 'sources/backEnd/controllers/relativePathController.php';
+require $projectRoot . 'sources/backEnd/controllers/phpPathController.php';
 
 //Register User to DB
 function ft_register($dbConn, $httpEmail, $httpUsername, $httpPassword) {

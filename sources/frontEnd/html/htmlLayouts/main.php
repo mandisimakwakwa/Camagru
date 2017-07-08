@@ -2,7 +2,7 @@
 
 //Setup Relative Root
 $projectRoot = substr(getcwd(), 0, strpos(getcwd(), "sources"));
-require $projectRoot . "sources/backEnd/controllers/relativePathController.php";
+require $projectRoot . "sources/backEnd/controllers/phpPathController.php";
 
 //Session Start
 session_start();
@@ -37,12 +37,12 @@ $checkPageName = $_SESSION['checkPageName'];
     >
 
     <!--Calling htmlRequestHandler-->
-    <script src="../../../backEnd/engines/htmlRequestHandler.js"
+    <script src="../../../backEnd/engines/controllers/indexController.js"
             type="text/javascript"
     ></script>
 
     <!--Calling applicationController-->
-    <script src="../../../backEnd/controllers/applicationController.js"
+    <script src="../../../backEnd/engines/controllers/mainController.js"
             type="text/javascript"
     ></script>
 </head>
