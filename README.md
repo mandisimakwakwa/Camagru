@@ -72,6 +72,10 @@ Web Video Engine for PHP
                                     mainSectionMain.php
                                     mainSectionAside.php
                                     mainFooter.php
+                    L4: css/
+                        L5: index.css
+                            main.css
+                            camagru.css
                 L3: index.php
                     LICENSE
                     README.md

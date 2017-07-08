@@ -1,184 +1,183 @@
-/*Body Tag Styling*/
+/*Index Page Styling*/
 
-/*Body Flex Box Styling*/
-body {
+/*Fill Body with Flex*/
+
+/*Body Debug Class*/
+.bodyWrapperDebugDiv {
 
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*min-height: 100%;
+    width: 100%;*/
+}
+
+/*Fill Body Context*/
+.bodyWrapperDebugDiv > .headerClass, .sectionMainClass, .sectionAsideClass, .footerClass {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 100%;
+}
+
+/*Adjust Height Assign of Elements*/
+
+/*Adjust Header Height*/
+.headerClass {
+
+    display: flex;
+    flex: 2;
+}
+
+/*Section Div Styling*/
+.sectionClass {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 4;
+}
+
+/*Style Content of Main Div*/
+.sectionMainClass {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*border: bisque solid thin;*/
+    flex: 2;
+}
+
+/*Style Content of Aside Div*/
+.sectionAsideClass {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*border: bisque solid thin;*/
+    flex: 1;
+}
+
+.camContainerClass {
+
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.camContainerClass > video, canvas {
+
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     padding: 0;
     margin: 0;
-    background-color: dodgerblue;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: bisque;
 }
 
-/*Debugging Styling*/
+video {
 
-/*Body Tag*/
-html, body {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0;
     margin: 0;
-    height: 98%;
-    /*border: green solid thick; !*Body Border Color green*!*/
 }
 
-/*Header Tag*/
-.headerClassDebug {
+canvas {
 
-    border: orange solid thick; /*Header Border Color orange*/
-}
-
-/*Section Main Tag*/
-.sectionMainClassDebug {
-
-    border: black solid thick; /*Section Main Border Color black*/
-}
-
-/*Section Aside Tag*/
-.sectionAsideClassDebug {
-
-    border: whitesmoke solid thick; /*Section Aside Border Color whitesmoke*/
-}
-
-/*Footer Tag*/
-.footerClassDebug {
-
-    border: pink solid thick; /*Footer Border Color pink*/
-}
-
-/*Universal Button Styling*/
-
-/*Inactive*/
-button {
-
-    background-color: deepskyblue;
-    color: bisque;
-    padding: 14px 20px;
-    font-size: larger;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-/*Hover*/
-button:hover {
-
-    border: bisque solid thick;
-}
-
-/*Universal Modal Window Setup*/
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-    /*padding-top: 60px;*/
+    /*border: bisque solid thin;*/
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
-/* Modal Content/Box */
-.modal-content {
+/*Create Thumbnail Container Class*/
+.thumbnailClass {
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: dodgerblue;
-    height: 100%;
-    width: 50%;
+    width: 300px;
 }
 
-/*Make Header Text Nice*/
-.modal-content > h1 {
+.thumbnailClassDebug {
 
-    display: flex;
+    border: red solid thick;
+    width: 300px;
 }
 
-/* The Close Button */
-.close {
-    /* Position it in the top right corner outside of the modal */
+#thumbOne {
+
     background-color: black;
-    width: 10%;
-    height: 10%;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
 }
 
-/* Close button on hover */
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
+#thumbCanvasOne {
+
 }
 
-/* Add Zoom Animation */
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
+#currentPageID:hover {
 
-@-webkit-keyframes animatezoom {
-    from {
-        -webkit-transform: scale(0)
-    }
-    to {
-        -webkit-transform: scale(1)
-    }
-}
-
-@keyframes animatezoom {
-    from {
-        transform: scale(0)
-    }
-    to {
-        transform: scale(1)
-    }
-}
-
-input[type=text], input[type=password] {
-
-    padding: 5px 5px;
-    font-size: larger;
-    margin: 8px 0;
     border: none;
-    cursor: pointer;
 }
 
-#saveButtonOffID {
+/*Adjust Footer Height*/
+.footerClass {
 
-    background-color: grey;
-    color: bisque;
-    padding: 14px 20px;
-    font-size: larger;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
+    display: flex;
+    flex: 1;
+}
+
+/*Style Registration Form*/
+
+/*Registration Form Button Styling*/
+#registrationFormButtonsDivContainer {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+/*Style Login Form*/
+
+/*Login Form Buttons Styling*/
+#loginFormButtonsDivContainer {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+#cancelSubmitButton {
+
+    background-color: red;
+}
+
+.buttonContainer {
+
+    display: flex;
+    flex-direction: row;
     width: 100%;
 }
 
-#saveButtonOffID:hover {
+#logoutButtonID {
 
-    background-color: grey;
-    color: bisque;
-    padding: 14px 20px;
-    font-size: larger;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+    float: right;
 }
+

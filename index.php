@@ -31,13 +31,13 @@ $checkPageName = $_SESSION['checkPageName'];
 
     <!--Calling indexPage.css-->
     <link rel="stylesheet"
-          href="sources/frontEnd/css/indexPage.css"
+          href="sources/frontEnd/css/index.css"
           type="text/css"
     >
 
     <!--Calling main.css-->
     <link rel="stylesheet"
-          href="sources/frontEnd/css/main.css"
+          href="sources/frontEnd/css/camagru.css"
           type="text/css"
     >
 
