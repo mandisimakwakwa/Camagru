@@ -88,3 +88,5 @@ Web Video Engine for PHP
                     LICENSE
                     README.md
                     .gitignore
+                    
+    /* Comments */
