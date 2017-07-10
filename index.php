@@ -44,14 +44,17 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         ></script>
     </head>
 
-    <body>
+    <body class="indexBodyDebugClass">
 
-        <?php
+        <div class="indexBodyWrapperDivClass indexBodyWrapperDivDebugClass">
+
+            <?php
 
             //Calling HTML Elements
             include $indexHeaderTemplate;
             include $indexSectionMainTemplate;
             include $indexFooterTemplate;
-        ?>
+            ?>
+        </div>
     </body>
 </html>

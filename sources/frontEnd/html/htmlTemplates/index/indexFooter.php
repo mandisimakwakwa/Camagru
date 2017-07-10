@@ -1,7 +1,7 @@
 <?php
 ?>
 
-<footer class="footerClass">
+<footer class="indexFooterDebugClass">
 
     author: mmakwakw
 </footer>

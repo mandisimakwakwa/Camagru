@@ -20,7 +20,39 @@
     \\==========================//
 */
 
+    /*Body Div Styling*/
 
+    .indexBodyDebugClass {
+
+        border: thick solid black;
+    }
+
+    /*BodyWrapperDivClass*/
+    .indexBodyWrapperDivDebugClass {
+
+        border: thick solid yellow;
+    }
+
+    /*Head Div Styling*/
+
+    .indexHeaderDebugClass {
+
+        border: thick solid #7fff79;
+    }
+
+    /*Main Div Styling*/
+
+    .indexMainDebugClass {
+
+        border: thick solid blue;
+    }
+
+    /*Footer Div Styling*/
+
+    .indexFooterDebugClass {
+
+        border: thick solid red;
+    }
 /*====================================================================================================================*/
 /*
     //==========================\\

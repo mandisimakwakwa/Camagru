@@ -4,6 +4,17 @@
     \\==========================//
 */
 
+    /*Reset Default Div Styles*/
+    html, body {
+
+        display: flex;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        height: 99%;
+        justify-content: center;
+        align-items: center;
+    }
 
 /*====================================================================================================================*/
 /*
@@ -13,6 +24,7 @@
 */
 
 
+
 /*====================================================================================================================*/
 /*
     //==========================\\
@@ -20,6 +32,17 @@
     \\==========================//
 */
 
+    /*Layout Defining Classes*/
+
+        /*Body Wrapper Div Class*/
+        .indexBodyWrapperDivClass {
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
 
 /*====================================================================================================================*/
 /*

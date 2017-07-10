@@ -1,4 +1,4 @@
-<main>
+<main class="indexMainDebugClass">
 
-    This is the main section
+    Main
 </main>
