@@ -89,4 +89,10 @@ Web Video Engine for PHP
                     README.md
                     .gitignore
                     
-    /* Comments */
+    /* 
+    
+        Extra Comments
+        
+        camagruDTO : User Control
+        camagruDAO : Application Control
+    */
