@@ -1,4 +1,4 @@
 <header>
 
-    This is the Header
+    Header
 </header>

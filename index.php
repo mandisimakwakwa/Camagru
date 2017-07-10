@@ -48,6 +48,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
         <?php
 
+            //Calling HTML Elements
             include $indexHeaderTemplate;
             include $indexSectionMainTemplate;
             include $indexFooterTemplate;
