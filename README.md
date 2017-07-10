@@ -4,32 +4,40 @@ Web Video Engine for PHP
     *About:
         Camagru is a web-application project.
         
-        This project should be able too:
-            ^ Ensure that DB,Table,etc creation uses PDO
+        *Requirements:
+            ^ Use of PDO
             ^ Register Users
             ^ Login Users
             ^ Verify Login via Email
             ^ Allow user to recover passwords via Email
             ^ Take Pictures from web cam
-            ^ Merge alpha images with web cam images
+            ^ Merge superposable images with web cam images
             ^ Display Results in Gallery
             ^ Navigate Gallery via Pagination
             ^ Display Gallery on index
+            ^ SQL Injections vulnerability not allowed
+            ^ PHP DB Schema capable of creating and recreating Databases and Tables
+            ^ index file on the root of project
+            ^ User DB management through users gallery
+
+            
+        *Restrictions
+            ^ No Frameworks allowed
+            ^ No micro-frameworks allowed
+            ^ Code shouldn't produce any errors(getUserMedia console log errors: tolerated)
+            ^ Validation of all forms
 
     * How to Use
         Step 1: Take Picture
         Step 2: Click Desired Merge Image
         Step 3: Click Save
+        Step 4: Enjoy everything else
         
     /* 
         Note after clicking save
         image should appear on the
         gallery to your right
     */
-    
-    *Restrictions
-        ^ No Frameworks allowed
-        ^ No micro-frameworks allowed
         
     *Directory Structure
     
