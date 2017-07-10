@@ -2,82 +2,56 @@
 
 //Setup Relative Root
 $projectRoot = substr(getcwd(), 0, strpos(getcwd(), "sources"));
-require $projectRoot . "sources/backEnd/controllers/phpPathController.php";
-
-//Session Start
-session_start();
-
-//Initialize Check Page Type Session
-$_SESSION['checkPageName'] = ft_getFileName($_SERVER['PHP_SELF']);
-
-//Global Page Variables
-$checkPageName = $_SESSION['checkPageName'];
+require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.php';
 ?>
 
 <!DOCTYPE html>
 
 <html lang="en">
 
-<head>
+    <head>
 
-    <meta charset="UTF-8">
+        <meta charset="UTF-8">
 
-    <title>Camagru</title>
+        <title>Camagru</title>
 
-    <!--Calling mainPage.css-->
-    <link rel="stylesheet"
-          href="../../css/camagru.css"
-          type="text/css"
-    >
+        <!--Calling index.css-->
+        <link rel="stylesheet"
+              href="../../css/main.css"
+              type="text/css"
+        >
 
-    <!--Calling main.css-->
-    <link rel="stylesheet"
-          href="../../css/main.css"
-          type="text/css"
-    >
+        <!--Calling camagru.css-->
+        <link rel="stylesheet"
+              href="../../css/camagru.css"
+              type="text/css"
+        >
 
-    <!--Calling htmlRequestHandler-->
-    <script src="../../../backEnd/engines/controllers/indexController.js"
-            type="text/javascript"
-    ></script>
+        <!--Calling cssDebugger.css-->
+        <link rel="stylesheet"
+              href="../../../../resources/debuggers/cssDebugger.css"
+              type="text/css"
+        >
 
-    <!--Calling applicationController-->
-    <script src="../../../backEnd/engines/controllers/mainController.js"
-            type="text/javascript"
-    ></script>
-</head>
+        <!--Calling mainController.js-->
+        <script src="../../../backEnd/engines/controllers/mainController.js"
+                type="text/javascript"
+        ></script>
+
+        <!--Calling ajaxController.js-->
+        <script src="../../../backEnd/engines/controllers/ajaxController.js"
+                type="text/javascript"
+        ></script>
+    </head>
+
     <body>
 
-        <!--Wrapper Div-->
-        <div class="bodyWrapperDebugDiv">
+        <?php
 
-            <?php
-
-                //Calling Header Div
-                include $headerTemplate;
-
-                if ($checkPageName == "index") {
-
-                    //Calling Section Main Div
-                    include $sectionMain;
-                } elseif ($checkPageName == "main") {
-                    ?>
-
-                    <div class="sectionClass">
-                        <?php
-
-                            //Calling Section Main and Aside Div
-                            include $sectionMain;
-                            include $sectionAside;
-                        ?>
-                    </div>
-                    <?php
-                }
-
-                //Calling Footer Div
-                include $footerTemplate;
-            ?>
-        </div>
+        include $mainHeaderTemplate;
+        include $mainSectionMainTemplate;
+        include $mainSectionAsideTemplate;
+        include $mainFooterTemplate;
+        ?>
     </body>
 </html>
-

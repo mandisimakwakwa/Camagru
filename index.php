@@ -2,74 +2,55 @@
 
 //Setup Relative Root
 $projectRoot = substr(getcwd(), 0, strpos(getcwd(), "sources"));
-require $projectRoot . 'sources/backEnd/controllers/phpPathController.php';
-
-//Session Start
-session_start();
-
-//Populate Check Page Type Session
-$_SESSION['checkPageName'] = ft_getFileName($_SERVER['PHP_SELF']);
-
-//Global Page Variables
-$checkPageName = $_SESSION['checkPageName'];
-
-
-
-//ft_debugController();
+require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.php';
 ?>
-
 
 <!DOCTYPE html>
 
 <html lang="en">
 
-<head>
+    <head>
 
-    <meta charset="UTF-8">
+        <meta charset="UTF-8">
 
-    <title>Camagru</title>
+        <title>Camagru</title>
 
-    <!--Calling indexPage.css-->
-    <link rel="stylesheet"
-          href="sources/frontEnd/css/index.css"
-          type="text/css"
-    >
+        <!--Calling index.css-->
+        <link rel="stylesheet"
+              href="sources/frontEnd/css/index.css"
+              type="text/css"
+        >
 
-    <!--Calling main.css-->
-    <link rel="stylesheet"
-          href="sources/frontEnd/css/camagru.css"
-          type="text/css"
-    >
+        <!--Calling camagru.css-->
+        <link rel="stylesheet"
+              href="sources/frontEnd/css/camagru.css"
+              type="text/css"
+        >
 
-    <!--Calling htmlRequestHandler-->
-    <script src="sources/backEnd/engines/controllers/indexController.js"
-            type="text/javascript"
-    ></script>
-</head>
-<body>
+        <!--Calling cssDebugger.css-->
+        <link rel="stylesheet"
+              href="resources/debuggers/cssDebugger.css"
+              type="text/css"
+        >
 
-<!--Wrapper Div-->
-<div class="bodyWrapperDebugDiv">
+        <!--Calling indexController.js-->
+        <script src="sources/backEnd/engines/controllers/indexController.js"
+                type="text/javascript"
+        ></script>
 
-    <?php
+        <!--Calling ajaxController.js-->
+        <script src="sources/backEnd/engines/controllers/ajaxController.js"
+                type="text/javascript"
+        ></script>
+    </head>
 
-    //Calling Header Div
-    include $headerTemplate;
+    <body>
 
-    if ($checkPageName == "index") {
+        <?php
 
-        //Calling Section Main Div
-        include $sectionMain;
-    } elseif ($checkPageName == "main") {
-
-        //Calling Section Main and Aside Div
-        include $sectionMain;
-        include $sectionAside;
-    }
-
-    //Calling Footer Div
-    include $footerTemplate;
-    ?>
-</div>
-</body>
+            include $indexHeaderTemplate;
+            include $indexSectionMainTemplate;
+            include $indexFooterTemplate;
+        ?>
+    </body>
 </html>
