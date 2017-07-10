@@ -44,9 +44,9 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         ></script>
     </head>
 
-    <body class="indexBodyDebugClass">
+    <body class="indexBodyWrapperDivClass">
 
-        <div class="indexBodyWrapperDivClass indexBodyWrapperDivDebugClass">
+        <div class="indexSectionDivClass">
 
             <?php
 

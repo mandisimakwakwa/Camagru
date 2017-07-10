@@ -1,4 +1,4 @@
-<header class="indexHeaderDebugClass">
+<header>
 
     Header
 </header>

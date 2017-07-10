@@ -4,6 +4,66 @@
     \\==========================//
 */
 
+/*Layout Defining Classes*/
+
+    /*Body Wrapper Div Class*/
+    .indexSectionDivClass {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+
+    /*Make All Dimensions Congruent*/
+    .indexSectionDivClass header {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background:rgba(0,155,205,0.5);
+        box-shadow: 0 4px 8px 0
+        rgba(0, 0, 0, 0.2), 0 6px 20px 0
+        rgba(0, 0, 0, 0.19);
+        margin: 15px;
+        flex: 1 1;
+        min-width: 95%;
+        max-height: 150px;
+    }
+
+    .indexSectionDivClass main {
+
+        display: flex;
+        justify-content: center;
+        min-width: 95%;
+        align-items: center;
+        border-radius: 10px;
+        background:rgba(0,155,205,0.5);
+        box-shadow: 0 4px 8px 0
+            rgba(0, 0, 0, 0.2), 0 6px 20px 0
+            rgba(0, 0, 0, 0.19);
+        margin: 15px;
+        flex: 1 1;
+    }
+
+    .indexSectionDivClass footer {
+
+        display: flex;
+        justify-content: center;
+        min-width: 95%;
+        align-items: center;
+        border-radius: 10px;
+        background:rgba(0,155,205,0.5);
+        box-shadow: 0 4px 8px 0
+        rgba(0, 0, 0, 0.2), 0 6px 20px 0
+        rgba(0, 0, 0, 0.19);
+        margin: 15px;
+        flex: 1 1;
+        max-height: 50px;
+    }
 /*====================================================================================================================*/
 /*
     //==========================\\
