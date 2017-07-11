@@ -1,9 +1,8 @@
 <main>
 
-    <div class="indexLMainSubDivAClass">
+    <div class="indexMainSubDivAClass">
 
         <button class="indexGalleryButtonClass"
-                style="vertical-align:middle"
                 onclick="ft_indexGalleryButton()"
         >
 
@@ -11,7 +10,7 @@
         </button>
     </div>
 
-    <div class="indexLMainSubDivBClass">
+    <div class="indexMainSubDivBClass">
 
 
         <button class="indexLoginButtonClass"
