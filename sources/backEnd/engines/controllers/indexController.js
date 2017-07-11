@@ -13,6 +13,11 @@ function ft_indexRegisterButton() {
     alert("Register Button has been Pressed");
 }
 
+function ft_indexLogoutButton() {
+
+    alert("Logout Button has been Pressed");
+}
+
 function ft_indexControllerDebugger() {
 
     console.log("Index On");

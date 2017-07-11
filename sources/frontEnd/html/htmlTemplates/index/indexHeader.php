@@ -11,7 +11,9 @@
 
     <div class="indexButtonContainerDivClass">
 
-        <button class="indexLogoutButtonClass">
+        <button class="indexLogoutButtonClass"
+                onclick="ft_indexLogoutButton()"
+        >
 
             Logout
         </button>
