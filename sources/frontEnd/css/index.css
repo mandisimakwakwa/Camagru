@@ -17,38 +17,10 @@
         height: 100%;
     }
 
-    /*Make All Dimensions Congruent*/
-    .indexSectionDivClass header {
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        background:rgba(0,155,205,0.5);
-        box-shadow: 0 4px 8px 0
-        rgba(0, 0, 0, 0.2), 0 6px 20px 0
-        rgba(0, 0, 0, 0.19);
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        margin: 15px;
-        flex: 1 1;
-        min-width: 95%;
-        max-height: 150px;
-    }
-
-    header {
-
-        font-size: 15vh;
-        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-        font-weight: bolder;
-        text-shadow: 0px 3px 4px rgba(0, 0, 0, 1);
-        -webkit-background-clip: text;
-        transform: rotate(0.5deg);
-        letter-spacing: 15px;
-    }
-
     .indexSectionDivClass main {
 
         display: flex;
+        flex-flow: column;
         justify-content: center;
         min-width: 95%;
         align-items: center;
@@ -84,7 +56,34 @@
     \\==========================//
 */
 
+    header {
 
+        font-size: 15vh;
+        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+        font-weight: bolder;
+        text-shadow: 0px 3px 4px rgba(0, 0, 0, 1);
+        -webkit-background-clip: text;
+        transform: rotate(0.5deg);
+        letter-spacing: 15px;
+    }
+
+    /*Make All Dimensions Congruent*/
+    .indexSectionDivClass header {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background:rgba(0,155,205,0.5);
+        box-shadow: 0 4px 8px 0
+        rgba(0, 0, 0, 0.2), 0 6px 20px 0
+        rgba(0, 0, 0, 0.19);
+        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+        margin: 15px;
+        flex: 1 1;
+        min-width: 95%;
+        max-height: 150px;
+    }
 /*====================================================================================================================*/
 /*
     //==========================\\
@@ -93,6 +92,39 @@
 */
 
 
+    main {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+
+    main .indexLMainSubDivAClass {
+
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        min-width: 95%;
+        align-items: center;
+        border-radius: 10px;
+        margin: 15px;
+        flex: 1 1;
+    }
+
+    main .indexLMainSubDivBClass {
+
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        min-width: 95%;
+        align-items: center;
+        border-radius: 10px;
+        margin: 15px;
+        flex: 1 1;
+    }
 /*====================================================================================================================*/
 /*
     //==========================\\
@@ -108,5 +140,175 @@
     \\==========================//
 */
 
+    /*Medium Screens*/
+    @media all and (min-width: 800px) {
 
+        .sectionAsideClass {flex: 1 auto}
+    }
+
+    /*Large Screens*/
+    @media all and (min-width: 950px) {
+
+        .sectionMainClass {flex: 3 auto}
+        .sectionAsideClass {order: 1;}
+        .footerClass {order: 2}
+
+    }
+
+    .indexGalleryButtonClass {
+
+        display: inline-block;
+        border: none;
+        border-radius: 5px 20px 5px;
+        background: linear-gradient(to bottom right, deepskyblue, dodgerblue);
+        width: 25%;
+        height: 50%;
+        font-size: 5vh;
+        color: bisque;
+        font-weight: bolder;
+        margin: 10px;
+        padding: 25px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: all 0.5s;
+        cursor: pointer;
+    }
+
+    .indexGalleryButtonClass:hover {
+
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.4), 0 15px 30px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .indexGalleryButtonClass span {
+
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .indexGalleryButtonClass span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -15px;
+        font-size: 10vh;
+        transition: 0.5s;
+    }
+
+    .indexGalleryButtonClass:hover span {
+
+        padding-right: 35px;
+    }
+
+    .indexGalleryButtonClass:hover span:after {
+
+        opacity: 1;
+        right: 0;
+    }
+
+    .indexLoginButtonClass {
+
+        display: inline-block;
+        border: none;
+        border-radius: 5px 20px 5px;
+        background: linear-gradient(to bottom right, deepskyblue, dodgerblue);
+        width: 25%;
+        height: 50%;
+        font-size: 5vh;
+        color: bisque;
+        font-weight: bolder;
+        margin: 10px;
+        padding: 25px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: all 0.5s;
+        cursor: pointer;
+    }
+
+    .indexLoginButtonClass:hover {
+
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.4), 0 15px 30px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .indexLoginButtonClass span {
+
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .indexLoginButtonClass span:after {
+
+        content: '\0040';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -15px;
+        font-size: 6.5vh;
+        transition: 0.5s;
+    }
+
+    .indexLoginButtonClass:hover span {
+
+        padding-right: 35px;
+    }
+
+    .indexLoginButtonClass:hover span:after {
+
+        opacity: 1;
+        right: 0;
+    }
+
+    .indexRegisterButtonClass {
+
+        display: inline-block;
+        border: none;
+        border-radius: 5px 20px 5px;
+        background: linear-gradient(to bottom right, deepskyblue, dodgerblue);
+        width: 25%;
+        height: 50%;
+        font-size: 5vh;
+        color: bisque;
+        font-weight: bolder;
+        margin: 10px;
+        padding: 25px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: all 0.5s;
+        cursor: pointer;
+    }
+
+    .indexRegisterButtonClass:hover {
+
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.4), 0 15px 30px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .indexRegisterButtonClass span {
+
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .indexRegisterButtonClass span:after {
+        content: '\002b';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -15px;
+        font-size: 10vh;
+        transition: 0.5s;
+    }
+
+    .indexRegisterButtonClass:hover span {
+
+        padding-right: 35px;
+    }
+
+    .indexRegisterButtonClass:hover span:after {
+
+        opacity: 1;
+        right: 0;
+    }
 /*====================================================================================================================*/
