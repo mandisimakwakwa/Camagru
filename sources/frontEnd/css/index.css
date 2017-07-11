@@ -40,8 +40,10 @@
         font-size: 15vh;
         font-family: Copperplate, "Copperplate Gothic Light", fantasy;
         font-weight: bolder;
-        text-shadow: 0px 3px 4px rgba(0, 0, 0,0.5);
+        text-shadow: 0px 3px 4px rgba(0, 0, 0, 1);
         -webkit-background-clip: text;
+        transform: rotate(0.5deg);
+        letter-spacing: 15px;
     }
 
     .indexSectionDivClass main {
@@ -66,13 +68,14 @@
         min-width: 95%;
         align-items: center;
         border-radius: 10px;
-        background:rgba(0,155,205,0.5);
+        background:rgba(0,155,205,0.4);
         box-shadow: 0 4px 8px 0
         rgba(0, 0, 0, 0.2), 0 6px 20px 0
         rgba(0, 0, 0, 0.19);
         margin: 15px;
         flex: 1 1;
         max-height: 50px;
+        transform: rotate(0.5deg);
     }
 /*====================================================================================================================*/
 /*
