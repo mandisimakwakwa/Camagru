@@ -62,7 +62,7 @@
         flex-flow: row;
         justify-content: center;
         align-items: center;
-        font-size: 15vh;
+        font-size: 450%;
         font-family: Copperplate, "Copperplate Gothic Light", fantasy;
         font-weight: bolder;
         text-shadow: 0px 3px 4px rgba(0, 0, 0, 1);
@@ -74,7 +74,7 @@
     header .indexPlaceholderDivClass {
 
         display: flex;
-        max-width: 250px;
+        max-width: 200px;
         flex: 1 1;
     }
 
@@ -82,13 +82,15 @@
 
         display: flex;
         width: 100%;
+        justify-content: center;
+        align-items: center;
         flex: 1 1;
     }
 
     header .indexButtonContainerDivClass {
 
         display: flex;
-        max-width: 250px;
+        max-width: 200px;
         justify-content: flex-end;
         align-items: flex-start;
         flex: 1 1;
@@ -143,6 +145,42 @@
         flex: 1 1;
     }
 
+    .modalContentClass {
+
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: transparent;
+    }
+
+    .indexRegistrationFormTitleDivClass {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 95%;
+        min-height: 15%;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0,155,205, 0.7);
+    }
+
+    .indexRegisterFormClass {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 95%;
+        height: 100%;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(30, 144, 255, 0.7);
+    }
+
     .indexMainSubDivBClass {
 
         display: flex;
@@ -160,6 +198,24 @@
         margin: 15px;
         flex: 1 1;
     }
+
+    .indexSeparatorDivClass {
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        flex: 1 1;
+    }
+
+    .indexSeparatorDivClass .closeButtonClass {
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
 /*====================================================================================================================*/
 /*
     //==========================\\
@@ -176,13 +232,13 @@
 */
 
     /*Medium Screens*/
-    @media all and (min-width: 800px) {
+    @media all and (min-width: 500px) {
 
         .sectionAsideClass {flex: 1 auto}
     }
 
     /*Large Screens*/
-    @media all and (min-width: 950px) {
+    @media all and (min-width: 750px) {
 
         .sectionMainClass {flex: 3 auto}
         .sectionAsideClass {order: 1;}
@@ -196,8 +252,8 @@
         border: none;
         border-radius: 50%;
         background: linear-gradient(to bottom right, deepskyblue, dodgerblue);
-        width: 135px;
-        height: 200px;
+        width: 155px;
+        height: 220px;
         font-size: 25px;
         color: bisque;
         font-weight: bolder;
@@ -244,17 +300,19 @@
 
     .indexLoginButtonClass {
 
-        display: inline-block;
+        display: flex;
         border: none;
+        justify-content: center;
+        align-items: center;
         border-radius: 5px;
         background: linear-gradient(to bottom right, deepskyblue, dodgerblue);
         width: 100%;
-        height: 50%;
+        height: 30%;
         font-size: 25px;
         color: bisque;
         font-weight: bolder;
-        margin: 10px;
-        padding: 25px;
+        margin: 0px;
+        padding: 0px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         transition: all 0.5s;
         cursor: pointer;
@@ -297,17 +355,19 @@
 
     .indexRegisterButtonClass {
 
-        display: inline-block;
+        display: flex;
         border: none;
         border-radius: 5px;
         background: linear-gradient(to bottom right, deepskyblue, dodgerblue);
         width: 100%;
-        height: 50%;
+        height: 30%;
+        justify-content: center;
+        align-items: center;
         font-size: 25px;
         color: bisque;
         font-weight: bolder;
-        margin: 10px;
-        padding: 25px;
+        margin: 0px;
+        padding: 0px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         transition: all 0.5s;
         cursor: pointer;
@@ -358,9 +418,9 @@
         font-size: 25px;
         color: bisque;
         font-weight: bolder;
-        margin: 10px;
-        padding: 10px;
-        height: 40%;
+        margin: 5px;
+        padding: 5px;
+        height: 25%;
         width: 70%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         transition: all 0.5s;

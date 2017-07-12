@@ -10,17 +10,12 @@ function ft_indexLoginButton() {
 
 function ft_indexRegisterButton() {
 
-    alert("Register Button has been Pressed");
+    var modal = document.getElementById('indexRegistrationModalID');
+
+    modal.style.display = "flex";
 }
 
 function ft_indexLogoutButton() {
 
     alert("Logout Button has been Pressed");
 }
-
-function ft_indexControllerDebugger() {
-
-    console.log("Index On");
-}
-
-ft_indexControllerDebugger();

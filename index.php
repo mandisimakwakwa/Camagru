@@ -42,6 +42,16 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         <script src="sources/backEnd/engines/controllers/ajaxController.js"
                 type="text/javascript"
         ></script>
+
+        <!--Calling camagruJavascriptHandler.js-->
+        <script src="sources/backEnd/engines/handlers/camagruJavascriptHandler.js"
+                type="text/javascript"
+        ></script>
+
+        <!--Calling jsDebugger.js-->
+        <script src="resources/debuggers/jsDebugger.js"
+                type="text/javascript"
+        ></script>
     </head>
 
     <body class="indexBodyWrapperDivClass">

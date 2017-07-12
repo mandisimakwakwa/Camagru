@@ -1,3 +1,4 @@
-/**
- * Created by novice on 2017/07/10.
- */
+function ft_indexControllerDebugger() {
+
+    console.log("Index On");
+}
