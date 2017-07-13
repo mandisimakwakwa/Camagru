@@ -61,12 +61,13 @@
 
     input[type=text], input[type=password] {
 
-        padding: 1.25px 1.25px;
+        padding: 5px 5px;
         font-size: medium;
         margin: 1px;
         border: none;
         text-align: center;
         cursor: pointer;
+        width: 90%;
     }
 /*====================================================================================================================*/
 /*

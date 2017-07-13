@@ -11,7 +11,12 @@ require $projectRoot . "sources/backEnd/engines/controllers/phpPathController.ph
 
     if ($decodedHTTPJSON['SessionState'] == 'REGISTER') {
 
-        echo "Works";
+        $to = "y8ztf@uscaves.com";
+        $subject = "My subject";
+        $txt = "Hello world!";
+        $headers = "From: mandisi.makwakwa@gmail.com";
+
+        echo mail($to,$subject,$txt,$headers);
     }
     //Debug Connection to indexPageHandler.php
     function ft_checkIndexPageHandler() {

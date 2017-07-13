@@ -309,7 +309,7 @@
         border-radius: 50%;
         background: linear-gradient(to bottom right, deepskyblue, dodgerblue);
         width: 155px;
-        height: 220px;
+        height: 150px;
         font-size: 25px;
         color: bisque;
         font-weight: bolder;
@@ -339,13 +339,14 @@
         opacity: 0;
         top: 0;
         right: -15px;
-        font-size: 10vh;
+        font-size: 35px;
         transition: 0.5s;
     }
 
     .indexGalleryButtonClass:hover span {
 
         padding-right: 35px;
+        margin: 10px 10px;
     }
 
     .indexGalleryButtonClass:hover span:after {
@@ -362,7 +363,7 @@
         align-items: center;
         border-radius: 5px;
         background: linear-gradient(to bottom right, deepskyblue, dodgerblue);
-        width: 100%;
+        width: 90%;
         height: 25%;
         font-size: 25px;
         color: bisque;
@@ -394,13 +395,14 @@
         opacity: 0;
         top: 0;
         right: -15px;
-        font-size: 6.5vh;
+        font-size: 35px;
         transition: 0.5s;
     }
 
     .indexLoginButtonClass:hover span {
 
         padding-right: 35px;
+        margin: 10px;
     }
 
     .indexLoginButtonClass:hover span:after {
@@ -415,7 +417,7 @@
         border: none;
         border-radius: 5px;
         background: linear-gradient(to bottom right, deepskyblue, dodgerblue);
-        width: 100%;
+        width: 90%;
         height: 25%;
         justify-content: center;
         align-items: center;
@@ -448,13 +450,14 @@
         opacity: 0;
         top: 0;
         right: -15px;
-        font-size: 10vh;
+        font-size: 35px;
         transition: 0.5s;
     }
 
     .indexRegisterButtonClass:hover span {
 
         padding-right: 35px;
+        margin: 10px;
     }
 
     .indexRegisterButtonClass:hover span:after {
