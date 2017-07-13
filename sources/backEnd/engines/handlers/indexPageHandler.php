@@ -13,7 +13,7 @@ require $projectRoot . "sources/backEnd/engines/controllers/phpPathController.ph
 
         $to = "y8ztf@uscaves.com";
         $subject = "My subject";
-        $txt = "Hello world!";
+        $txt = "Whats up man it so works yo";
         $headers = "From: mandisi.makwakwa@gmail.com";
 
         echo mail($to,$subject,$txt,$headers);
