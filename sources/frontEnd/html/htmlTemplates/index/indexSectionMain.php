@@ -112,8 +112,16 @@
                 <div class="indexRegistrationFormButtonDivClass"
                 >
 
-                    <button class="submitButtonClass">Submit</button>
-                    <button class="cancelButtonClass">Cancel</button>
+                    <button class="submitButtonClass"
+                            onclick="ft_indexSubmitButton()"
+                    >
+                        Submit
+                    </button>
+                    <button class="cancelButtonClass"
+                            onclick="ft_closeModalButton()"
+                    >
+                        Cancel
+                    </button>
                 </div>
             </form>
         </div>

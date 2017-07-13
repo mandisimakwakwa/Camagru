@@ -5,3 +5,11 @@ function ft_closeModalButton() {
 
     closeModal.style.display = "none";
 }
+
+function ft_submitButton(sourcePage) {
+
+    if (sourcePage == "index") {
+
+        ft_sendRegHTTPRequest();
+    }
+}
