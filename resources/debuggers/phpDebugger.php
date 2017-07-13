@@ -18,5 +18,9 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         ft_checkPaginationHandler();
     }
 
-//    ft_debugController();
+    //Debug Sessions
+    function ft_arrayDebugger($array) {
+
+        print_r($array);
+    }
 ?>

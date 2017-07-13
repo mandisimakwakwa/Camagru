@@ -11,16 +11,23 @@ require $projectRoot . "sources/backEnd/engines/controllers/phpPathController.ph
 
     if ($decodedHTTPJSON['SessionState'] == 'REGISTER') {
 
-        $to = "y8ztf@uscaves.com";
-        $subject = "My subject";
-        $txt = "Whats up man it so works yo";
-        $headers = "From: mandisi.makwakwa@gmail.com";
-
-        echo mail($to,$subject,$txt,$headers);
+        ft_arrayDebugger($decodedHTTPJSON);
     }
+
     //Debug Connection to indexPageHandler.php
     function ft_checkIndexPageHandler() {
 
         echo 'indexPageHandler.php is accessible<br>';
     }
+
+    /*
+        Email Functionality
+
+        $to = "y8ztf@uscaves.com";
+        $subject = "My subject";
+        $txt = "I dided it. :)";
+        $headers = "From: mandisi.makwakwa@gmail.com";
+
+        echo (mail($to,$subject,$txt,$headers));
+    */
 ?>
