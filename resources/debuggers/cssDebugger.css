@@ -67,11 +67,35 @@
         border: thick solid sandybrown;
     }
 
+    .indexRegistrationFormFieldDebugClass {
+
+        border: thick solid yellow;
+    }
+
     .indexPlaceholderDivDebugClass {
 
         border: thick solid lime;
     }
 
+    .indexRegistrationFormFieldDivDebugClass {
+
+        border: thick solid olivedrab;
+    }
+
+    .indexRegistrationFormRowOneDebugClass {
+
+        border: thick solid darkviolet;
+    }
+
+    .indexRegistrationFormRowTwoDebugClass {
+
+        border: thick solid navy;
+    }
+
+    .indexRegistrationFormButtonDivDebugClass {
+
+        border: thick solid white;
+    }
 /*====================================================================================================================*/
 /*
     //==========================\\

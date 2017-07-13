@@ -52,28 +52,68 @@
 
             <form id="registrationFormID"
                   class="indexRegisterFormClass"
-                  method="post"
+                  method="post""
             >
 
                 <div class="indexRegistrationFormFieldClass">
 
-                    <div class="indexRegistrationFormRowOneClass">
+                    <div class="indexRegistrationFormRowOneClass"
+                    >
 
-                        <div class="indexRegistrationFormFieldDivClass"
-                        <div class="indexRegistrationFormFieldDivClass"
-                        <div class="indexRegistrationFormFieldDivClass"
+                        <div class="indexRegistrationFormFieldDivClass">
+
+                            <h3 class="regFormTitleClass"><b>Email</b></h3>
+
+                            <input type="text"
+                                   placeholder="Please Enter Email"
+                                   id="registerEmailInput"
+                            />
+                        </div>
+
+                        <div class="indexRegistrationFormFieldDivClass">
+
+                            <h3 class="regFormTitleClass"><b>Username</b></h3>
+
+                            <input type="text"
+                                   placeholder="Please Enter Username"
+                                   id="registerUsernameInput"
+                            />
+                        </div>
+                        <div class="indexRegistrationFormFieldDivClass">
+
+                            <h3 class="regFormTitleClass"><b>Password</b></h3>
+
+                            <input type="password"
+                                   placeholder="Please Enter Password"
+                                   id="registerPasswordInput"
+                                   required/>
+                        </div>
                     </div>
                     <div class="indexRegistrationFormRowTwoClass">
 
-                        <div class="indexRegistrationFormFieldDivClass"
-                        <div class="indexRegistrationFormFieldDivClass"
-                        <div class="indexRegistrationFormFieldDivClass"
+                        <div class="indexRegistrationFormFieldDivClass">
+                        </div>
+
+                        <div class="indexRegistrationFormFieldDivClass">
+
+                            <h3 class="regFormTitleClass"><b>Confirm Password</b></h3>
+
+                            <input type="password"
+                                   placeholder="Please Confirm Password"
+                                   id="registerConfirmPasswordInput"
+                                   required/>
+                        </div>
+
+                        <div class="indexRegistrationFormFieldDivClass">
+                        </div>
                     </div>
                 </div>
-                <div class="indexRegistrationFormButtonDivClass">
 
-                    <button>Register</button>
-                    <button>Cancel</button>
+                <div class="indexRegistrationFormButtonDivClass"
+                >
+
+                    <button class="submitButtonClass">Submit</button>
+                    <button class="cancelButtonClass">Cancel</button>
                 </div>
             </form>
         </div>
