@@ -16,6 +16,7 @@ require_once ServerRoot . "sources/backEnd/engines/handlers/indexPageHandler.php
 require_once ServerRoot . "sources/backEnd/engines/handlers/mainPageHandler.php";
 require_once ServerRoot . "sources/backEnd/engines/handlers/paginationHandler.php";
 require_once ServerRoot . "sources/backEnd/engines/handlers/galleryHandler.php";
+require_once ServerRoot . "sources/backEnd/engines/handlers/mysqlPHPHandler.php";
 //require_once ServerRoot . "sources/backEnd/engines/engines/controllers/phpPathController.php";
 
 //HTML Index Template Controllers

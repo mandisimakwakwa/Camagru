@@ -21,10 +21,11 @@ function ft_sendRegHTTPRequest() {
      var httpRegisterEmail = document.forms['registrationFormID']['registerEmailInput'].value;
 
      //Get Username Form Client-Side
-    var httpRegisterUsername = document.forms['registrationFormID']['registerUsernameInput'].value;
+     var httpRegisterUsername = document.forms['registrationFormID']['registerUsernameInput'].value;
 
      //Get Password Form Client-Side
-     //To be hashed From Front-End in Future
+
+    //To be hashed From Front-End in Future
      var httpRegisterPassword = document.forms['registrationFormID']['registerPasswordInput'].value;
 
      //Get Confirm Password Form Client-Side
