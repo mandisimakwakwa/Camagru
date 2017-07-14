@@ -11,7 +11,6 @@ function ft_sendHTTPRequest(httpRequestAction, httpPostActionParams, getFormPara
             var response = xhttpRequest.response;
 
             console.log(response);
-            return response;
         }
     };
 

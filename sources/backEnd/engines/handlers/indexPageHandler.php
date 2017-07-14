@@ -52,13 +52,10 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         //Assign User HTTP values to DB
         ft_register($dbConn, $httpRegisterEmail, $httpRegisterUsername, $httpRegisterPassword);
 
-        /*
         //Set DB Sessions
         $_SESSION['userDBEmail'] = ft_getUserDBEmail($dbConn, $httpRegisterEmail, $httpRegisterPassword);
         $_SESSION['userDBUsername'] = ft_getUserDBUsername($dbConn, $httpRegisterEmail, $httpRegisterPassword);
         $_SESSION['userDBPassword'] = ft_getUserDBPassword($dbConn, $httpRegisterEmail, $httpRegisterPassword);
-
-        ft_arrayDebugger($_SESSION);
 
         //Validate User
         if (($httpRegisterEmail == $_SESSION['userDBEmail']) && ($httpRegisterPassword == $_SESSION['userDBPassword'])) {
@@ -68,7 +65,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
             echo $_SESSION['confirmLogin'] = "0";
             echo $_SESSION['errorLog'];
-        }*/
+        }
     } else {
         //Debug NULL Session State
     //    echo "Session State is NULL";

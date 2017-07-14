@@ -5,7 +5,11 @@ function ft_indexGalleryButton() {
 
 function ft_indexLoginButton() {
 
-    alert("Login Button has been Pressed");
+
+    var params = {'SessionState' : "LOGOUT"};
+
+    //Call Send HTTP Request Function Parse Login as session state.
+    console.log(ft_sendLoginHTTPRequest("POST", params, ""));
 }
 
 function ft_indexRegisterButton() {
@@ -37,6 +41,11 @@ function ft_sendRegHTTPRequest() {
      var handler = "sources/backEnd/engines/handlers/indexPageHandler.php";
 
      console.log(ft_sendHTTPRequest("POST", params, "", handler));
+}
+
+function ft_sendLoginHTTPRequest() {
+
+    var handler = "sources/backEnd/engines/handlers/main.php"
 }
 
 function ft_indexSubmitButton() {

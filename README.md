@@ -59,6 +59,8 @@ Web Video Engine for PHP
                                     mainPageHandler.php
                                     galleryHandler.php
                                     paginationHandler.php
+                                    mysqlPHPHandler.php
+                                    camagruJavascriptHandler.js
                         L5: controllers/
                                 L6: indexController.js
                                     mainController.js

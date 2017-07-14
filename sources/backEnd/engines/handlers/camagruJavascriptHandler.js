@@ -13,3 +13,9 @@ function ft_submitButton(sourcePage) {
         ft_sendRegHTTPRequest();
     }
 }
+
+/*Redirect to Main.php*/
+function ft_redirectController() {
+
+    window.location.href = "/sources/frontEnd/html/htmlLayouts/main.php";
+}
