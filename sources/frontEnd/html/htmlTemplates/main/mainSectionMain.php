@@ -2,7 +2,14 @@
 
     <div class="mainMainSubDivAClass">
 
-        <div class="mainSubDivA11Class">Camera</div>
+        <div class="mainSubDivA11Class">
+
+            <video id="camViewID"
+                   class="camViewDivClass"
+                    autoplay>
+            </video>
+            <script>ft_camDisplay();</script>
+        </div>
 
         <div class="mainSubDivA2Class">
 
@@ -14,7 +21,12 @@
             </a>
         </div>
 
-        <div class="mainSubDivA12Class">Canvas</div>
+        <div class="mainSubDivA12Class">
+
+            <canvas class="canvasViewClass"
+                    id="canvasViewID">
+            </canvas>
+        </div>
     </div>
 
     <div class="mainMainSubDivBClass">

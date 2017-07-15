@@ -1,41 +1,42 @@
 function ft_camDisplay() {
 
     cam = document.getElementById('camViewID');
+
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
 
     if (navigator.getUserMedia) {
 
         navigator.getUserMedia({video: true}, ft_handleVideo, ft_videoError);
     }
-
-    function ft_handleVideo(stream) {
-
-        cam.src = window.URL.createObjectURL(stream);
-    }
-    
-    function ft_videoError(e) {
-
-        //Go's
-    }
 }
+
+function ft_handleVideo(stream) {
+
+    cam.src = window.URL.createObjectURL(stream);
+}
+
+function ft_videoError(e) {
+
+    //Go's
+}
+
+ft_camDisplay();
 
 function ft_snapButton() {
 
-    // var cam = document.getElementById('camViewID');
-    // var canvas = document.getElementById('photoViewID');
-    // var context = canvas.getContext('2d');
-    //  var data = canvas.toDataURL('image/png');
-    //
-    // if (data) {
-    //
-    //     context.drawImage(cam, 0, 0, 300, 450);
-    //     canvas.setAttribute('src', data);
-    // } else {
-    //
-    //     ft_clearPhoto(canvas, context, data);
-    // }
+    var cam = document.getElementById('camViewID');
+    var canvas = document.getElementById('canvasViewID');
+    var context = canvas.getContext('2d');
+    var data = canvas.toDataURL('image/png');
 
-    alert("You clicked the snap to canvas button");
+    if (data) {
+
+        context.drawImage(cam, 15, 20, 250, 150);
+        canvas.setAttribute('src', data);
+    } else {
+
+        ft_clearPhoto(canvas, context, data);
+    }
 }
 
 function ft_saveToGalleryButton() {
