@@ -153,47 +153,46 @@
                   method="post""
             >
 
-            <div class="indexLoginFormFieldClass">
+                <div class="indexLoginFormFieldClass">
 
-                <div class="indexLoginFormRowOneClass"
-                >
+                    <div class="indexLoginFormRowOneClass"
+                    >
 
-                    <div class="indexLoginFormFieldDivClass">
+                        <div class="indexLoginFormFieldDivClass">
 
-                        <h3 class="loginFormTitleClass"><b>Email</b></h3>
+                            <h3 class="loginFormTitleClass"><b>Email</b></h3>
 
-                        <input type="text"
-                               placeholder="Please Enter Email"
-                               id="loginEmailInput"
-                        />
-                    </div>
+                            <input type="text"
+                                   placeholder="Please Enter Email"
+                                   id="loginEmailInput"
+                            />
+                        </div>
 
-                    <div class="indexLoginFormFieldDivClass">
+                        <div class="indexLoginFormFieldDivClass">
 
-                        <h3 class="loginFormTitleClass"><b>Password</b></h3>
+                            <h3 class="loginFormTitleClass"><b>Password</b></h3>
 
-                        <input type="password"
-                               placeholder="Please Enter Password"
-                               id="loginPasswordInput"
-                               required/>
+                            <input type="password"
+                                   placeholder="Please Enter Password"
+                                   id="loginPasswordInput"
+                                   required/>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="indexLoginFormButtonDivClass"
-            >
+                <div class="indexLoginFormButtonDivClass">
 
-                <button class="submitButtonClass"
-                        onclick="ft_indexLoginSubmitButton()"
-                >
-                    Submit
-                </button>
-                <button class="cancelButtonClass"
-                        onclick="ft_closeModalButton()"
-                >
-                    Cancel
-                </button>
-            </div>
+                    <button class="submitButtonClass"
+                            onclick="ft_indexLoginSubmitButton()"
+                    >
+                        Submit
+                    </button>
+                    <button class="cancelButtonClass"
+                            onclick="ft_closeModalButton()"
+                    >
+                        Cancel
+                    </button>
+                </div>
             </form>
         </div>
     </div>

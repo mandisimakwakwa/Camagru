@@ -47,7 +47,7 @@ function ft_sendLoginHTTPRequest() {
     var httpLoginEmail = document.forms['loginFormID']['loginEmailInput'].value;
 
     //Get Password Form Client-Side
-    var httpLoginPassword = document.forms['loginFormID']['registerPasswordInput'].value;
+    var httpLoginPassword = document.forms['loginFormID']['loginPasswordInput'].value;
 
     //Session State is Register
     var params = {'httpLoginEmail' : httpLoginEmail, 'httpLoginPassword' : httpLoginPassword, 'SessionState' : "LOGIN"};
