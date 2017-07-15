@@ -70,8 +70,3 @@ function ft_indexRegisterSubmitButton() {
 
     ft_submitButton(sourcePage);
 }
-
-function ft_indexLogoutButton() {
-
-    alert("Logout Button has been Pressed");
-}

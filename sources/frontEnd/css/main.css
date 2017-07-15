@@ -4,7 +4,79 @@
     \\==========================//
 */
 
+/*Layout Defining Classes*/
 
+    /*Make All Dimensions Congruent*/
+    .sectionDivClass header {
+
+        display: flex;
+        flex: 1 1;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin: 5px;
+        min-width: 95%;
+        max-height: 100px;
+        height: 100%;
+        background:rgba(0,155,205,0.5);
+        box-shadow: 0 4px 8px 0
+        rgba(0, 0, 0, 0.2), 0 6px 20px 0
+        rgba(0, 0, 0, 0.19);
+    }
+
+    .sectionDivClass main {
+
+        display: flex;
+        flex-flow: row;
+        flex: 1 1;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin: 15px;
+        min-width: 70%;
+        max-height: 70%;
+        height: 100%;
+        background:rgba(0,155,205,0.5);
+        box-shadow: 0 4px 8px 0
+        rgba(0, 0, 0, 0.2), 0 6px 20px 0
+        rgba(0, 0, 0, 0.19);
+    }
+
+    .sectionDivClass aside {
+
+        display: flex;
+        flex-flow: row;
+        flex: 1 1;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin: 15px;
+        min-width: 20%;
+        max-height: 60%;
+        height: 100%;
+        background:rgba(0,155,205,0.5);
+        box-shadow: 0 4px 8px 0
+        rgba(0, 0, 0, 0.2), 0 6px 20px 0
+        rgba(0, 0, 0, 0.19);
+    }
+
+    .sectionDivClass footer {
+
+        display: flex;
+        flex: 1 1;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin: 15px;
+        padding: 10px;
+        min-width: 95%;
+        max-height: 50px;
+        background:rgba(0,155,205,0.4);
+        box-shadow: 0 4px 8px 0
+        rgba(0, 0, 0, 0.2), 0 6px 20px 0
+        rgba(0, 0, 0, 0.19);
+        transform: rotate(0.5deg);
+    }
 /*====================================================================================================================*/
 /*
     //==========================\\
@@ -35,6 +107,5 @@
     ||      Extra Styling      ||
     \\==========================//
 */
-
 
 /*====================================================================================================================*/

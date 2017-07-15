@@ -27,7 +27,9 @@ function ft_responseHandler(response) {
 
     if (confirmLogin == "1") {
 
-        ft_redirectController();
+        var destPage = "main";
+
+        ft_redirectController(destPage);
     } else {
 
         alert(response.substring(1));
@@ -35,7 +37,20 @@ function ft_responseHandler(response) {
 }
 
 /*Redirect to Main.php*/
-function ft_redirectController() {
+function ft_redirectController(destPage) {
 
-    window.location.href = "sources/frontEnd/html/htmlLayouts/main.php";
+    if (destPage == "main") {
+
+        window.location.href = "sources/frontEnd/html/htmlLayouts/main.php";
+    } else {
+
+        window.location.href = "../../../../index.php";
+    }
+}
+
+function ft_logoutButton() {
+
+    var destPage = "index";
+
+    ft_redirectController(destPage);
 }

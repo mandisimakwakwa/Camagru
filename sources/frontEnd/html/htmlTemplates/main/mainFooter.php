@@ -1,6 +1,3 @@
-<?php
-?>
-
 <footer>
 
     author: mmakwakw

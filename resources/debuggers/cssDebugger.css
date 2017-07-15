@@ -14,7 +14,7 @@
 
     /*Head Div Styling*/
 
-    .indexHeaderDebugClass {
+    .headerDebugClass {
 
         border: thick solid #7fff79;
     }
@@ -25,74 +25,66 @@
     \\==========================//
 */
 
-
-
     /*Body Div Styling*/
 
-    .indexBodyDebugClass {
+    .sectionDivDebugClass {
 
         border: thick solid black;
     }
 
-    /*BodyWrapperDivClass*/
-    .indexBodyWrapperDivDebugClass {
-
-        border: thick solid yellow;
-    }
-
     /*Main Div Styling*/
 
-    .indexMainDebugClass {
+    .mainDebugClass {
 
         border: thick solid blue;
     }
 
-    .indexLMainSubDivADebugClass {
+    .mainSubDivADebugClass {
 
         border: thick solid gold;
     }
 
-    .indexLMainSubDivBDebugClass {
+    .mainSubDivBDebugClass {
 
         border: thick solid indigo;
     }
 
-    .indexRegisterFormDebugClass {
+    .formDebugClass {
 
         border: thick solid crimson;
     }
 
-    .indexRegistrationFormTitleDivDebugClass {
+    .formTitleDivDebugClass {
 
         border: thick solid sandybrown;
     }
 
-    .indexRegistrationFormFieldDebugClass {
+    .formFieldDebugClass {
 
         border: thick solid yellow;
     }
 
-    .indexPlaceholderDivDebugClass {
+    .placeholderDivDebugClass {
 
         border: thick solid lime;
     }
 
-    .indexRegistrationFormFieldDivDebugClass {
+    .formFieldDivDebugClass {
 
         border: thick solid olivedrab;
     }
 
-    .indexRegistrationFormRowOneDebugClass {
+    .formRowOneDebugClass {
 
         border: thick solid darkviolet;
     }
 
-    .indexRegistrationFormRowTwoDebugClass {
+    .formRowTwoDebugClass {
 
         border: thick solid navy;
     }
 
-    .indexRegistrationFormButtonDivDebugClass {
+    .formButtonDivDebugClass {
 
         border: thick solid white;
     }
@@ -105,7 +97,7 @@
 
     /*Footer Div Styling*/
 
-    .indexFooterDebugClass {
+    .footerDebugClass {
 
         border: thick solid red;
     }

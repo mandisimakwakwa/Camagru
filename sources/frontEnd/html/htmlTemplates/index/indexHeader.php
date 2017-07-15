@@ -1,21 +1,15 @@
 <header>
 
-    <div class="indexPlaceholderDivClass">
+    <div class="placeholderDivClass">
 
     </div>
 
-    <div class="indexTitleDivClass">
+    <div class="titleDivClass">
 
         Camagru
     </div>
 
-    <div class="indexButtonContainerDivClass">
+    <div class="placeholderDivClass">
 
-        <button class="indexLogoutButtonClass"
-                onclick="ft_indexLogoutButton()"
-        >
-
-            Logout
-        </button>
     </div>
 </header>

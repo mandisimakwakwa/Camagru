@@ -1,7 +1,4 @@
-<?php
-?>
-
 <main>
 
-    This is the main section
+    This is the Main Section
 </main>

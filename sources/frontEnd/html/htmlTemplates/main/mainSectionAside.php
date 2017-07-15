@@ -1,7 +1,4 @@
-<?php
-?>
-
 <aside>
 
-    This is the header
+    This is the Section Aside
 </aside>

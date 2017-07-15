@@ -15,12 +15,6 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
         <title>Camagru</title>
 
-        <!--Calling index.css-->
-        <link rel="stylesheet"
-              href="sources/frontEnd/css/index.css"
-              type="text/css"
-        >
-
         <!--Calling camagru.css-->
         <link rel="stylesheet"
               href="sources/frontEnd/css/camagru.css"
@@ -33,8 +27,14 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
               type="text/css"
         >
 
-        <!--Calling indexController.js-->
-        <script src="sources/backEnd/engines/controllers/indexController.js"
+        <!--Calling index.css-->
+        <link rel="stylesheet"
+              href="sources/frontEnd/css/index.css"
+              type="text/css"
+        >
+
+        <!--Calling camagruJavascriptHandler.js-->
+        <script src="sources/backEnd/engines/handlers/camagruJavascriptHandler.js"
                 type="text/javascript"
         ></script>
 
@@ -43,20 +43,20 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
                 type="text/javascript"
         ></script>
 
-        <!--Calling camagruJavascriptHandler.js-->
-        <script src="sources/backEnd/engines/handlers/camagruJavascriptHandler.js"
-                type="text/javascript"
-        ></script>
-
         <!--Calling jsDebugger.js-->
         <script src="resources/debuggers/jsDebugger.js"
                 type="text/javascript"
         ></script>
+
+        <!--Calling indexController.js-->
+        <script src="sources/backEnd/engines/controllers/indexController.js"
+                type="text/javascript"
+        ></script>
     </head>
 
-    <body class="indexBodyWrapperDivClass">
+    <body>
 
-        <div class="indexSectionDivClass">
+        <div class="sectionDivClass">
 
             <?php
 
