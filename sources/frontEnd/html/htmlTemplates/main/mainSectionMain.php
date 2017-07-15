@@ -2,7 +2,7 @@
 
     <div class="mainMainSubDivAClass">
 
-        <div class="mainSubDivA11Class"></div>
+        <div class="mainSubDivA11Class">Camera</div>
 
         <div class="mainSubDivA2Class">
 
@@ -13,7 +13,7 @@
             </button>
         </div>
 
-        <div class="mainSubDivA12Class"></div>
+        <div class="mainSubDivA12Class">Canvas</div>
     </div>
 
     <div class="mainMainSubDivBClass">
