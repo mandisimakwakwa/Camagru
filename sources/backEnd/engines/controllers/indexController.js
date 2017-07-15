@@ -5,11 +5,9 @@ function ft_indexGalleryButton() {
 
 function ft_indexLoginButton() {
 
+    var modal = document.getElementById('indexLoginModalID');
 
-    var params = {'SessionState' : "LOGOUT"};
-
-    //Call Send HTTP Request Function Parse Login as session state.
-    console.log(ft_sendLoginHTTPRequest("POST", params, ""));
+    modal.style.display = "flex";
 }
 
 function ft_indexRegisterButton() {
@@ -45,12 +43,30 @@ function ft_sendRegHTTPRequest() {
 
 function ft_sendLoginHTTPRequest() {
 
-    var handler = "sources/backEnd/engines/handlers/main.php"
+    //Get Email From Register Form Client-Side
+    var httpLoginEmail = document.forms['loginFormID']['loginEmailInput'].value;
+
+    //Get Password Form Client-Side
+    var httpLoginPassword = document.forms['loginFormID']['registerPasswordInput'].value;
+
+    //Session State is Register
+    var params = {'httpLoginEmail' : httpLoginEmail, 'httpLoginPassword' : httpLoginPassword, 'SessionState' : "LOGIN"};
+
+    var handler = "sources/backEnd/engines/handlers/indexPageHandler.php"
+
+    console.log(ft_sendHTTPRequest("POST", params, "", handler));
 }
 
-function ft_indexSubmitButton() {
+function ft_indexLoginSubmitButton() {
 
-    var sourcePage = "index";
+    var sourcePage = "login";
+
+    ft_submitButton(sourcePage);
+}
+
+function ft_indexRegisterSubmitButton() {
+
+    var sourcePage = "register";
 
     ft_submitButton(sourcePage);
 }

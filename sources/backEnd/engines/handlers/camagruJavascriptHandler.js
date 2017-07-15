@@ -8,7 +8,10 @@ function ft_closeModalButton() {
 
 function ft_submitButton(sourcePage) {
 
-    if (sourcePage == "index") {
+    if (sourcePage == "login") {
+
+        ft_sendLoginHTTPRequest();
+    } else if (sourcePage == "register") {
 
         ft_sendRegHTTPRequest();
     }
