@@ -21,7 +21,6 @@ function ft_submitButton(sourcePage) {
 
 function ft_responseHandler(response) {
 
-
     //Confirm Login
     var confirmLogin = response[0];
 

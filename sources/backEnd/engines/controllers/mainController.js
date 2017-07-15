@@ -64,11 +64,12 @@ function ft_clearPhoto(canvas, context, data) {
 //Send Gallery image and Merges image to Server-Side
 function ft_mergeLayer(imageLayerContainer) {
 
-    var layerImageFilename = imageLayerContainer.id;
+    alert("Merge Layer");
+   /* var layerImageFilename = imageLayerContainer.id;
     var canvas = document.getElementById('photoViewID');
     var data = canvas.toDataURL('image/png');
     var baseEncodedData = data.replace("data:image/png;base64,", "");
     var params = {'baseImage' : baseEncodedData, 'layerImageFilename' : layerImageFilename, 'SessionState' : "LAYER"};
-
-    ft_sendHTTPRequest("POST", params, "");
+*/
+    // ft_sendHTTPRequest("POST", params, "");
 }

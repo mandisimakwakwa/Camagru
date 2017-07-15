@@ -33,8 +33,27 @@
     </div>
     <div class="mainMainSubDivCClass">
 
-        <img src="../../../../../resources/merges/1.png"
+        <img src="../../../../resources/merges/1.png"
              id="1.png"
+             class="mergeDivClass"
+             onclick="ft_mergeLayer(this)"
+        />
+
+        <img src="../../../../resources/merges/2.png"
+             id="2.png"
+             class="mergeDivClass"
+             onclick="ft_mergeLayer(this)"
+        />
+
+        <img src="../../../../resources/merges/3.png"
+             id="3.png"
+             class="mergeDivClass"
+             onclick="ft_mergeLayer(this)"
+        />
+
+        <img src="../../../../resources/merges/4.png"
+             id="4.png"
+             class="mergeDivClass"
              onclick="ft_mergeLayer(this)"
         />
     </div>
