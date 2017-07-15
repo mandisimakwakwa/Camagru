@@ -4,7 +4,6 @@
     \\==========================//
 */
 
-
 /*====================================================================================================================*/
 /*
     //==========================\\
@@ -12,12 +11,6 @@
     \\==========================//
 */
 
-    /*Head Div Styling*/
-
-    .headerDebugClass {
-
-        border: thick solid #7fff79;
-    }
 /*====================================================================================================================*/
 /*
     //==========================\\
@@ -25,69 +18,6 @@
     \\==========================//
 */
 
-    /*Body Div Styling*/
-
-    .sectionDivDebugClass {
-
-        border: thick solid black;
-    }
-
-    /*Main Div Styling*/
-
-    .mainDebugClass {
-
-        border: thick solid blue;
-    }
-
-    .mainSubDivADebugClass {
-
-        border: thick solid gold;
-    }
-
-    .mainSubDivBDebugClass {
-
-        border: thick solid indigo;
-    }
-
-    .formDebugClass {
-
-        border: thick solid crimson;
-    }
-
-    .formTitleDivDebugClass {
-
-        border: thick solid sandybrown;
-    }
-
-    .formFieldDebugClass {
-
-        border: thick solid yellow;
-    }
-
-    .placeholderDivDebugClass {
-
-        border: thick solid lime;
-    }
-
-    .formFieldDivDebugClass {
-
-        border: thick solid olivedrab;
-    }
-
-    .formRowOneDebugClass {
-
-        border: thick solid darkviolet;
-    }
-
-    .formRowTwoDebugClass {
-
-        border: thick solid navy;
-    }
-
-    .formButtonDivDebugClass {
-
-        border: thick solid white;
-    }
 /*====================================================================================================================*/
 /*
     //==========================\\
@@ -95,12 +25,6 @@
     \\==========================//
 */
 
-    /*Footer Div Styling*/
-
-    .footerDebugClass {
-
-        border: thick solid red;
-    }
 /*====================================================================================================================*/
 /*
     //==========================\\
@@ -109,4 +33,53 @@
 */
 
 
+    .headerDebugClass {
+
+        border: thick solid gold;
+    }
+
+    .mainDebugClass {
+
+        border: thick solid red;
+    }
+
+    .asideDebugClass {
+
+        border: thick solid yellow;
+    }
+
+    .footerDebugClass {
+
+        border: thick solid greenyellow;
+    }
+
+    .divDebugClassOne {
+
+        border: thick solid black;
+    }
+
+    .divDebugClassTwo {
+
+        border: thick solid silver;
+    }
+
+    .divDebugClassThree {
+
+        border: thick solid white;
+    }
+
+    .divDebugClassFour {
+
+        border: thick solid blue;
+    }
+
+    .divDebugClassFive {
+
+        border: thick solid deepskyblue;
+    }
+
+    .divDebugClassSix {
+
+        border: thick solid lightskyblue;
+    }
 /*====================================================================================================================*/
