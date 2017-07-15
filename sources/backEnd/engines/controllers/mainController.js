@@ -21,29 +21,36 @@ function ft_camDisplay() {
 
 function ft_snapButton() {
 
-    var cam = document.getElementById('camViewID');
-    var canvas = document.getElementById('photoViewID');
-    var context = canvas.getContext('2d');
-     var data = canvas.toDataURL('image/png');
+    // var cam = document.getElementById('camViewID');
+    // var canvas = document.getElementById('photoViewID');
+    // var context = canvas.getContext('2d');
+    //  var data = canvas.toDataURL('image/png');
+    //
+    // if (data) {
+    //
+    //     context.drawImage(cam, 0, 0, 300, 450);
+    //     canvas.setAttribute('src', data);
+    // } else {
+    //
+    //     ft_clearPhoto(canvas, context, data);
+    // }
 
-    if (data) {
-
-        context.drawImage(cam, 0, 0, 300, 450);
-        canvas.setAttribute('src', data);
-    } else {
-
-        ft_clearPhoto(canvas, context, data);
-    }
+    alert("You clicked the snap to canvas button");
 }
 
-/*Get Current Page Event Info*/
+function ft_saveToGalleryButton() {
 
-function ft_saveButton() {
+    // //Post Image Variables
+    // var params = {'SessionState' : "GALLERY"};
+    //
+    // ft_sendHTTPPicRequest("POST", params, "");
 
-    //Post Image Variables
-    var params = {'SessionState' : "GALLERY"};
+    alert("You clicked the save to gallery button");
+}
 
-    ft_sendHTTPPicRequest("POST", params, "");
+function ft_uploadToGalleryButton() {
+
+    alert("You clicked the upload to gallery button");
 }
 
 function ft_clearPhoto(canvas, context, data) {
@@ -63,5 +70,5 @@ function ft_mergeLayer(imageLayerContainer) {
     var baseEncodedData = data.replace("data:image/png;base64,", "");
     var params = {'baseImage' : baseEncodedData, 'layerImageFilename' : layerImageFilename, 'SessionState' : "LAYER"};
 
-    ft_sendHTTPPicRequest("POST", params, "");
+    ft_sendHTTPRequest("POST", params, "");
 }

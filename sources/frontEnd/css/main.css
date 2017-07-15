@@ -112,7 +112,7 @@
             box-shadow: 0 4px 8px 0
             rgba(0, 0, 0, 0.2), 0 6px 20px 0
             rgba(0, 0, 0, 0.19);
-            transform: skewX(10deg);
+            transform: skewX(5deg);
         }
 
         .mainSubDivA12Class {
@@ -122,7 +122,7 @@
             box-shadow: 0 4px 8px 0
             rgba(0, 0, 0, 0.2), 0 6px 20px 0
             rgba(0, 0, 0, 0.19);
-            transform: skewX(-10deg);
+            transform: skewX(-5deg);
         }
 
         .mainSubDivA2Class {
@@ -145,10 +145,24 @@
         flex: 1 1;
         justify-content: center;
         align-items: center;
+        padding: 5px;
+        margin: 5px;
+        min-width: 100%;
+        max-height: 10%;
+        height: 100%;
+    }
+
+    main .mainMainSubDivCClass {
+
+        display: flex;
+        flex-flow: row;
+        flex: 1 1;
+        justify-content: center;
+        align-items: center;
         border-radius: 10px;
         margin: 15px;
         min-width: 100%;
-        max-height: 20%;
+        max-height: 10%;
         height: 100%;
     }
 /*====================================================================================================================*/
