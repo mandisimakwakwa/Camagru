@@ -10,7 +10,16 @@ function ft_sendHTTPRequest(httpRequestAction, httpPostActionParams, getFormPara
 
             var response = xhttpRequest.response;
 
-            console.log(response);
+            console.log(response[0]);
+            console.log(xhttpRequest.response);
+
+            if (response) {
+
+                ft_responseHandler(response);
+            } else {
+
+                alert(response.substring(1));
+            }
         }
     };
 

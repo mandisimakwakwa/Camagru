@@ -74,13 +74,13 @@
     }
 
     //Get User Email from DB
-    function ft_getUserDBEmail($dbConn, $httpRegisterEmail, $httpRegisterPassword) {
+    function ft_getUserDBEmail($dbConn, $httpEmail, $httpPassword) {
 
         $dbQuery = "SELECT email FROM users WHERE email=:email AND password=:password";
 
         $preparedStatement = $dbConn->prepare($dbQuery);
-        $preparedStatement->bindParam(':email', $httpRegisterEmail);
-        $preparedStatement->bindParam(':password', $httpRegisterPassword);
+        $preparedStatement->bindParam(':email', $httpEmail);
+        $preparedStatement->bindParam(':password', $httpPassword);
         $preparedStatement->execute();
 
         $queryResult = $preparedStatement->fetch();
@@ -90,13 +90,13 @@
     }
 
     //Get User Username from DB
-    function ft_getUserDBUsername($dbConn, $httpRegisterEmail, $httpRegisterPassword) {
+    function ft_getUserDBUsername($dbConn, $httpEmail, $httpPassword) {
 
         $dbQuery = "SELECT username FROM users WHERE email=:email AND password=:password";
 
         $preparedStatement = $dbConn->prepare($dbQuery);
-        $preparedStatement->bindParam(':email', $httpRegisterEmail);
-        $preparedStatement->bindParam(':password', $httpRegisterPassword);
+        $preparedStatement->bindParam(':email', $httpEmail);
+        $preparedStatement->bindParam(':password', $httpPassword);
         $preparedStatement->execute();
 
         $queryResult = $preparedStatement->fetch();
@@ -106,13 +106,13 @@
     }
 
     //Get User Password from DB
-    function ft_getUserDBPassword($dbConn, $httpRegisterEmail, $httpRegisterPassword) {
+    function ft_getUserDBPassword($dbConn, $httpEmail, $httpPassword) {
 
         $dbQuery = "SELECT password FROM users WHERE email=:email AND password=:password";
 
         $preparedStatement = $dbConn->prepare($dbQuery);
-        $preparedStatement->bindParam(':email', $httpRegisterEmail);
-        $preparedStatement->bindParam(':password', $httpRegisterPassword);
+        $preparedStatement->bindParam(':email', $httpEmail);
+        $preparedStatement->bindParam(':password', $httpPassword);
         $preparedStatement->execute();
 
         $queryResult = $preparedStatement->fetch();

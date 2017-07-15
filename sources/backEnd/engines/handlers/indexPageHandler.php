@@ -38,6 +38,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         $_SESSION['httpRegisterUsername'] = ft_validator($decodedHTTPJSON['httpRegisterUsername']);
         $_SESSION['httpRegisterPassword'] = hash("sha256", ft_validator($decodedHTTPJSON['httpRegisterPassword']));
         $_SESSION['httpRegisterConfirmPassword'] = hash("sha256", ft_validator($decodedHTTPJSON['httpRegisterConfirmPassword']));
+        $_SESSION['confirmLogin'] = "1";
 
         //Register User
             //Create users Table & Set Auto Increment
@@ -60,11 +61,11 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         //Validate User
         if (($httpRegisterEmail == $_SESSION['userDBEmail']) && ($httpRegisterPassword == $_SESSION['userDBPassword'])) {
 
-            echo $_SESSION['confirmLogin'] = "1";
+            echo $_SESSION['confirmLogin'];
         } else {
 
             echo $_SESSION['confirmLogin'] = "0";
-            echo $_SESSION['errorLog'];
+            echo $_SESSION['errorLog']."RegisterHandler";
         }
     } elseif ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
 
@@ -75,12 +76,10 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
         //Retrieve User From DB
         $httpLoginEmail = $_SESSION['httpLoginEmail'];
-        $httpLoginUsername = $_SESSION['httpLoginUsername'];
         $httpLoginPassword = $_SESSION['httpLoginPassword'];
 
         //Set DB Sessions
         $_SESSION['userDBEmail'] = ft_getUserDBEmail($dbConn, $httpLoginEmail, $httpLoginPassword);
-        $_SESSION['userDBUsername'] = ft_getUserDBUsername($dbConn, $httpLoginEmail, $httpLoginPassword);
         $_SESSION['userDBPassword'] = ft_getUserDBPassword($dbConn, $httpLoginEmail, $httpLoginPassword);
 
         if (($_SESSION['userDBEmail'] == $httpLoginEmail) && ($_SESSION['userDBPassword'] == $httpLoginPassword)) {

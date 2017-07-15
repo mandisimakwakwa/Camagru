@@ -19,8 +19,23 @@ function ft_submitButton(sourcePage) {
     }
 }
 
+function ft_responseHandler(response) {
+
+
+    //Confirm Login
+    var confirmLogin = response[0];
+
+    if (confirmLogin == "1") {
+
+        ft_redirectController();
+    } else {
+
+        alert(response.substring(1));
+    }
+}
+
 /*Redirect to Main.php*/
 function ft_redirectController() {
 
-    window.location.href = "/sources/frontEnd/html/htmlLayouts/main.php";
+    window.location.href = "sources/frontEnd/html/htmlLayouts/main.php";
 }

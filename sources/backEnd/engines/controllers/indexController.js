@@ -52,7 +52,7 @@ function ft_sendLoginHTTPRequest() {
     //Session State is Register
     var params = {'httpLoginEmail' : httpLoginEmail, 'httpLoginPassword' : httpLoginPassword, 'SessionState' : "LOGIN"};
 
-    var handler = "sources/backEnd/engines/handlers/indexPageHandler.php"
+    var handler = "sources/backEnd/engines/handlers/indexPageHandler.php";
 
     console.log(ft_sendHTTPRequest("POST", params, "", handler));
 }

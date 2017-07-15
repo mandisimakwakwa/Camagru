@@ -26,9 +26,6 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         //Misc Sessions
         $_SESSION['errorLog'];
 
-        //DB Pic Likes
-        $_SESSION['db_picturelikes'];
-
         //Header User Check
         $_SESSION['checkPageName'];
 
@@ -53,6 +50,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
     //Debug Connection to setup.php
     function ft_checkSetupLinking() {
+
         echo 'setup.php is accessible<br>';
     }
 ?>
