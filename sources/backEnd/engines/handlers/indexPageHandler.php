@@ -66,6 +66,32 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
             echo $_SESSION['confirmLogin'] = "0";
             echo $_SESSION['errorLog'];
         }
+    } elseif ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
+
+        //Set Sessions
+        $_SESSION['httpLoginEmail'] = ft_validator($decodedHTTPJSON['httpLoginEmail']);
+        $_SESSION['httpLoginPassword'] = hash("sha256", ft_validator($decodedHTTPJSON['httpLoginPassword']));
+        $_SESSION['confirmLogin'] = "1";
+
+        //Retrieve User From DB
+        $httpLoginEmail = $_SESSION['httpLoginEmail'];
+        $httpLoginUsername = $_SESSION['httpLoginUsername'];
+        $httpLoginPassword = $_SESSION['httpLoginPassword'];
+
+        //Set DB Sessions
+        $_SESSION['userDBEmail'] = ft_getUserDBEmail($dbConn, $httpLoginEmail, $httpLoginPassword);
+        $_SESSION['userDBUsername'] = ft_getUserDBUsername($dbConn, $httpLoginEmail, $httpLoginPassword);
+        $_SESSION['userDBPassword'] = ft_getUserDBPassword($dbConn, $httpLoginEmail, $httpLoginPassword);
+
+        if (($_SESSION['userDBEmail'] == $httpLoginEmail) && ($_SESSION['userDBPassword'] == $httpLoginPassword)) {
+
+            //Send Client-Side Response
+            echo $_SESSION['confirmLogin'];
+        } else {
+
+            echo $_SESSION['confirmLogin'] = "0";
+            echo $_SESSION['errorLog'];
+        }
     } else {
         //Debug NULL Session State
     //    echo "Session State is NULL";

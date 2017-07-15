@@ -1,9 +1,11 @@
 //Close Modal Button
 function ft_closeModalButton() {
 
-    var closeModal = document.getElementById('indexRegistrationModalID');
+    var closeModalReg = document.getElementById('indexRegistrationModalID');
+    var closeModalLogin = document.getElementById('indexLoginModalID');
 
-    closeModal.style.display = "none";
+    closeModalReg.style.display = "none";
+    closeModalLogin.style.display = "none";
 }
 
 function ft_submitButton(sourcePage) {

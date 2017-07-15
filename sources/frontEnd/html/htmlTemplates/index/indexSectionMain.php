@@ -19,8 +19,6 @@
             <span>Login</span>
         </button>
 
-        <div id="indexLoginModalID"></div>
-
         <button class="indexRegisterButtonClass"
                 onclick="ft_indexRegisterButton()"
         >
@@ -52,77 +50,77 @@
 
             <form id="registrationFormID"
                   class="indexRegisterFormClass"
-                  method="post""
+                  method="post"
             >
 
-            <div class="indexRegistrationFormFieldClass">
+                <div class="indexRegistrationFormFieldClass">
 
-                <div class="indexRegistrationFormRowOneClass"
-                >
+                    <div class="indexRegistrationFormRowOneClass"
+                    >
 
-                    <div class="indexRegistrationFormFieldDivClass">
+                        <div class="indexRegistrationFormFieldDivClass">
 
-                        <h3 class="regFormTitleClass"><b>Email</b></h3>
+                            <h3 class="regFormTitleClass"><b>Email</b></h3>
 
-                        <input type="text"
-                               placeholder="Please Enter Email"
-                               id="registerEmailInput"
-                        />
+                            <input type="text"
+                                   placeholder="Please Enter Email"
+                                   id="registerEmailInput"
+                            />
+                        </div>
+
+                        <div class="indexRegistrationFormFieldDivClass">
+
+                            <h3 class="regFormTitleClass"><b>Username</b></h3>
+
+                            <input type="text"
+                                   placeholder="Please Enter Username"
+                                   id="registerUsernameInput"
+                            />
+                        </div>
+                        <div class="indexRegistrationFormFieldDivClass">
+
+                            <h3 class="regFormTitleClass"><b>Password</b></h3>
+
+                            <input type="password"
+                                   placeholder="Please Enter Password"
+                                   id="registerPasswordInput"
+                                   required/>
+                        </div>
                     </div>
+                    <div class="indexRegistrationFormRowTwoClass">
 
-                    <div class="indexRegistrationFormFieldDivClass">
+                        <div class="indexRegistrationFormFieldDivClass">
+                        </div>
 
-                        <h3 class="regFormTitleClass"><b>Username</b></h3>
+                        <div class="indexRegistrationFormFieldDivClass">
 
-                        <input type="text"
-                               placeholder="Please Enter Username"
-                               id="registerUsernameInput"
-                        />
-                    </div>
-                    <div class="indexRegistrationFormFieldDivClass">
+                            <h3 class="regFormTitleClass"><b>Confirm Password</b></h3>
 
-                        <h3 class="regFormTitleClass"><b>Password</b></h3>
+                            <input type="password"
+                                   placeholder="Please Confirm Password"
+                                   id="registerConfirmPasswordInput"
+                                   required/>
+                        </div>
 
-                        <input type="password"
-                               placeholder="Please Enter Password"
-                               id="registerPasswordInput"
-                               required/>
+                        <div class="indexRegistrationFormFieldDivClass">
+                        </div>
                     </div>
                 </div>
-                <div class="indexRegistrationFormRowTwoClass">
 
-                    <div class="indexRegistrationFormFieldDivClass">
-                    </div>
+                <div class="indexRegistrationFormButtonDivClass"
+                >
 
-                    <div class="indexRegistrationFormFieldDivClass">
-
-                        <h3 class="regFormTitleClass"><b>Confirm Password</b></h3>
-
-                        <input type="password"
-                               placeholder="Please Confirm Password"
-                               id="registerConfirmPasswordInput"
-                               required/>
-                    </div>
-
-                    <div class="indexRegistrationFormFieldDivClass">
-                    </div>
+                    <button class="submitButtonClass"
+                            onclick="ft_indexRegisterSubmitButton()"
+                    >
+                        Submit
+                    </button>
+                    <button class="cancelButtonClass"
+                            onclick="ft_closeModalButton()"
+                    >
+                        Cancel
+                    </button>
                 </div>
-            </div>
-
-            <div class="indexRegistrationFormButtonDivClass"
-            >
-
-                <button class="submitButtonClass"
-                        onclick="ft_indexRegisterSubmitButton()"
-                >
-                    Submit
-                </button>
-                <button class="cancelButtonClass"
-                        onclick="ft_closeModalButton()"
-                >
-                    Cancel
-                </button>
-            </div>
             </form>
         </div>
     </div>
@@ -150,13 +148,11 @@
 
             <form id="loginFormID"
                   class="indexLoginFormClass"
-                  method="post""
-            >
+                  method="post">
 
                 <div class="indexLoginFormFieldClass">
 
-                    <div class="indexLoginFormRowOneClass"
-                    >
+                    <div class="indexLoginFormRowOneClass">
 
                         <div class="indexLoginFormFieldDivClass">
 
@@ -187,6 +183,7 @@
                     >
                         Submit
                     </button>
+
                     <button class="cancelButtonClass"
                             onclick="ft_closeModalButton()"
                     >
