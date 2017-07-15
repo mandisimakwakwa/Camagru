@@ -263,8 +263,10 @@
 
         .roundButtonClass img {
 
-            width: 100px;
-            height: 100px;
+            width: 55px;
+            height: 55px;
+            border: none;
+            border-radius: 50%;
         }
 
     .roundButtonClass:hover {

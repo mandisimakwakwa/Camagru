@@ -6,11 +6,12 @@
 
         <div class="mainSubDivA2Class">
 
-            <button class="roundButtonClass"
+            <a class="roundButtonClass"
                     onclick="ft_snapButton()"
             >
-                &#62;
-            </button>
+                
+                <img src="../../../../resources/icons/cameraIcon.png">
+            </a>
         </div>
 
         <div class="mainSubDivA12Class">Canvas</div>
