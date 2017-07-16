@@ -20,8 +20,6 @@ function ft_videoError(e) {
     //Go's
 }
 
-ft_camDisplay();
-
 function ft_snapButton() {
 
     var cam = document.getElementById('camViewID');
@@ -66,6 +64,7 @@ function ft_clearPhoto(canvas, context, data) {
 function ft_mergeLayer(imageLayerContainer) {
 
     alert("Merge Layer");
+
    /* var layerImageFilename = imageLayerContainer.id;
     var canvas = document.getElementById('photoViewID');
     var data = canvas.toDataURL('image/png');
