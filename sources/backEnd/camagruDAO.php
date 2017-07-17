@@ -20,7 +20,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         $image = ob_get_clean();
 
         //Global Variables
-        $imageContent = base64_encode($image);
+        $imageContent = base64_encode($imageBaseContent);
 
         if ($image) {
 

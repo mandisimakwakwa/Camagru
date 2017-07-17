@@ -45,7 +45,7 @@ function ft_responseHandler(response) {
         if (response) {
 
             //Draw image from encoded base64
-            context.drawImage(canvas, 15, 10, 250, 150);
+            context.drawImage(canvas, 0, 8, 300, 145);
         } else {
 
             ft_clearPhoto(canvas, context, data);

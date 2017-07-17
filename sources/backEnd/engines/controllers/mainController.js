@@ -29,7 +29,8 @@ function ft_snapButton() {
 
     if (data) {
 
-        context.drawImage(cam, 15, 20, 250, 150);
+        //50: width, 25: height ; 200: width, 100: height
+        context.drawImage(cam, 50, 25, 150, 130);
         canvas.setAttribute('src', data);
     } else {
 
