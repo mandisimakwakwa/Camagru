@@ -32,6 +32,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         //Login Check
         $_SESSION['confirmLogin'] = "-1";
 
+
     //Get Connection
     function ft_getConnection($dsn, $user, $password) {
 

@@ -1,3 +1,9 @@
+//Enable all Onload JS Functions
+function ft_defaultOnloadEnabler() {
+
+    ft_camDisplay();
+}
+
 //Close Modal Button
 function ft_closeModalButton() {
 
@@ -29,7 +35,25 @@ function ft_responseHandler(response) {
         var destPage = "main";
 
         ft_redirectController(destPage);
-    } else {
+    } else if (response && (confirmLogin != "1")) {
+
+        var canvas = document.getElementById('canvasViewID');
+        var context = canvas.getContext('2d');
+        var image = new Image();
+
+        if (response) {
+
+            image.onload = function () {
+
+                //Draw image from encoded base64
+                context.drawImage(image, 15, 20, 250, 150);
+            }
+            image.src = response;
+        } else {
+
+            ft_clearPhoto(canvas, context, data);
+        }
+    }else {
 
         alert(response.substring(1));
     }

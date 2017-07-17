@@ -54,7 +54,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         ></script>
     </head>
 
-    <body>
+    <body onload="ft_defaultOnloadEnabler()">
 
         <div class="sectionDivClass">
 

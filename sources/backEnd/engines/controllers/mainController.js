@@ -63,13 +63,22 @@ function ft_clearPhoto(canvas, context, data) {
 //Send Gallery image and Merges image to Server-Side
 function ft_mergeLayer(imageLayerContainer) {
 
-    alert("Merge Layer");
-
-   /* var layerImageFilename = imageLayerContainer.id;
-    var canvas = document.getElementById('photoViewID');
+    var layerImageFilename = imageLayerContainer.id;
+    var canvas = document.getElementById('canvasViewID');
     var data = canvas.toDataURL('image/png');
     var baseEncodedData = data.replace("data:image/png;base64,", "");
     var params = {'baseImage' : baseEncodedData, 'layerImageFilename' : layerImageFilename, 'SessionState' : "LAYER"};
-*/
-    // ft_sendHTTPRequest("POST", params, "");
+
+    var handler = "../../../../sources/backEnd/engines/handlers/galleryHandler.php";
+
+    ft_enableSaveButton();
+    ft_sendHTTPRequest("POST", params, "", handler);
+}
+
+function ft_enableSaveButton() {
+
+    var saveButton = document.getElementById("saveButtonID");
+
+    saveButton.style.background = "linear-gradient(to bottom right, dodgerblue, deepskyblue)";
+    saveButton.style.pointerEvents = "auto";
 }

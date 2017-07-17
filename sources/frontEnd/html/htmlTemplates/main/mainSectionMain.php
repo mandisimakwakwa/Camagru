@@ -8,7 +8,6 @@
                    class="camViewDivClass"
                     autoplay>
             </video>
-            <script>ft_camDisplay();</script>
         </div>
 
         <div class="mainSubDivA2Class">
@@ -31,7 +30,8 @@
 
     <div class="mainMainSubDivBClass">
 
-        <button class="submitButtonClass"
+        <button class="submitButtonClass disableButtonClass"
+                id="saveButtonID"
                 onclick="ft_saveToGalleryButton()"
         >
 
@@ -44,7 +44,8 @@
             Upload
         </button>
     </div>
-    <div class="mainMainSubDivCClass">
+    <div class="mainMainSubDivCClass"
+    >
 
         <img src="../../../../resources/merges/1.png"
              id="1.png"
