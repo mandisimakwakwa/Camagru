@@ -39,16 +39,13 @@ function ft_responseHandler(response) {
 
         var canvas = document.getElementById('canvasViewID');
         var context = canvas.getContext('2d');
-        var image = new Image();
+
+        canvas.src = response;
 
         if (response) {
 
-            image.onload = function () {
-
-                //Draw image from encoded base64
-                context.drawImage(image, 15, 20, 250, 150);
-            }
-            image.src = response;
+            //Draw image from encoded base64
+            context.drawImage(canvas, 15, 10, 250, 150);
         } else {
 
             ft_clearPhoto(canvas, context, data);

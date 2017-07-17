@@ -18,7 +18,7 @@ require $projectRoot . "sources/backEnd/engines/controllers/phpPathController.ph
     if ($decodedHTTPJSON['SessionState'] == "LAYER") {
 
         $imageLayerFilename = $decodedHTTPJSON['layerImageFilename'];
-        $imageLayerContent = imagecreatefromstring(ft_base64FromPNG($imageLayerFilename));
+        $imageLayerContent = imagecreatefromstring(base64_decode(ft_base64FromPNG($imageLayerFilename)));
         $imageBaseContent = imagecreatefromstring(base64_decode($decodedHTTPJSON['baseImage']));
 
         ft_imageMerge($imageBaseContent, $imageLayerContent);
