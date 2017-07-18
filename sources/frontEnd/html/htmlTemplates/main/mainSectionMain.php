@@ -64,6 +64,8 @@
                       class="uploadFormClass"
                 >
 
+                    <h3 class="formTitleClass"><b>Select an Image to Upload: </b></h3>
+
                     <input type="file"
                            name="fileToUpload"
                            id="fileToUpload"

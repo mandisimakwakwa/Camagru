@@ -164,12 +164,14 @@
 
         #uploadFormModalID {
 
-            box-shadow: 0 5px 5px 0
-            rgba(0, 0, 0, 0.1), 0 15px 25px 0
-            rgba(0, 0, 0, 0.2);
             flex-flow: row;
             height: 35%;
+            border-radius: 10px;
+            padding: 25px;
             background:rgba(0, 0, 0,0.5);
+            box-shadow: 0 4px 8px 0
+            rgba(0, 0, 0, 0.2), 0 6px 20px 0
+            rgba(0, 0, 0, 0.19);
         }
 
         .uploadFormTitleDivClass {
@@ -179,6 +181,8 @@
             align-items: center;
             flex-flow: row;
             width: 100%;
+            padding: 25px;
+            margin: 25px;
         }
 
         .uploadFormTitleDivClass h1{
