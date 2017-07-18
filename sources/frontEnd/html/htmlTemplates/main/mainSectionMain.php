@@ -38,24 +38,45 @@
             Save
         </button>
 
-        <div class="modalClass">
+        <div id="uploadFormModalID"
+             class="modalClass">
 
-            <form action="upload.php"
-                  method="post"
-                  enctype="multipart/form-data"
-            >
+            <div class="modalContentClass">
 
-                Select image to upload:
-                <input type="file"
-                       name="fileToUpload"
-                       id="fileToUpload"
+                <div class="uploadFormTitleDivClass">
+
+                    <div class="placeHolderDivClass"></div>
+
+                    <h1>Upload</h1>
+
+                    <div class="placeHolderDivClass">
+
+                        <button class="closeButtonClass"
+                                onclick="ft_closeUploadForm()">
+
+                            <div>X</div>
+                        </button>
+                    </div>
+                </div>
+
+                <form method="post"
+                      enctype="multipart/form-data"
+                      class="uploadFormClass"
                 >
 
-                <input type="submit"
-                       value="Upload Image"
-                       name="submit"
-                >
-            </form>
+                    <input type="file"
+                           name="fileToUpload"
+                           id="fileToUpload"
+                           class="submitButtonClass"
+                    >
+
+                    <input type="submit"
+                           value="Upload Image"
+                           name="submit"
+                           class="submitButtonClass"
+                    >
+                </form>
+            </div>
         </div>
 
         <button class="submitButtonClass"

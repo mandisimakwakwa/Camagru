@@ -1,6 +1,6 @@
 <header>
 
-    <div class="placeholderDivClass">
+    <div class="placeHolderDivClass">
 
     </div>
 

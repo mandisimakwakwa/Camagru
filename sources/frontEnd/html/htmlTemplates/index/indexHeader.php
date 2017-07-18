@@ -1,6 +1,6 @@
 <header>
 
-    <div class="placeholderDivClass">
+    <div class="placeHolderDivClass">
 
     </div>
 
@@ -9,7 +9,7 @@
         Camagru
     </div>
 
-    <div class="placeholderDivClass">
+    <div class="placeHolderDivClass">
 
     </div>
 </header>

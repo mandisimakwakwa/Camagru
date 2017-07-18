@@ -30,6 +30,13 @@
         height: 95%;
     }
 
+    .placeHolderDivClass {
+
+        display: flex;
+        flex: 1 1;
+        min-width: 20%;
+    }
+
 /*====================================================================================================================*/
 /*
     //==========================\\
@@ -52,7 +59,7 @@
         letter-spacing: 15px;
     }
 
-    header .placeholderDivClass {
+    header .placeHolderDivClass {
 
         display: flex;
         max-width: 200px;

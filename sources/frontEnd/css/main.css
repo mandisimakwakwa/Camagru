@@ -162,6 +162,39 @@
         height: 100%;
     }
 
+        #uploadFormModalID {
+
+            box-shadow: 0 5px 5px 0
+            rgba(0, 0, 0, 0.1), 0 15px 25px 0
+            rgba(0, 0, 0, 0.2);
+            flex-flow: row;
+            height: 35%;
+            background:rgba(0, 0, 0,0.5);
+        }
+
+        .uploadFormTitleDivClass {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: row;
+            width: 100%;
+        }
+
+        .uploadFormTitleDivClass h1{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: row;
+            width: 100%;
+        }
+
+        .uploadFormClass {
+
+            background:rgba(0,155,205,0.9);
+        }
+
     main .mainMainSubDivCClass {
 
         display: flex;

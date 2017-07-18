@@ -50,7 +50,9 @@ function ft_saveToGalleryButton() {
 
 function ft_uploadToGalleryButton() {
 
-    alert("You clicked the upload to gallery button");
+    var uploadDiv = document.getElementById('uploadFormModalID');
+
+    uploadDiv.style.display = "flex";
 }
 
 function ft_clearPhoto(canvas, context, data) {
@@ -82,4 +84,11 @@ function ft_enableSaveButton() {
 
     saveButton.style.background = "linear-gradient(to bottom right, dodgerblue, deepskyblue)";
     saveButton.style.pointerEvents = "auto";
+}
+
+function ft_closeUploadForm() {
+
+    var uploadFormDiv = document.getElementById("uploadFormModalID");
+
+    uploadFormDiv.style.display = "none";
 }
