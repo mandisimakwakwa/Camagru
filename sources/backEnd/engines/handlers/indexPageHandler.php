@@ -39,10 +39,10 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
             ft_sessionStateLogin($dbConn, $decodedHTTPJSON);
             break;
-        default :
+        /*default :
 
-            ft_sessionStateError($dbConn, $decodedHTTPJSON);
-            break;
+            ft_sessionStateError();
+            break;*/
     }
 
     //Debug Connection to indexPageHandler.php

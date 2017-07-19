@@ -17,6 +17,15 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         ft_checkPaginationHandler();
     }
 
+    function ft_sessionStateError() {
+
+        //Debug NULL Session State
+        $switchNode = "errorLog";
+        $_SESSION['errorLog'] = "Session State is NULL";
+
+        ft_sendJSON($_SESSION['errorLog'], $switchNode);
+    }
+
 //    ft_debugController();
 
     //Debug Sessions

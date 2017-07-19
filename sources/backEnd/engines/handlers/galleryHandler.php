@@ -23,6 +23,10 @@ require $projectRoot . "sources/backEnd/engines/controllers/phpPathController.ph
 
             ft_sessionStateLayer($decodedHTTPJSON);
             break;
+        /*default :
+
+            ft_sessionStateError();
+            break;*/
     }
 
     //Debug Connection to galleryHandler.php

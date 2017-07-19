@@ -32,6 +32,8 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
                 $jsonObj = ft_sendErrorJSON($sourceContent);
                 break;
+            default:
+                break;
         }
 
         $jsonEncode = json_encode($jsonObj, JSON_PRETTY_PRINT);
@@ -138,15 +140,6 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
             ft_sendJSON($_SESSION['errorLog'], $switchNode);
         }
-    }
-
-    function ft_sessionStateError() {
-
-        //Debug NULL Session State
-        $switchNode = "errorLog";
-        $_SESSION['errorLog'] = "Session State is NULL";
-
-        ft_sendJSON($_SESSION['errorLog'], $switchNode);
     }
 
     //Debug Connection to camagruDTO.php
