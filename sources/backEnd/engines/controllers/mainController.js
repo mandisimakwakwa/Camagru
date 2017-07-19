@@ -40,12 +40,19 @@ function ft_snapButton() {
 
 function ft_saveToGalleryButton() {
 
-    // //Post Image Variables
-    // var params = {'SessionState' : "GALLERY"};
-    //
-    // ft_sendHTTPPicRequest("POST", params, "");
+    var canvas = document.getElementById("canvasViewID");
+    var data = canvas.toDataURL('image/png');
+    var baseEncodedData = data.replace("data:image/png;base64,",  "");
 
-    alert("You clicked the save to gallery button");
+    var params = {'baseImageSave' : baseEncodedData, 'SessionState' : "IMAGESAVE"};
+
+    var handler = "../../../../sources/backEnd/engines/handlers/galleryHandler.php";
+
+    var switchNode = "imageSave";
+
+
+    console.log(ft_sendHTTPRequest("POST", params, "", handler, switchNode));
+
 }
 
 function ft_uploadToGalleryButton() {
@@ -66,7 +73,9 @@ function ft_clearPhoto(canvas, context, data) {
 //Send Gallery image and Merges image to Server-Side
 function ft_mergeLayer(imageLayerContainer) {
 
-    var layerImageFilename = imageLayerContainer.id;
+    ft_enableSaveButton();
+
+   /* var layerImageFilename = imageLayerContainer.id;
     var canvas = document.getElementById('canvasViewID');
     var data = canvas.toDataURL('image/png');
     var baseEncodedData = data.replace("data:image/png;base64,", "");
@@ -76,8 +85,8 @@ function ft_mergeLayer(imageLayerContainer) {
 
     var switchNode = "imageMerge";
 
-    ft_enableSaveButton();
-    console.log(ft_sendHTTPRequest("POST", params, "", handler, switchNode));
+
+    console.log(ft_sendHTTPRequest("POST", params, "", handler, switchNode));*/
 }
 
 function ft_enableSaveButton() {

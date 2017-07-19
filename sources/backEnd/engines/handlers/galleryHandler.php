@@ -12,8 +12,23 @@ require $projectRoot . "sources/backEnd/engines/controllers/phpPathController.ph
     $getHTTPJSON = file_get_contents("php://input");
     $decodedHTTPJSON = json_decode($getHTTPJSON, true);
 
+    //DB Connection Variables
+    $dbConnDSN = $_SESSION['dbConnDSN'];
+    $dbConnUser = $_SESSION['dbConnUser'];
+    $dbConnPassword = $_SESSION['dbConnPassword'];
+    $dbConnName = $_SESSION['dbConnName'];
+
+    //Establish Network Connection
+    $dbConn = ft_getConnection($dbConnDSN, $dbConnUser, $dbConnPassword);
+
+    //Use Camagru DB
+    ft_useCamagru($dbConn, $dbConnName);
+
+    //Create gallery table query
+    ft_createGalleryTable($dbConn);
+
     //Session Set Error Log
-    $_SESSION['errorLog'] = "Error Something Went Wrong With the Image.";
+    $_SESSION['errorLog'] = "Error Gallery Setup Failed.";
 
     $sessionState = $decodedHTTPJSON['sessionState'];
 
@@ -22,6 +37,10 @@ require $projectRoot . "sources/backEnd/engines/controllers/phpPathController.ph
         case "LAYER" :
 
             ft_sessionStateLayer($decodedHTTPJSON);
+            break;
+        case "IMAGESAVE" :
+
+            ft_sessionStateImageSave($dbConn, $decodedHTTPJSON);
             break;
         /*default :
 

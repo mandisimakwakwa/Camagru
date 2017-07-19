@@ -120,4 +120,31 @@
 
         return $dbPassword;
     }
+
+    //Create gallery table query
+    function ft_createGalleryTable($dbConn)
+    {
+        $dbQuery = "CREATE TABLE IF NOT EXISTS gallery (
+                    imageID VARCHAR(66),
+                    imageContent VARCHAR(50000000),
+                    username VARCHAR(30),
+                    insertTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    PRIMARY KEY (imageID));";
+
+        ft_queryExecute($dbConn, $dbQuery);
+    }
+
+    //Image Data into DB
+    function ft_imageDBUpload($dbConn, $dbUsername, $imageID, $imageContent) {
+
+        $dbQuery = "INSERT INTO gallery (imageID, imageContent, username) VALUES (:imageID, :imageContent, :username)";
+
+        $preparedStatement = $dbConn->prepare($dbQuery);
+
+        $preparedStatement->bindParam(':imageID', $imageID);
+        $preparedStatement->bindParam(':imageContent', $imageContent);
+        $preparedStatement->bindParam(':username', $dbUsername);
+
+        $preparedStatement->execute();
+    }
 ?>

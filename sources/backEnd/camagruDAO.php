@@ -46,6 +46,17 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         ft_imageMerge($imageBaseContent, $imageLayerContent);
     }
 
+    function ft_sessionStateImageSave($dbConn, $decodedHTTPJSON) {
+
+        $username = $_SESSION['userDBUsername'];
+        $pictureFilename = time();
+        $pictureFilename = $pictureFilename.$username;
+        $pictureFilename = hash("sha256", $pictureFilename);
+        $imageContent = $decodedHTTPJSON['baseImageSave'];
+
+        ft_imageDBUpload($dbConn, $username, $pictureFilename, $imageContent);
+    }
+
     function ft_base64FromPNG($imageLayerFilename) {
 
         $path = "../../../../resources/merges/$imageLayerFilename";

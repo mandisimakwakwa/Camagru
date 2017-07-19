@@ -35,10 +35,15 @@ function ft_responseHandler(response, switchNode) {
 
             ft_loginCase(jsonResponse);
             break;
+        case "imageSave":
+            ft_imageSaveCase(jsonResponse);
+            break;
+            /*
         case "imageMerge":
 
             ft_imageMergeCase(jsonResponse);
-            break;
+            break;*/
+
         case "errorLog":
 
             ft_errorLogCase(jsonResponse);
@@ -58,7 +63,7 @@ function ft_responseHandler(response, switchNode) {
         }
     }
 
-    function ft_imageMergeCase(jsonResponse) {
+    /*function ft_imageMergeCase(jsonResponse) {
 
 
         var canvas = document.getElementById('canvasViewID');
@@ -75,7 +80,7 @@ function ft_responseHandler(response, switchNode) {
 
             ft_clearPhoto(canvas, context, data);
         }
-    }
+    }*/
 
     function ft_errorLogCase(jsonResponse) {
 
