@@ -74,8 +74,10 @@ function ft_mergeLayer(imageLayerContainer) {
 
     var handler = "../../../../sources/backEnd/engines/handlers/galleryHandler.php";
 
+    var switchNode = "imageMerge";
+
     ft_enableSaveButton();
-    ft_sendHTTPRequest("POST", params, "", handler);
+    console.log(ft_sendHTTPRequest("POST", params, "", handler, switchNode));
 }
 
 function ft_enableSaveButton() {

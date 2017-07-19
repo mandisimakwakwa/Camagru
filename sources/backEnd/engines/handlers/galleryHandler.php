@@ -13,15 +13,16 @@ require $projectRoot . "sources/backEnd/engines/controllers/phpPathController.ph
     $decodedHTTPJSON = json_decode($getHTTPJSON, true);
 
     //Session Set Error Log
-    $_SESSION['errorLog'] = "Error Login and Password Don't Match";
+    $_SESSION['errorLog'] = "Error Something Went Wrong With the Image.";
 
-    if ($decodedHTTPJSON['SessionState'] == "LAYER") {
+    $sessionState = $decodedHTTPJSON['sessionState'];
 
-        $imageLayerFilename = $decodedHTTPJSON['layerImageFilename'];
-        $imageLayerContent = imagecreatefromstring(base64_decode(ft_base64FromPNG($imageLayerFilename)));
-        $imageBaseContent = imagecreatefromstring(base64_decode($decodedHTTPJSON['baseImage']));
+    switch ($sessionState) {
 
-        ft_imageMerge($imageBaseContent, $imageLayerContent);
+        case "LAYER" :
+
+            ft_sessionStateLayer($decodedHTTPJSON);
+            break;
     }
 
     //Debug Connection to galleryHandler.php

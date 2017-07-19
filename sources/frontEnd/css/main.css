@@ -197,6 +197,10 @@
         .uploadFormClass {
 
             background:rgba(0,155,205,0.9);
+            flex-flow: row;
+            width: 95%;
+            height: 100%;
+            border-radius: 10px;
         }
 
     main .mainMainSubDivCClass {
@@ -244,4 +248,29 @@
     \\==========================//
 */
 
+    .uploadButtonClass {
+
+        font-size: 15px;
+        font-weight: bolder;
+        color: bisque;
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 5px;
+        margin: 5px;
+        padding: 0px;
+        width: 45%;
+        height: 20%;
+        background: linear-gradient(to bottom right, deepskyblue, dodgerblue);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: all 0.5s;
+        cursor: pointer;
+    }
+
+    .uploadButtonClass:hover {
+
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.8), 0 15px 30px 0 rgba(0, 0, 0, 0.19);
+    }
 /*====================================================================================================================*/

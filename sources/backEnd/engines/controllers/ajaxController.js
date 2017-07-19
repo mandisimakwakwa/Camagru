@@ -1,4 +1,4 @@
-function ft_sendHTTPRequest(httpRequestAction, httpPostActionParams, getFormParams, handler) {
+function ft_sendHTTPRequest(httpRequestAction, httpPostActionParams, getFormParams, handler, switchNode) {
 
     var xhttpRequest = new XMLHttpRequest();
 
@@ -10,16 +10,7 @@ function ft_sendHTTPRequest(httpRequestAction, httpPostActionParams, getFormPara
 
             var response = xhttpRequest.response;
 
-            console.log(response[0]);
-            console.log(xhttpRequest.response);
-
-            if (response) {
-
-                ft_responseHandler(response);
-            } else {
-
-                alert(response.substring(1));
-            }
+            ft_responseHandler(response, switchNode);
         }
     };
 

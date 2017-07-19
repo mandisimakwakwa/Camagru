@@ -11,7 +11,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         imagesavealpha($imageBaseContent, true);
         imagealphablending($imageLayerContent, true);
         imagesavealpha($imageLayerContent, true);
-        imagecopymerge($imageBaseContent, $imageLayerContent, 0, 0, 0, 0, 350, 350, 100);
+        imagecopymerge($imageBaseContent, $imageLayerContent, 0, 0, 0, 0, 450, 450, 75);
 
         // Output and free from memory
         header('Content-Type: image/png');
@@ -20,17 +20,30 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         $image = ob_get_clean();
 
         //Global Variables
-        $imageContent = base64_encode($imageBaseContent);
+        $imageContent = base64_encode($image);
 
-        if ($image) {
+        if ($imageContent) {
 
-            echo 'data:image/png;base64,'.$imageContent;
+            $switchNode = "mergeImage";
+
+            ft_sendJSON($imageContent, $switchNode);
         } else {
 
-            echo $_SESSION['errorLog'];
+            $switchNode = "errorLog";
+
+            ft_sendJSON($_SESSION['errorLog'], $switchNode);
         }
         imagedestroy($imageBaseContent);
         imagedestroy($imageLayerContent);
+    }
+
+    function ft_sessionStateLayer($decodedHTTPJSON) {
+
+        $imageLayerFilename = $decodedHTTPJSON['layerImageFilename'];
+        $imageLayerContent = imagecreatefromstring(base64_decode(ft_base64FromPNG($imageLayerFilename)));
+        $imageBaseContent = imagecreatefromstring(base64_decode($decodedHTTPJSON['baseImage']));
+
+        ft_imageMerge($imageBaseContent, $imageLayerContent);
     }
 
     function ft_base64FromPNG($imageLayerFilename) {

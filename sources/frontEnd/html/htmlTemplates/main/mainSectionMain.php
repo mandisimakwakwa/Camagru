@@ -69,13 +69,13 @@
                     <input type="file"
                            name="fileToUpload"
                            id="fileToUpload"
-                           class="submitButtonClass"
+                           class="uploadButtonClass"
                     >
 
                     <input type="submit"
                            value="Upload Image"
                            name="submit"
-                           class="submitButtonClass"
+                           class="uploadButtonClass"
                     >
                 </form>
             </div>

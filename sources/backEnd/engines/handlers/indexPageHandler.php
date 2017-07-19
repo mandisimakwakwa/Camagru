@@ -21,8 +21,6 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
     //Establish Network Connection
     $dbConn = ft_getConnection($dbConnDSN, $dbConnUser, $dbConnPassword);
 
-    //Session Set Error Log
-    $_SESSION['errorLog'] = "Error Login and Password Don't Match";
 
     //Create DB if Not Exists
     ft_createDB($dbConn, $dbConnName);
@@ -30,70 +28,21 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
     //Use Camagru DB
     ft_useCamagru($dbConn, $dbConnName);
 
-    //Check Session State
-    if ($decodedHTTPJSON['SessionState'] == 'REGISTER') {
+    $sessionState = $decodedHTTPJSON['SessionState'];
+    switch ($sessionState) {
 
-        //Set Sessions
-        $_SESSION['httpRegisterEmail'] = ft_validator($decodedHTTPJSON['httpRegisterEmail']);
-        $_SESSION['httpRegisterUsername'] = ft_validator($decodedHTTPJSON['httpRegisterUsername']);
-        $_SESSION['httpRegisterPassword'] = hash("sha256", ft_validator($decodedHTTPJSON['httpRegisterPassword']));
-        $_SESSION['httpRegisterConfirmPassword'] = hash("sha256", ft_validator($decodedHTTPJSON['httpRegisterConfirmPassword']));
-        $_SESSION['confirmLogin'] = "1";
+        case "REGISTER":
 
-        //Register User
-            //Create users Table & Set Auto Increment
-            ft_createUsersTable($dbConn);
+            ft_sessionStateRegister($dbConn, $decodedHTTPJSON);
+            break;
+        case "LOGIN" :
 
+            ft_sessionStateLogin($dbConn, $decodedHTTPJSON);
+            break;
+        default :
 
-        //Store User In DB
-        $httpRegisterEmail = $_SESSION['httpRegisterEmail'];
-        $httpRegisterUsername = $_SESSION['httpRegisterUsername'];
-        $httpRegisterPassword = $_SESSION['httpRegisterPassword'];
-
-        //Assign User HTTP values to DB
-        ft_register($dbConn, $httpRegisterEmail, $httpRegisterUsername, $httpRegisterPassword);
-
-        //Set DB Sessions
-        $_SESSION['userDBEmail'] = ft_getUserDBEmail($dbConn, $httpRegisterEmail, $httpRegisterPassword);
-        $_SESSION['userDBUsername'] = ft_getUserDBUsername($dbConn, $httpRegisterEmail, $httpRegisterPassword);
-        $_SESSION['userDBPassword'] = ft_getUserDBPassword($dbConn, $httpRegisterEmail, $httpRegisterPassword);
-
-        //Validate User
-        if (($httpRegisterEmail == $_SESSION['userDBEmail']) && ($httpRegisterPassword == $_SESSION['userDBPassword'])) {
-
-            echo $_SESSION['confirmLogin'];
-        } else {
-
-            echo $_SESSION['confirmLogin'] = "0";
-            echo $_SESSION['errorLog']."RegisterHandler";
-        }
-    } elseif ($decodedHTTPJSON['SessionState'] == 'LOGIN') {
-
-        //Set Sessions
-        $_SESSION['httpLoginEmail'] = ft_validator($decodedHTTPJSON['httpLoginEmail']);
-        $_SESSION['httpLoginPassword'] = hash("sha256", ft_validator($decodedHTTPJSON['httpLoginPassword']));
-        $_SESSION['confirmLogin'] = "1";
-
-        //Retrieve User From DB
-        $httpLoginEmail = $_SESSION['httpLoginEmail'];
-        $httpLoginPassword = $_SESSION['httpLoginPassword'];
-
-        //Set DB Sessions
-        $_SESSION['userDBEmail'] = ft_getUserDBEmail($dbConn, $httpLoginEmail, $httpLoginPassword);
-        $_SESSION['userDBPassword'] = ft_getUserDBPassword($dbConn, $httpLoginEmail, $httpLoginPassword);
-
-        if (($_SESSION['userDBEmail'] == $httpLoginEmail) && ($_SESSION['userDBPassword'] == $httpLoginPassword)) {
-
-            //Send Client-Side Response
-            echo $_SESSION['confirmLogin'];
-        } else {
-
-            echo $_SESSION['confirmLogin'] = "0";
-            echo $_SESSION['errorLog'];
-        }
-    } else {
-        //Debug NULL Session State
-    //    echo "Session State is NULL";
+            ft_sessionStateError($dbConn, $decodedHTTPJSON);
+            break;
     }
 
     //Debug Connection to indexPageHandler.php

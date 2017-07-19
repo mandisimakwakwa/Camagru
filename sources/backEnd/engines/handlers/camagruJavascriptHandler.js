@@ -25,24 +25,49 @@ function ft_submitButton(sourcePage) {
     }
 }
 
-function ft_responseHandler(response) {
+function ft_responseHandler(response, switchNode) {
 
-    //Confirm Login
-    var confirmLogin = response[0];
+    var jsonResponse = JSON.parse(response);
 
-    if (confirmLogin == "1") {
+    switch (switchNode) {
 
-        var destPage = "main";
+        case "login":
 
-        ft_redirectController(destPage);
-    } else if (response && (confirmLogin != "1")) {
+            ft_loginCase(jsonResponse);
+            break;
+        case "imageMerge":
+
+            ft_imageMergeCase(jsonResponse);
+            break;
+        case "errorLog":
+
+            ft_errorLogCase(jsonResponse);
+            break;
+    }
+}
+
+    function ft_loginCase(jsonResponse) {
+
+        var confirmLogin = jsonResponse.confirmLogin;
+
+        if (confirmLogin == "1") {
+
+            var destPage = "main";
+
+            ft_redirectController(destPage);
+        }
+    }
+
+    function ft_imageMergeCase(jsonResponse) {
+
 
         var canvas = document.getElementById('canvasViewID');
         var context = canvas.getContext('2d');
+        var imageMerge = jsonResponse.imageMerge;
 
-        canvas.src = response;
+        canvas.src = imageMerge;
 
-        if (response) {
+        if (imageMerge) {
 
             //Draw image from encoded base64
             context.drawImage(canvas, 0, 8, 300, 145);
@@ -50,21 +75,28 @@ function ft_responseHandler(response) {
 
             ft_clearPhoto(canvas, context, data);
         }
-    }else {
-
-        alert(response.substring(1));
     }
-}
+
+    function ft_errorLogCase(jsonResponse) {
+
+        var errorLog = jsonResponse.errorLog;
+
+        alert(errorLog);
+    }
 
 /*Redirect to Main.php*/
 function ft_redirectController(destPage) {
 
-    if (destPage == "main") {
+    switch (destPage) {
 
-        window.location.href = "sources/frontEnd/html/htmlLayouts/main.php";
-    } else {
+        case "main":
 
-        window.location.href = "../../../../index.php";
+            window.location.href = "sources/frontEnd/html/htmlLayouts/main.php";
+            break;
+        case "index":
+
+            window.location.href = "../../../../index.php";
+            break;
     }
 }
 

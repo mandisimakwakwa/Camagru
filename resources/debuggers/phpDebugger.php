@@ -7,7 +7,6 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
     //Debug Controller
     function ft_debugController() {
 
-        ft_checkIndexPHP();
         ft_checkDatabaseLinking();
         ft_checkSetupLinking();
         ft_checkCamagruDAO();
@@ -17,6 +16,8 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         ft_checkGalleryHandler();
         ft_checkPaginationHandler();
     }
+
+//    ft_debugController();
 
     //Debug Sessions
     function ft_arrayDebugger($array) {

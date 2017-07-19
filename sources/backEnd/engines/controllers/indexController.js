@@ -38,7 +38,9 @@ function ft_sendRegHTTPRequest() {
 
      var handler = "sources/backEnd/engines/handlers/indexPageHandler.php";
 
-     console.log(ft_sendHTTPRequest("POST", params, "", handler));
+     var switchNode = "login";
+
+     console.log(ft_sendHTTPRequest("POST", params, "", handler, switchNode));
 }
 
 function ft_sendLoginHTTPRequest() {
@@ -54,7 +56,9 @@ function ft_sendLoginHTTPRequest() {
 
     var handler = "sources/backEnd/engines/handlers/indexPageHandler.php";
 
-    console.log(ft_sendHTTPRequest("POST", params, "", handler));
+    var switchNode = "login";
+
+    console.log(ft_sendHTTPRequest("POST", params, "", handler, switchNode));
 }
 
 function ft_indexLoginSubmitButton() {
