@@ -54,7 +54,45 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         $pictureFilename = hash("sha256", $pictureFilename);
         $imageContent = $decodedHTTPJSON['baseImageSave'];
 
+        //Session Set Error Log
+        $_SESSION['errorLog'] = "Error! Image Save Failed.";
+
         ft_imageDBUpload($dbConn, $username, $pictureFilename, $imageContent);
+
+        if ($imageContent && $username) {
+
+            $switchNode = "imageSave";
+
+            ft_sendJSON($imageContent, $switchNode);
+        } else {
+
+            $switchNode = "errorLog";
+
+            ft_sendJSON($_SESSION['errorLog'], $switchNode);
+        }
+    }
+
+    function ft_sessionStateUpload($dbConn, $decodedHTTPJSON) {
+
+        $username = $_SESSION['userDBUsername'];
+        $pictureFilename = time();
+        $pictureFilename = $pictureFilename.$username;
+        $pictureFilename = hash("sha256", $pictureFilename);
+        $imageContent = $decodedHTTPJSON['httpUploadImageContent'];;
+
+        ft_imageDBUpload($dbConn, $username, $pictureFilename, $imageContent);
+
+        if ($imageContent && $username) {
+
+            $switchNode = "imageUpload";
+
+            ft_sendJSON($imageContent, $switchNode);
+        } else {
+
+            $switchNode = "errorLog";
+
+            ft_sendJSON($_SESSION['errorLog'], $switchNode);
+        }
     }
 
     function ft_base64FromPNG($imageLayerFilename) {

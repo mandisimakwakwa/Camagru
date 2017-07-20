@@ -26,9 +26,8 @@ function ft_sendRegHTTPRequest() {
      var httpRegisterUsername = document.forms['registrationFormID']['registerUsernameInput'].value;
 
      //Get Password Form Client-Side
-
-    //To be hashed From Front-End in Future
-     var httpRegisterPassword = document.forms['registrationFormID']['registerPasswordInput'].value;
+        //To be hashed From Front-End in Future
+        var httpRegisterPassword = document.forms['registrationFormID']['registerPasswordInput'].value;
 
      //Get Confirm Password Form Client-Side
      var httpRegisterConfirmPassword = document.forms['registrationFormID']['registerConfirmPasswordInput'].value;
@@ -40,7 +39,7 @@ function ft_sendRegHTTPRequest() {
 
      var switchNode = "login";
 
-     console.log(ft_sendHTTPRequest("POST", params, "", handler, switchNode));
+     ft_sendHTTPRequest("POST", params, "", handler, switchNode);
 }
 
 function ft_sendLoginHTTPRequest() {
@@ -58,7 +57,7 @@ function ft_sendLoginHTTPRequest() {
 
     var switchNode = "login";
 
-    console.log(ft_sendHTTPRequest("POST", params, "", handler, switchNode));
+    ft_sendHTTPRequest("POST", params, "", handler, switchNode);
 }
 
 function ft_indexLoginSubmitButton() {

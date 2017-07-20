@@ -15,7 +15,7 @@
             <a class="roundButtonClass"
                     onclick="ft_snapButton()"
             >
-                
+
                 <img src="../../../../resources/icons/cameraIcon.png">
             </a>
         </div>
@@ -59,7 +59,8 @@
                     </div>
                 </div>
 
-                <form method="post"
+                <form id="uploadFormID"
+                      method="post"
                       enctype="multipart/form-data"
                       class="uploadFormClass"
                 >
@@ -68,13 +69,8 @@
 
                     <input type="file"
                            name="fileToUpload"
-                           id="fileToUpload"
-                           class="uploadButtonClass"
-                    >
-
-                    <input type="submit"
-                           value="Upload Image"
-                           name="submit"
+                           onchange="ft_uploadImageContent(this.files)"
+                           id="uploadImageInput"
                            class="uploadButtonClass"
                     >
                 </form>

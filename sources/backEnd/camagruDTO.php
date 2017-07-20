@@ -24,21 +24,27 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
                 $jsonObj = ft_prepLoginJSON($sourceContent);
                 break;
-            case "mergeImage" :
+            case "imageSave" :
 
-                $jsonObj = ft_prepMergeJSON($sourceContent);
+                $jsonObj = ft_imageSaveJSON($sourceContent);
                 break;
-            case "errorLog" :
+            case "imageUpload" :
 
-                $jsonObj = ft_sendErrorJSON($sourceContent);
+                $jsonObj = ft_imageUploadJSON($sourceContent);
                 break;
-            default:
+            default :
+//                $jsonObj = ft_sendErrorJSON($sourceContent);
                 break;
         }
 
-        $jsonEncode = json_encode($jsonObj, JSON_PRETTY_PRINT);
+        if ($jsonObj) {
 
-        echo $jsonEncode;
+            $jsonEncode = json_encode($jsonObj, JSON_PRETTY_PRINT);
+            echo $jsonEncode;
+        } else {
+
+            echo "Hello";
+        }
     }
 
     function ft_sendErrorJSON($sourceContent) {
@@ -53,6 +59,22 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
         $confirmLoginJSONIndex = "confirmLogin";
         $jsonObj = array($confirmLoginJSONIndex => $sourceContent);
+
+        return $jsonObj;
+    }
+
+    function ft_imageSaveJSON($sourceContent) {
+
+        $imageContentJSONIndex = "imageSave";
+        $jsonObj = array($imageContentJSONIndex => $sourceContent);
+
+        return $jsonObj;
+    }
+
+    function ft_imageUploadJSON($sourceContent) {
+
+        $imageContentJSONIndex = "imageUpload";
+        $jsonObj = array($imageContentJSONIndex => $sourceContent);
 
         return $jsonObj;
     }
@@ -125,6 +147,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
         //Set DB Sessions
         $_SESSION['userDBEmail'] = ft_getUserDBEmail($dbConn, $httpLoginEmail, $httpLoginPassword);
+        $_SESSION['userDBUsername'] = ft_getUserDBUsername($dbConn, $httpLoginEmail, $httpLoginPassword);
         $_SESSION['userDBPassword'] = ft_getUserDBPassword($dbConn, $httpLoginEmail, $httpLoginPassword);
 
         if (($_SESSION['userDBEmail'] == $httpLoginEmail) && ($_SESSION['userDBPassword'] == $httpLoginPassword)) {

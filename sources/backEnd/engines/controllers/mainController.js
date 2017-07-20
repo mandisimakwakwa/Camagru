@@ -50,9 +50,7 @@ function ft_saveToGalleryButton() {
 
     var switchNode = "imageSave";
 
-
-    console.log(ft_sendHTTPRequest("POST", params, "", handler, switchNode));
-
+    ft_sendHTTPRequest("POST", params, "", handler, switchNode);
 }
 
 function ft_uploadToGalleryButton() {
@@ -60,6 +58,35 @@ function ft_uploadToGalleryButton() {
     var uploadDiv = document.getElementById('uploadFormModalID');
 
     uploadDiv.style.display = "flex";
+}
+
+function ft_uploadSubmitButton(sourceContent) {
+
+    //Get Email From Register Form Client-Side
+    var httpUploadImageContent = sourceContent;
+
+    //Session State is Register
+    var params = {'httpUploadImageContent' : httpUploadImageContent, 'SessionState' : "UPLOAD"};
+
+    var handler = "../../../../sources/backEnd/engines/handlers/galleryHandler.php";
+
+    var switchNode = "upload";
+
+    ft_sendHTTPRequest("POST", params, "", handler, switchNode);
+}
+
+function ft_uploadImageContent(sourceContent) {
+
+    var uploadRawImage = sourceContent;
+    var fileContentReader = new FileReader();
+
+    fileContentReader.readAsBinaryString(uploadRawImage[0]);
+    fileContentReader.onload = function (e) {
+
+        var uploadImageData = btoa(e.target.result);
+
+        ft_uploadSubmitButton(uploadImageData);
+    }
 }
 
 function ft_clearPhoto(canvas, context, data) {

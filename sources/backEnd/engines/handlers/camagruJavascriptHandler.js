@@ -27,27 +27,28 @@ function ft_submitButton(sourcePage) {
 
 function ft_responseHandler(response, switchNode) {
 
-    var jsonResponse = JSON.parse(response);
+    if (response) {
 
-    switch (switchNode) {
+        var jsonResponse = JSON.parse(response);
 
-        case "login":
+        switch (switchNode) {
 
-            ft_loginCase(jsonResponse);
-            break;
-        case "imageSave":
-            ft_imageSaveCase(jsonResponse);
-            break;
-            /*
-        case "imageMerge":
+            case "login":
 
-            ft_imageMergeCase(jsonResponse);
-            break;*/
+                ft_loginCase(jsonResponse);
+                break;
+            case "imageSave":
 
-        case "errorLog":
+                ft_imageSaveCase(jsonResponse);
+                break;
+            case "imageUpload":
 
-            ft_errorLogCase(jsonResponse);
-            break;
+                ft_imageUploadCase(jsonResponse);
+                break;
+        }
+    } else {
+
+        alert("Hi");
     }
 }
 
@@ -63,24 +64,25 @@ function ft_responseHandler(response, switchNode) {
         }
     }
 
-    /*function ft_imageMergeCase(jsonResponse) {
+    function ft_imageSaveCase(jsonResponse) {
 
+        var imageSave = jsonResponse.imageSave;
 
-        var canvas = document.getElementById('canvasViewID');
+        // console.log(imageSave);
+    }
+
+    function ft_imageUploadCase(jsonResponse) {
+
+        var imageUpload = jsonResponse.imageUpload;
+        var canvas = document.getElementById("canvasViewID");
         var context = canvas.getContext('2d');
-        var imageMerge = jsonResponse.imageMerge;
 
-        canvas.src = imageMerge;
+        if (imageUpload) {
 
-        if (imageMerge) {
-
-            //Draw image from encoded base64
-            context.drawImage(canvas, 0, 8, 300, 145);
-        } else {
-
-            ft_clearPhoto(canvas, context, data);
+            ft_clearPhoto(canvas, context, imageUpload);
+            alert(imageUpload);
         }
-    }*/
+    }
 
     function ft_errorLogCase(jsonResponse) {
 
@@ -89,25 +91,25 @@ function ft_responseHandler(response, switchNode) {
         alert(errorLog);
     }
 
-/*Redirect to Main.php*/
-function ft_redirectController(destPage) {
+    /*Redirect to Main.php*/
+    function ft_redirectController(destPage) {
 
-    switch (destPage) {
+        switch (destPage) {
 
-        case "main":
+            case "main":
 
-            window.location.href = "sources/frontEnd/html/htmlLayouts/main.php";
-            break;
-        case "index":
+                window.location.href = "sources/frontEnd/html/htmlLayouts/main.php";
+                break;
+            case "index":
 
-            window.location.href = "../../../../index.php";
-            break;
+                window.location.href = "../../../../index.php";
+                break;
+        }
     }
-}
 
-function ft_logoutButton() {
+    function ft_logoutButton() {
 
-    var destPage = "index";
+        var destPage = "index";
 
-    ft_redirectController(destPage);
-}
+        ft_redirectController(destPage);
+    }

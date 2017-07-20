@@ -27,25 +27,27 @@ require $projectRoot . "sources/backEnd/engines/controllers/phpPathController.ph
     //Create gallery table query
     ft_createGalleryTable($dbConn);
 
-    //Session Set Error Log
-    $_SESSION['errorLog'] = "Error Gallery Setup Failed.";
-
-    $sessionState = $decodedHTTPJSON['sessionState'];
+    $sessionState = $decodedHTTPJSON['SessionState'];
 
     switch ($sessionState) {
 
-        case "LAYER" :
+        /*case "LAYER" :
 
             ft_sessionStateLayer($decodedHTTPJSON);
-            break;
+            break;*/
         case "IMAGESAVE" :
 
             ft_sessionStateImageSave($dbConn, $decodedHTTPJSON);
             break;
-        /*default :
 
-            ft_sessionStateError();
-            break;*/
+        case "UPLOAD" :
+
+            ft_sessionStateUpload($dbConn, $decodedHTTPJSON);
+            break;
+        default :
+
+//            ft_sessionStateError();
+            break;
     }
 
     //Debug Connection to galleryHandler.php
