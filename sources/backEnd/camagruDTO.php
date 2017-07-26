@@ -32,8 +32,8 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
                 $jsonObj = ft_imageUploadJSON($sourceContent);
                 break;
-            default :
-//                $jsonObj = ft_sendErrorJSON($sourceContent);
+            case "errorLog" :
+                $jsonObj = ft_sendErrorJSON($sourceContent);
                 break;
         }
 

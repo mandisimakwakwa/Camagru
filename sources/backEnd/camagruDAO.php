@@ -82,14 +82,23 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
         ft_imageDBUpload($dbConn, $username, $pictureFilename, $imageContent);
 
-        if ($imageContent && $username) {
+        if ($imageContent) {
 
             $switchNode = "imageUpload";
+            $imageBase = 'data:image/png;base64,';
 
-            ft_sendJSON($imageContent, $switchNode);
+            header('Content-Type: image/png');
+
+            ob_start();
+            imagepng($imageContent);
+            $image = ob_get_clean();
+
+            $imageContent = base64_encode($image);
+
+            ft_sendJSON($imageBase.$imageContent, $switchNode);
         } else {
 
-            $switchNode = "errorLog";
+            $switchNode = "errrorLog";
 
             ft_sendJSON($_SESSION['errorLog'], $switchNode);
         }

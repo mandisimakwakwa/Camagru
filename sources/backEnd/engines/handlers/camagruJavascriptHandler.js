@@ -75,12 +75,19 @@ function ft_responseHandler(response, switchNode) {
 
         var imageUpload = jsonResponse.imageUpload;
         var canvas = document.getElementById("canvasViewID");
-        var context = canvas.getContext('2d');
+        var context = canvas.getContext("2d");
 
         if (imageUpload) {
 
-            ft_clearPhoto(canvas, context, imageUpload);
-            alert(imageUpload);
+            //Draw image from encoded base64
+            window.onload = function() {
+
+                context.drawImage(imageUpload, 0, 0);
+            };
+        } else {
+
+            ft_clearPhoto(canvas, context, "");
+            alert("fail");
         }
     }
 

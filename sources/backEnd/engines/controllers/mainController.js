@@ -70,7 +70,7 @@ function ft_uploadSubmitButton(sourceContent) {
 
     var handler = "../../../../sources/backEnd/engines/handlers/galleryHandler.php";
 
-    var switchNode = "upload";
+    var switchNode = "imageUpload";
 
     ft_sendHTTPRequest("POST", params, "", handler, switchNode);
 }
