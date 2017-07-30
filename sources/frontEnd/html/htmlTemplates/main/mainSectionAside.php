@@ -63,7 +63,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
                     while ($itemCounter < $itemsPerPageLimiter) {
                         $imageData = $userImageContainer[$itemCounter];
                         ?>
-                        <div>
+                        <div class="commentDivClass">
 
                             <?php
                             if ($imageData) {
@@ -74,6 +74,12 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
                                      width="50"
                                      src="data:image/png;base64,<?php echo $imageData; ?>"
                                 />
+
+                                <button class="commentDivButtonClass"
+                                        onclick="ft_commentsButton(<?php echo $itemCounter + 1; ?>)">
+
+                                    Comments
+                                </button>
 
                                 <?php
                             } else {

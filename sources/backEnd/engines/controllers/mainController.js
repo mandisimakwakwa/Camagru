@@ -157,3 +157,8 @@ function ft_next(currentPage) {
 
     window.location = "?page="+nextPage;
 }
+
+function ft_commentsButton(imageID) {
+
+    alert(imageID);
+}
