@@ -37,10 +37,10 @@ require $projectRoot . "sources/backEnd/engines/controllers/phpPathController.ph
 
     switch ($sessionState) {
 
-        /*case "LAYER" :
+        case "LAYER" :
 
             ft_sessionStateLayer($decodedHTTPJSON);
-            break;*/
+            break;
         case "IMAGESAVE" :
 
             ft_sessionStateImageSave($dbConn, $decodedHTTPJSON);

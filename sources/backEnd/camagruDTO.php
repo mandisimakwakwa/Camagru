@@ -28,6 +28,10 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
                 $jsonObj = ft_imageSaveJSON($sourceContent);
                 break;
+            case "imageMerge" :
+
+                $jsonObj = ft_imageMergeJSON($sourceContent);
+                break;
             case "imageUpload" :
 
                 $jsonObj = ft_imageUploadJSON($sourceContent);
@@ -72,6 +76,14 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
     function ft_imageSaveJSON($sourceContent) {
 
         $imageContentJSONIndex = "imageSave";
+        $jsonObj = array($imageContentJSONIndex => $sourceContent);
+
+        return $jsonObj;
+    }
+
+    function ft_imageMergeJSON($sourceContent) {
+
+        $imageContentJSONIndex = "imageMerge";
         $jsonObj = array($imageContentJSONIndex => $sourceContent);
 
         return $jsonObj;

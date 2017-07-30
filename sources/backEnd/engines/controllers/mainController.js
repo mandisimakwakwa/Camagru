@@ -102,7 +102,7 @@ function ft_mergeLayer(imageLayerContainer) {
 
     ft_enableSaveButton();
 
-   /* var layerImageFilename = imageLayerContainer.id;
+    var layerImageFilename = imageLayerContainer.id;
     var canvas = document.getElementById('canvasViewID');
     var data = canvas.toDataURL('image/png');
     var baseEncodedData = data.replace("data:image/png;base64,", "");
@@ -113,7 +113,7 @@ function ft_mergeLayer(imageLayerContainer) {
     var switchNode = "imageMerge";
 
 
-    console.log(ft_sendHTTPRequest("POST", params, "", handler, switchNode));*/
+    ft_sendHTTPRequest("POST", params, "", handler, switchNode);
 }
 
 function ft_enableSaveButton() {

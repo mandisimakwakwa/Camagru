@@ -24,7 +24,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
         if ($imageContent) {
 
-            $switchNode = "mergeImage";
+            $switchNode = "imageMerge";
 
             ft_sendJSON($imageContent, $switchNode);
         } else {

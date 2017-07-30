@@ -41,6 +41,10 @@ function ft_responseHandler(response, switchNode) {
 
                 ft_imageSaveCase(jsonResponse);
                 break;
+            case "imageMerge":
+
+                ft_imageMergeCase(jsonResponse);
+                break;
             case "imageUpload":
 
                 ft_imageUploadCase(jsonResponse);
@@ -72,6 +76,23 @@ function ft_responseHandler(response, switchNode) {
         var imageSave = jsonResponse.imageSave;
 
         // console.log(imageSave);
+    }
+
+    function ft_imageMergeCase(jsonResponse) {
+
+        var canvas = document.getElementById('canvasViewID');
+        var context = canvas.getContext("2d");
+        var image = new Image();
+
+        var imageRaw = jsonResponse.imageMerge;
+        var imageData = "data:image/png;base64,"+imageRaw;
+
+        image.onload = function () {
+
+            context.drawImage(image, 50, 25, 150, 130);
+        };
+
+        image.src = imageData;
     }
 
     function ft_imageUploadCase(jsonResponse) {
