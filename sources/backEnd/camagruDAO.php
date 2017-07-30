@@ -83,7 +83,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         $pictureFilename = hash("sha256", $pictureFilename);
         $imageContent = $decodedHTTPJSON['httpUploadImageContent'];;
 
-        ft_imageDBUpload($dbConn, $username, $pictureFilename, $imageContent);
+//        ft_imageDBUpload($dbConn, $username, $pictureFilename, $imageContent);
 
         if ($imageContent) {
 

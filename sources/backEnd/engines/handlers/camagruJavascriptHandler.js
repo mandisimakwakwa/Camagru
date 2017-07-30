@@ -75,7 +75,10 @@ function ft_responseHandler(response, switchNode) {
 
         var imageSave = jsonResponse.imageSave;
 
-        // console.log(imageSave);
+        if (imageSave) {
+
+            window.location.reload();
+        }
     }
 
     function ft_imageMergeCase(jsonResponse) {
