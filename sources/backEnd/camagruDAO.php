@@ -11,12 +11,15 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         imagesavealpha($imageBaseContent, true);
         imagealphablending($imageLayerContent, true);
         imagesavealpha($imageLayerContent, true);
-        imagecopymerge($imageBaseContent, $imageLayerContent, 0, 0, 0, 0, 450, 450, 75);
+
+        imagecopymerge($imageBaseContent, $imageLayerContent, 0, 0, 0, 0, 100, 100, 75);
 
         // Output and free from memory
         header('Content-Type: image/png');
+
         ob_start();
-        imagepng($imageBaseContent);
+        imagepng($imageLayerContent);
+
         $image = ob_get_clean();
 
         //Global Variables
