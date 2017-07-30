@@ -7,7 +7,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
     //Session Creator
     session_start();
 
-//Global Variables
+    //Global Variables
     //Handle HTTP Requests
     $getHTTPJSON = file_get_contents("php://input");
     $decodedHTTPJSON = json_decode($getHTTPJSON, true);
@@ -27,6 +27,12 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
     //Use Camagru DB
     ft_useCamagru($dbConn, $dbConnName);
+
+    //Create users Table & Set Auto Increment
+    ft_createUsersTable($dbConn);
+
+    //Create gallery table query
+    ft_createGalleryTable($dbConn);
 
     $sessionState = $decodedHTTPJSON['SessionState'];
     switch ($sessionState) {

@@ -48,7 +48,7 @@ function ft_responseHandler(response, switchNode) {
         }
     } else {
 
-        alert("Hi");
+        alert("No Responses Recieved!");
     }
 }
 
@@ -61,6 +61,9 @@ function ft_responseHandler(response, switchNode) {
             var destPage = "main";
 
             ft_redirectController(destPage);
+        } else {
+
+            alert("Login Failed. Please Check Email and Password!");
         }
     }
 
@@ -73,22 +76,6 @@ function ft_responseHandler(response, switchNode) {
 
     function ft_imageUploadCase(jsonResponse) {
 
-        var imageUpload = jsonResponse.imageUpload;
-        var canvas = document.getElementById("canvasViewID");
-        var context = canvas.getContext("2d");
-
-        if (imageUpload) {
-
-            //Draw image from encoded base64
-            window.onload = function() {
-
-                context.drawImage(imageUpload, 0, 0);
-            };
-        } else {
-
-            ft_clearPhoto(canvas, context, "");
-            alert("fail");
-        }
     }
 
     function ft_errorLogCase(jsonResponse) {

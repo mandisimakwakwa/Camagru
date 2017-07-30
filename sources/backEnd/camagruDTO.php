@@ -33,6 +33,11 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
                 $jsonObj = ft_imageUploadJSON($sourceContent);
                 break;
             case "errorLog" :
+
+                $jsonObj = ft_sendErrorJSON($sourceContent);
+                break;
+            case "errorUserNull" :
+
                 $jsonObj = ft_sendErrorJSON($sourceContent);
                 break;
         }
@@ -48,6 +53,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
     }
 
     function ft_sendErrorJSON($sourceContent) {
+
 
         $confirmErrorJSONIndex = "errorLog";
         $jsonObj = array($confirmErrorJSONIndex => $sourceContent);
@@ -100,9 +106,6 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         $_SESSION['errorLog'] = "Error Registration Failed.";
 
         //Register User
-        //Create users Table & Set Auto Increment
-        ft_createUsersTable($dbConn);
-
         //Store User In DB
         $httpRegisterEmail = $_SESSION['httpRegisterEmail'];
         $httpRegisterUsername = $_SESSION['httpRegisterUsername'];
@@ -125,9 +128,18 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
             ft_sendJSON($confirmLoginJSONValue, $switchNode);
         } else {
 
-            $switchNode = "errorLog";
+            if ($_SESSION['userDBEmail']) {
 
-            ft_sendJSON($_SESSION['errorLog'], $switchNode);
+                $switchNode = "errorLog";
+
+                ft_sendJSON($_SESSION['errorLog'], $switchNode);
+            } else {
+
+                $switchNode = "errorUserNull";
+                $_SESSION['errorLog'] = "Error Login Doesn't Exist!";
+
+                ft_sendJSON($_SESSION['errorLog'], $switchNode);
+            }
         }
     }
 
@@ -145,6 +157,9 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         //Session Set Error Log
         $_SESSION['errorLog'] = "Error Login and Password Don't Match";
 
+        //Create users Table & Set Auto Increment
+        ft_createUsersTable($dbConn);
+
         //Set DB Sessions
         $_SESSION['userDBEmail'] = ft_getUserDBEmail($dbConn, $httpLoginEmail, $httpLoginPassword);
         $_SESSION['userDBUsername'] = ft_getUserDBUsername($dbConn, $httpLoginEmail, $httpLoginPassword);
@@ -159,9 +174,18 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
             ft_sendJSON($confirmLoginJSONValue, $switchNode);
         } else {
 
-            $switchNode = "errorLog";
+            if ($_SESSION['userDBEmail']) {
 
-            ft_sendJSON($_SESSION['errorLog'], $switchNode);
+                $switchNode = "errorLog";
+
+                ft_sendJSON($_SESSION['errorLog'], $switchNode);
+            } else {
+
+                $switchNode = "errorUserNull";
+                $_SESSION['errorLog'] = "Error Login Doesn't Exist!";
+
+                ft_sendJSON($_SESSION['errorLog'], $switchNode);
+            }
         }
     }
 

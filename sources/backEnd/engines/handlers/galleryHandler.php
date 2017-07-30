@@ -21,8 +21,14 @@ require $projectRoot . "sources/backEnd/engines/controllers/phpPathController.ph
     //Establish Network Connection
     $dbConn = ft_getConnection($dbConnDSN, $dbConnUser, $dbConnPassword);
 
+    //Create DB if Not Exists
+    ft_createDB($dbConn, $dbConnName);
+
     //Use Camagru DB
     ft_useCamagru($dbConn, $dbConnName);
+
+    //Create users Table & Set Auto Increment
+    ft_createUsersTable($dbConn);
 
     //Create gallery table query
     ft_createGalleryTable($dbConn);
@@ -43,10 +49,6 @@ require $projectRoot . "sources/backEnd/engines/controllers/phpPathController.ph
         case "UPLOAD" :
 
             ft_sessionStateUpload($dbConn, $decodedHTTPJSON);
-            break;
-        default :
-
-//            ft_sessionStateError();
             break;
     }
 
