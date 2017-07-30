@@ -97,6 +97,19 @@ function ft_responseHandler(response, switchNode) {
 
     function ft_imageUploadCase(jsonResponse) {
 
+        var canvas = document.getElementById('canvasViewID');
+        var context = canvas.getContext("2d");
+        var image = new Image();
+
+        var imageRaw = jsonResponse.imageUpload;
+        var imageData = "data:image/png;base64,"+imageRaw;
+
+        image.onload = function () {
+
+            context.drawImage(image, 50, 25, 150, 130);
+        };
+
+        image.src = imageData;
     }
 
     function ft_errorLogCase(jsonResponse) {

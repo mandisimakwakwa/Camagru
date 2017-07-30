@@ -88,17 +88,8 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         if ($imageContent) {
 
             $switchNode = "imageUpload";
-            $imageBase = 'data:image/png;base64,';
 
-            header('Content-Type: image/png');
-
-            ob_start();
-            imagepng($imageContent);
-            $image = ob_get_clean();
-
-            $imageContent = base64_encode($image);
-
-            ft_sendJSON($imageBase.$imageContent, $switchNode);
+            ft_sendJSON($imageContent, $switchNode);
         } else {
 
             $switchNode = "errrorLog";
