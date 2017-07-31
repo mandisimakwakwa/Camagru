@@ -70,24 +70,18 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
                                 ?>
 
                                 <img id="<?php echo $itemCounter + 1; ?>"
-                                     height="50"
-                                     width="50"
+                                     height="80"
+                                     width="125"
                                      src="data:image/png;base64,<?php echo $imageData; ?>"
                                 />
-
-                                <button class="commentDivButtonClass"
-                                        onclick="ft_commentsButton(<?php echo $itemCounter + 1; ?>)">
-
-                                    Comments
-                                </button>
 
                                 <?php
                             } else {
                                 ?>
 
                                 <img id="<?php echo $itemCounter + 1; ?>"
-                                     height="50"
-                                     width="50"
+                                     height="80"
+                                     width="125"
                                      src="#"
                                 />
 
