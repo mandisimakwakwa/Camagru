@@ -110,4 +110,13 @@
              onclick="ft_mergeLayer(this)"
         />
     </div>
+
+    <div id="commentsContainerDivID"
+         class="modalClass divDebugClassThree">
+
+        <div class="modalContentClass divDebugClassTwo">
+
+            Hello
+        </div>
+    </div>
 </main>

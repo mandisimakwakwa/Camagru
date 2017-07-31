@@ -37,6 +37,29 @@
         min-width: 20%;
     }
 
+    .opacityAnimationClass {
+
+        animation: flash linear 2s infinite;
+    }
+
+    .pulseAnimationClass {
+
+        animation: pulse linear 1s infinite;
+    }
+    
+    @keyframes flash {
+
+        0% {opacity: 1;}
+        50% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+    @keyframes pulse {
+
+        0% {font-weight: bolder;}
+        100% {}
+    }
+
 /*====================================================================================================================*/
 /*
     //==========================\\
@@ -94,10 +117,9 @@
     .modalClass {
 
         display: none;
-        flex-flow: column;
         position: fixed;
-        justify-content: center;
-        align-items: center;
+        top: 0;
+        left: 0;
         margin: 0px;
         padding: 0px;
         width: 100%;

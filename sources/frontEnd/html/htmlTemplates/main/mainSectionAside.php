@@ -48,11 +48,11 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
         <div id="galleryTitleDivID">
 
-            <span class="galleryHtmlEntitiesClass">&#91;</span>
+            <span class="galleryHtmlEntitiesClass opacityAnimationClass pulseAnimationClass">&#91;</span>
 
                 <?php echo $username;?>
 
-            <span class="galleryHtmlEntitiesClass">&#93;</span>
+            <span class="galleryHtmlEntitiesClass opacityAnimationClass pulseAnimationClass">&#93;</span>
         </div>
         <div id="galleryContentsID">
 
@@ -63,7 +63,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
                     while ($itemCounter < $itemsPerPageLimiter) {
                         $imageData = $userImageContainer[$itemCounter];
                         ?>
-                        <div class="commentDivClass">
+                        <div class="commentsDivClass">
 
                             <?php
                             if ($imageData) {

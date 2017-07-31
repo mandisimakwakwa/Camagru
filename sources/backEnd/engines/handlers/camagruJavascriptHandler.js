@@ -2,6 +2,7 @@
 function ft_defaultOnloadEnabler() {
 
     ft_camDisplay();
+    ft_closeModal();
 }
 
 //Close Modal Button
@@ -12,6 +13,19 @@ function ft_closeModalButton() {
 
     closeModalReg.style.display = "none";
     closeModalLogin.style.display = "none";
+}
+
+function ft_closeModal() {
+
+    var commentsModal = document.getElementById('commentsContainerDivID');
+
+    window.onclick = function (event) {
+
+        if (event.target == commentsModal) {
+
+            commentsModal.style.display = "none";
+        }
+    }
 }
 
 function ft_submitButton(sourcePage) {

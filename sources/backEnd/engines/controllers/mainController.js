@@ -160,6 +160,7 @@ function ft_next(currentPage) {
 
 function ft_commentsButton(imageID) {
 
-    alert(imageID);
-    //Make comments php handler and layout template/
+    var commentsDiv = document.getElementById("commentsContainerDivID");
+
+    commentsDiv.style.display = "block";
 }
