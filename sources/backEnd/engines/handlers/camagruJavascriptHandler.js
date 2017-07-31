@@ -10,9 +10,11 @@ function ft_closeModalButton() {
 
     var closeModalReg = document.getElementById('indexRegistrationModalID');
     var closeModalLogin = document.getElementById('indexLoginModalID');
+    var closeModalComments = document.getElementById('commentsContainerDivID');
 
     closeModalReg.style.display = "none";
     closeModalLogin.style.display = "none";
+    closeModalComments.style.display = "none";
 }
 
 function ft_closeModal() {

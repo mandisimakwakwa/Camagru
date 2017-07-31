@@ -36,7 +36,7 @@
 
                 <div class="indexSeparatorDivClass"></div>
 
-                <h1>Registration Form</h1>
+                <h1>Registration</h1>
 
                 <div class="indexSeparatorDivClass">
 

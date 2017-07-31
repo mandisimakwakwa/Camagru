@@ -112,9 +112,28 @@
     </div>
 
     <div id="commentsContainerDivID"
-         class="modalClass divDebugClassThree">
+         class="modalClass divDebugClassThree"
+    >
 
-        <div class="modalContentClass divDebugClassTwo">
+        <div class="uploadFormTitleDivClass">
+
+            <div class="placeHolderDivClass"></div>
+
+            <h1>Comments</h1>
+
+            <div class="placeHolderDivClass">
+
+                <button class="closeButtonClass"
+                        onclick="ft_closeUploadForm()">
+
+                    <div>X</div>
+                </button>
+            </div>
+        </div>
+
+        <div class="modalContentClass divDebugClassTwo"
+             id="commentsDivID"
+        >
 
             Hello
         </div>

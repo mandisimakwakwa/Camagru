@@ -158,9 +158,9 @@ function ft_next(currentPage) {
     window.location = "?page="+nextPage;
 }
 
-function ft_commentsButton(imageID) {
+function ft_comments(imageID) {
 
     var commentsDiv = document.getElementById("commentsContainerDivID");
 
-    commentsDiv.style.display = "block";
+    commentsDiv.style.display = "flex";
 }
