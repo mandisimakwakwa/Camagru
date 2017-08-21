@@ -73,7 +73,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
                                      height="80"
                                      width="125"
                                      src="data:image/png;base64,<?php echo $imageData; ?>"
-                                     onclick="ft_comments(<?php echo $itemCounter + 1; ?>)"
+<!--                                     onclick="ft_comments(--><?php //echo $itemCounter + 1; ?>//)"
                                 />
 
                                 <?php

@@ -1,6 +1,8 @@
 function ft_indexGalleryButton() {
 
-    alert("Gallery Button has been Pressed");
+    var indexGalleryDiv = document.getElementById('indexGalleryModalID');
+
+    indexGalleryDiv.style.display = "flex";
 }
 
 function ft_indexLoginButton() {
