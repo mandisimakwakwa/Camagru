@@ -195,7 +195,7 @@
 
         $username = $_SESSION['userDBUsername'];
 
-        $dbQuery = "SELECT imageContent FROM gallery";
+        $dbQuery = "SELECT imageContent FROM gallery ORDER BY insertTime DESC";
 
         $preparedStatement = $dbConn->prepare($dbQuery);
         $preparedStatement->execute();
