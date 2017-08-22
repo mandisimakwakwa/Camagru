@@ -41,7 +41,15 @@ function ft_sendRegHTTPRequest() {
 
      var switchNode = "login";
 
-     ft_sendHTTPRequest("POST", params, "", handler, switchNode);
+     var passwordSecurityCheck = ft_passwordSecurityCheck(httpRegisterPassword);
+
+     if (passwordSecurityCheck) {
+
+         ft_sendHTTPRequest("POST", params, "", handler, switchNode);
+     } else {
+
+         alert("Your Password must contain at minimum 8 Characters and also contain at least a Number.");
+     }
 }
 
 function ft_sendLoginHTTPRequest() {

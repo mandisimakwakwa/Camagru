@@ -1,2 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
+resources/.DS_Store
+resources/._.DS_Store
+sources/backEnd/.DS_Store
+sources/backEnd/._.DS_Store
+sources/backEnd/engines/.DS_Store
+sources/backEnd/engines/._.DS_Store

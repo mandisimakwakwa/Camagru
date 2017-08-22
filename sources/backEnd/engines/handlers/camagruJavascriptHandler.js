@@ -187,3 +187,21 @@ function ft_responseHandler(response, switchNode) {
 
         window.location = "?page="+nextPage;
     }
+
+    function ft_passwordSecurityCheck(password) {
+
+        var passwordLength = password.length;
+        var passwordComplexityCheck = /(?=.*[0-9])(?=.*[a-z])/;
+
+        var state = 0;
+
+        if (passwordLength > 7) {
+
+            if (passwordComplexityCheck.test(password)) {
+
+                state = 1;
+            }
+        }
+
+        return state;
+    }
