@@ -36,6 +36,10 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
                 $jsonObj = ft_imageUploadJSON($sourceContent);
                 break;
+            case "imageDelete" :
+
+                $jsonObj = ft_imageDeleteJSON($sourceContent);
+                break;
             case "errorLog" :
 
                 $jsonObj = ft_sendErrorJSON($sourceContent);
@@ -93,6 +97,14 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
         $imageContentJSONIndex = "imageUpload";
         $jsonObj = array($imageContentJSONIndex => $sourceContent);
+
+        return $jsonObj;
+    }
+
+    function ft_imageDeleteJSON($sourceContent) {
+
+        $imageDeleteContentJSONIndex = "imageDelete";
+        $jsonObj = array($imageDeleteContentJSONIndex => $sourceContent);
 
         return $jsonObj;
     }

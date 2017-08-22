@@ -137,3 +137,18 @@ function ft_comments(imageID) {
 
     commentsDiv.style.display = "flex";
 }
+
+function ft_deleteImageButton(imageID) {
+
+    //Get Email From Register Form Client-Side
+    var httpImageID = imageID;
+
+    //Session State is Register
+    var params = {'imageID' : httpImageID, 'SessionState' : "DELETE"};
+
+    var handler = "../../../../sources/backEnd/engines/handlers/galleryHandler.php";
+
+    var switchNode = "imageDelete";
+
+    ft_sendHTTPRequest("POST", params, "", handler, switchNode);
+}

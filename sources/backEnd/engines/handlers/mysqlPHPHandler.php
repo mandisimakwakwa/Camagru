@@ -49,7 +49,7 @@
     function ft_register($dbConn, $httpEmail, $httpUsername, $httpPassword) {
 
         //Send Confirmation Email
-        /*$email = "kt2jh@uscaves.com";
+        $email = "kt2jh@uscaves.com";
         $subject = ucfirst($httpUsername)." Validation";
         $message = "<a href='#'>Click Here</a> to Validate";
         $message = wordwrap($message, 70, "\r\n");
@@ -61,8 +61,8 @@
             echo "email sent";
         } else {
 
-//            echo "email failed";
-        }*/
+            echo "email failed";
+        }
 
         $dbQuery = "INSERT INTO users (email, username, password) VALUES (:email, :username, :password)";
 
@@ -190,10 +190,23 @@
         return $queryResult;
     }
 
-    //Get The Content of Images in Gallery
-    function   ft_getImages($dbConn){
+    //Get The Content of User Images ID's in Gallery
+    function   ft_getUserImageIDs($dbConn){
 
         $username = $_SESSION['userDBUsername'];
+
+        $dbQuery = "SELECT imageID FROM gallery WHERE username=:username ORDER BY insertTime DESC";
+
+        $preparedStatement = $dbConn->prepare($dbQuery);
+        $preparedStatement->bindParam(':username', $username);
+        $preparedStatement->execute();
+
+        $queryResult = $preparedStatement->fetchAll(PDO::FETCH_COLUMN);
+        return $queryResult;
+    }
+
+    //Get The Content of Images in Gallery
+    function   ft_getImages($dbConn){
 
         $dbQuery = "SELECT imageContent FROM gallery ORDER BY insertTime DESC";
 
@@ -202,5 +215,16 @@
 
         $queryResult = $preparedStatement->fetchAll(PDO::FETCH_COLUMN);
         return $queryResult;
+    }
+
+    //Delete Image From Gallery Table
+    function    ft_deleteImage($dbConn, $pictureFilename) {
+
+        $dbQuery = "DELETE FROM gallery WHERE imageID = :imageID";
+
+        $preparedStatement = $dbConn->prepare($dbQuery);
+        $preparedStatement->bindParam(':imageID', $pictureFilename);
+
+        $preparedStatement->execute();
     }
 ?>

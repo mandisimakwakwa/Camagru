@@ -98,6 +98,21 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         }
     }
 
+    function ft_sessionStateImageDelete($dbConn, $decodedHTTPJSON) {
+
+        $username = $_SESSION['userDBUsername'];
+        $pictureFilename = $decodedHTTPJSON['imageID'];
+
+        ft_deleteImage($dbConn, $pictureFilename);
+
+        if ($pictureFilename) {
+
+            $switchNode = "imageDelete";
+
+            ft_sendJSON($pictureFilename, $switchNode);
+        }
+    }
+
     function ft_base64FromPNG($imageLayerFilename) {
 
         $path = "../../../../resources/merges/$imageLayerFilename";
@@ -106,7 +121,6 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
         return $imageData;
     }
-
 
 //Debug Connection to camagruDAO.php
     function ft_checkCamagruDAO() {

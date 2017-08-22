@@ -50,6 +50,10 @@ require $projectRoot . "sources/backEnd/engines/controllers/phpPathController.ph
 
             ft_sessionStateUpload($dbConn, $decodedHTTPJSON);
             break;
+        case "DELETE" :
+
+            ft_sessionStateImageDelete($dbConn, $decodedHTTPJSON);
+            break;
     }
 
     //Debug Connection to galleryHandler.php

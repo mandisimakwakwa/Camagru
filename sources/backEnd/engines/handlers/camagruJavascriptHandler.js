@@ -65,6 +65,9 @@ function ft_responseHandler(response, switchNode) {
 
                 ft_imageUploadCase(jsonResponse);
                 break;
+            case "imageDelete":
+                ft_imageDelete(jsonResponse);
+                break;
         }
     } else {
 
@@ -129,6 +132,21 @@ function ft_responseHandler(response, switchNode) {
         };
 
         image.src = imageData;
+    }
+
+    function ft_pageRefresh() {
+
+        window.location.reload();
+    }
+
+    function ft_imageDelete(jsonResponse) {
+
+        var imageID = jsonResponse.imageDelete;
+
+        if (imageID) {
+
+            ft_pageRefresh();
+        }
     }
 
     function ft_errorLogCase(jsonResponse) {

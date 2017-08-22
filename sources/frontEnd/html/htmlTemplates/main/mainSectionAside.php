@@ -34,6 +34,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
         //Read Pics From DB and Convert to Thumbnails
         $sumOfImageArrayContents = ft_getUserImageSum($dbConn);
         $userImageContainer = ft_getUserImages($dbConn);
+        $userImageIDsContainer = ft_getUserImageIDs($dbConn);
 
         //Pagination
         $currentPage = strlen($_GET['page'])>0?$_GET['page']:1;
@@ -62,6 +63,7 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
 
                     while ($itemCounter < $itemsPerPageLimiter) {
                         $imageData = $userImageContainer[$itemCounter];
+                        $imageID = $userImageIDsContainer[$itemCounter];
                         ?>
                         <div class="commentsDivClass">
 
@@ -70,19 +72,18 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
                                 ?>
 
                                 <img id="<?php echo $itemCounter + 1; ?>"
-                                     height="80"
-                                     width="125"
+                                     height="60"
+                                     width="115"
                                      src="data:image/png;base64,<?php echo $imageData; ?>"
 <!--                                     onclick="ft_comments(--><?php //echo $itemCounter + 1; ?>//)"
                                 />
-
                                 <?php
                             } else {
                                 ?>
 
                                 <img id="<?php echo $itemCounter + 1; ?>"
-                                     height="80"
-                                     width="125"
+                                     height="60"
+                                     width="115"
                                      src="#"
                                 />
 
@@ -91,6 +92,11 @@ require $projectRoot . 'sources/backEnd/engines/controllers/phpPathController.ph
                             ?>
                             <br>
                         </div>
+                        <button class="deleteButtonContainerClass"
+                                onclick="ft_deleteImageButton('<?php echo $imageID?>')">
+
+                            Delete
+                        </button>
                         <?php
                         $itemCounter += 1;
                     }
