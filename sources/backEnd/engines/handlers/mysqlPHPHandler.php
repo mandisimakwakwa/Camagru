@@ -49,28 +49,23 @@
     function ft_register($dbConn, $httpEmail, $httpUsername, $httpPassword) {
 
         //Send Confirmation Email
-        $email = "kt2jh@uscaves.com";
+        $email = $httpEmail;
         $subject = ucfirst($httpUsername)." Validation";
-        $message = "<a href='#'>Click Here</a> to Validate";
+        $message = "This is a confirmation email to validate you have successfully registered with Camagru.";
         $message = wordwrap($message, 70, "\r\n");
         $retMail = mail($email, $subject, $message);
 
         //Confirmation Email Return
         if ($retMail) {
 
-            echo "email sent";
-        } else {
+            $dbQuery = "INSERT INTO users (email, username, password) VALUES (:email, :username, :password)";
 
-            echo "email failed";
+            $preparedStatement = $dbConn->prepare($dbQuery);
+            $preparedStatement->bindParam(':email', $httpEmail);
+            $preparedStatement->bindParam(':username', $httpUsername);
+            $preparedStatement->bindParam(':password', $httpPassword);
+            $preparedStatement->execute();
         }
-
-        $dbQuery = "INSERT INTO users (email, username, password) VALUES (:email, :username, :password)";
-
-        $preparedStatement = $dbConn->prepare($dbQuery);
-        $preparedStatement->bindParam(':email', $httpEmail);
-        $preparedStatement->bindParam(':username', $httpUsername);
-        $preparedStatement->bindParam(':password', $httpPassword);
-        $preparedStatement->execute();
     }
 
     //Get User Email from DB
